@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solicite uma Proposta Personalizada — Paulo Cortez</title>
+<style>
+  :root{
+    --cyan:#00B4C8; --dark:#005F75; --med:#0093A8; --light:#E0F7FA;
+    --ink:#1A1A1A; --gray:#5B6B70; --line:#C8E8ED; --amber:#E6A817; --bg:#F2FBFC;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.5;padding:0 0 60px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px}
+  header{background:linear-gradient(135deg,#005F75 0%,#00B4C8 60%,#00D4C0 100%);
+    color:#fff;padding:40px 0 36px;margin-bottom:26px;position:relative;overflow:hidden}
+  header::after{content:'';position:absolute;right:-60px;top:-60px;width:280px;height:280px;
+    border-radius:50%;background:rgba(255,255,255,.06)}
+  header::before{content:'';position:absolute;left:-40px;bottom:-80px;width:200px;height:200px;
+    border-radius:50%;background:rgba(255,255,255,.04)}
+  header .wrap{position:relative;z-index:1}
+  .kicker{color:#B2EEF4;font-size:12px;font-weight:700;letter-spacing:2.5px;
+    text-transform:uppercase;margin-bottom:10px}
+  header h1{font-size:28px;line-height:1.2;margin-bottom:12px;font-weight:800}
+  header p{color:#D8F5F8;font-size:15px;max-width:560px;line-height:1.6}
+  .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:5px 12px;
+    font-size:12px;font-weight:600;color:#fff;margin-top:16px}
+  .badge span{width:6px;height:6px;border-radius:50%;background:#7FE8D0;display:inline-block}
+  .sec{background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:22px 22px 8px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,180,200,.06)}
+  .sec h2{font-size:17px;color:var(--dark);margin-bottom:4px;display:flex;align-items:center;gap:10px;font-weight:700}
+  .sec .num{background:linear-gradient(135deg,var(--dark),var(--cyan));color:#fff;
+    width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;
+    justify-content:center;font-size:13px;font-weight:800;flex:0 0 auto}
+  .sec .desc{color:var(--gray);font-size:13px;margin:0 0 16px 36px}
+  .field{margin-bottom:16px}
+  label{display:block;font-weight:600;font-size:14px;margin-bottom:6px;color:#1A1A1A}
+  label .opt{font-weight:400;color:var(--gray);font-size:12px}
+  .req{color:var(--amber);font-weight:700}
+  input[type=text],input[type=email],input[type=date],input[type=number],select,textarea{
+    width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:9px;font-size:15px;
+    font-family:inherit;color:var(--ink);background:#fff;transition:border .15s,box-shadow .15s}
+  input:focus,select:focus,textarea:focus{
+    outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,180,200,.12)}
+  textarea{resize:vertical;min-height:72px}
+  .hint{font-size:12px;color:var(--gray);margin-top:5px}
+  .row{display:flex;gap:14px;flex-wrap:wrap}
+  .row .field{flex:1;min-width:200px}
+  .checks{display:flex;flex-direction:column;gap:9px;margin-top:4px}
+  .chk{display:flex;align-items:flex-start;gap:10px;font-weight:400;font-size:14px;cursor:pointer;
+    padding:10px 13px;border:1.5px solid var(--line);border-radius:9px;transition:.15s;color:#1A1A1A}
+  .chk:hover{border-color:var(--cyan);background:var(--light)}
+  .chk input{margin-top:2px;width:17px;height:17px;accent-color:var(--cyan);flex:0 0 auto}
+  .pillset{display:flex;gap:9px;flex-wrap:wrap;margin-top:4px}
+  .pill{position:relative}
+  .pill input{position:absolute;opacity:0}
+  .pill label{display:inline-block;padding:9px 16px;border:1.5px solid var(--line);
+    border-radius:30px;font-weight:500;font-size:14px;cursor:pointer;margin:0;transition:.15s;color:#1A1A1A}
+  .pill input:checked + label{
+    background:linear-gradient(135deg,var(--dark),var(--cyan));color:#fff;border-color:transparent}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  button{font-family:inherit;font-size:15px;font-weight:700;padding:15px 20px;border-radius:10px;
+    border:none;cursor:pointer;transition:.15s;flex:1;min-width:170px}
+  .btn-primary{background:linear-gradient(135deg,var(--dark) 0%,var(--cyan) 100%);
+    color:#fff;box-shadow:0 4px 14px rgba(0,180,200,.3)}
+  .btn-primary:hover{box-shadow:0 6px 20px rgba(0,180,200,.45);transform:translateY(-1px)}
+  .btn-primary:disabled{opacity:.6;cursor:not-allowed;transform:none}
+  .btn-ghost{background:#fff;color:var(--dark);border:1.5px solid var(--cyan)}
+  .btn-ghost:hover{background:var(--light)}
+  .note{background:var(--light);border-left:4px solid var(--cyan);padding:14px 16px;
+    border-radius:8px;font-size:13px;color:var(--dark);margin-top:18px;line-height:1.6}
+  /* SUCCESS STATE */
+  .success{display:none;text-align:center;padding:48px 24px;background:#fff;
+    border-radius:16px;border:1px solid var(--line);margin-top:8px}
+  .success .icon{font-size:52px;margin-bottom:16px}
+  .success h2{color:var(--dark);font-size:22px;margin-bottom:10px}
+  .success p{color:var(--gray);font-size:15px;max-width:460px;margin:0 auto;line-height:1.6}
+  .success .back{display:inline-block;margin-top:20px;padding:12px 24px;border-radius:10px;
+    background:var(--light);color:var(--dark);font-weight:700;font-size:14px;cursor:pointer;border:none;font-family:inherit}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);
+    background:var(--dark);color:#fff;padding:14px 22px;border-radius:30px;font-size:14px;
+    font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);transition:transform .35s;z-index:50}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+  .err{border-color:#D14343 !important;box-shadow:0 0 0 3px rgba(209,67,67,.12) !important}
+  footer{text-align:center;color:var(--gray);font-size:12px;margin-top:28px}
+  footer strong{color:var(--dark)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">Paulo Cortez · PROCRESCER ACADEMY</div>
+    <h1>Solicite uma Proposta Personalizada</h1>
+    <p>Preencha as informações abaixo e eu monto uma proposta sob medida para a sua empresa. Com isso já eliminamos uma reunião e você recebe algo concreto, não um modelo genérico.</p>
+    <div class="badge"><span></span> Leva menos de 5 minutos</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- FORMULÁRIO -->
+  <form id="f" name="proposta" data-netlify="true" data-netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="proposta">
+    <input type="hidden" name="bot-field" style="display:none">
+    <input type="hidden" name="resumo_completo" id="resumo_completo">
+
+    <!-- 1. CONTATO -->
+    <div class="sec">
+      <h2><span class="num">1</span> Quem está solicitando</h2>
+      <p class="desc">Para eu saber com quem falo e como retornar.</p>
+      <div class="row">
+        <div class="field">
+          <label>Empresa <span class="req">*</span></label>
+          <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa ou organização" required>
+        </div>
+        <div class="field">
+          <label>Seu nome <span class="req">*</span></label>
+          <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>E-mail <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com.br" required>
+        </div>
+        <div class="field">
+          <label>WhatsApp / Telefone <span class="opt">(opcional)</span></label>
+          <input type="text" id="fone" name="telefone" placeholder="(11) 9 0000-0000">
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. A ACAO -->
+    <div class="sec">
+      <h2><span class="num">2</span> A ação</h2>
+      <p class="desc">O básico do que você precisa.</p>
+      <div class="field">
+        <label>Qual o tema ou assunto desejado? <span class="req">*</span></label>
+        <input type="text" id="tema" name="tema" placeholder="Ex.: liderança, IA aplicada, comunicação, saúde mental, produtividade..." required>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Data prevista da ação <span class="req">*</span></label>
+          <input type="date" id="data" name="data" required>
+          <div class="hint">Se ainda não há data fechada, coloque a mais provável.</div>
+        </div>
+        <div class="field">
+          <label>Carga horária prevista <span class="req">*</span></label>
+          <input type="text" id="carga" name="carga_horaria" placeholder="Ex.: 1h palestra, 4h curso, dia inteiro..." required>
+        </div>
+      </div>
+      <div class="field">
+        <label>Formato <span class="req">*</span></label>
+        <div class="pillset">
+          <span class="pill"><input type="radio" name="formato" id="fp" value="Presencial" required><label for="fp">Presencial</label></span>
+          <span class="pill"><input type="radio" name="formato" id="fr" value="Remoto / Online"><label for="fr">Remoto / Online</label></span>
+          <span class="pill"><input type="radio" name="formato" id="fh" value="Híbrido"><label for="fh">Híbrido</label></span>
+        </div>
+      </div>
+      <div class="field" id="localWrap">
+        <label>Cidade / local da ação <span class="opt">(se presencial ou híbrido)</span></label>
+        <input type="text" id="local" name="local" placeholder="Cidade, estado ou nome do local/auditório">
+      </div>
+    </div>
+
+    <!-- 3. PUBLICO -->
+    <div class="sec">
+      <h2><span class="num">3</span> Quem vai participar</h2>
+      <p class="desc">Quanto melhor eu conhecer o público, mais certeira fica a entrega.</p>
+      <div class="row">
+        <div class="field">
+          <label>Quantidade de pessoas <span class="req">*</span></label>
+          <input type="number" id="qtd" name="quantidade_pessoas" min="1" placeholder="Ex.: 40" required>
+        </div>
+        <div class="field">
+          <label>Cargo / nível predominante</label>
+          <input type="text" id="cargo" name="cargo_nivel" placeholder="Ex.: lideranças, time comercial, diretoria, misto">
+        </div>
+      </div>
+      <div class="field">
+        <label>Perfil dos profissionais <span class="opt">(faixa etária, área, experiência com o tema)</span></label>
+        <textarea id="perfil" name="perfil_publico" placeholder="Ex.: gestores de 30 a 50 anos, área comercial, nunca fizeram treinamento de liderança; ou equipe jovem, primeiro emprego, ambiente de alta pressão."></textarea>
+      </div>
+    </div>
+
+    <!-- 4. DOR E MOTIVACAO -->
+    <div class="sec">
+      <h2><span class="num">4</span> O porquê desta ação</h2>
+      <p class="desc">Esta é a parte mais importante. É o que transforma uma palestra genérica em algo que resolve o problema real da sua empresa.</p>
+      <div class="field">
+        <label>Qual a principal dor ou situação que motivou esta contratação? <span class="req">*</span></label>
+        <textarea id="dor" name="dor_principal" placeholder="Ex.: as lideranças estão sobrecarregadas e o clima caiu; o time comercial perdeu motivação após uma reestruturação; queremos preparar a equipe para um novo ciclo de crescimento." required></textarea>
+      </div>
+      <div class="field">
+        <label>O que motivou buscar isso agora? <span class="opt">(o que mudou ou está acontecendo)</span></label>
+        <textarea id="motivacao" name="motivacao" placeholder="Ex.: novo ciclo estratégico; pesquisa de clima; convenção anual; SIPAT; troca de liderança; meta de reduzir turnover."></textarea>
+      </div>
+      <div class="field">
+        <label>Qual resultado você espera ao final do encontro? <span class="req">*</span></label>
+        <textarea id="resultado" name="resultado_esperado" placeholder="Ex.: que as lideranças saiam com ferramentas práticas para aplicar na semana seguinte; que o time saia mais unido e engajado; que as pessoas entendam a mudança e se sintam parte dela." required></textarea>
+        <div class="hint">Pense no sucesso: o que as pessoas devem sentir, saber ou fazer diferente depois.</div>
+      </div>
+    </div>
+
+    <!-- 5. LOGISTICA -->
+    <div class="sec">
+      <h2><span class="num">5</span> Logística e ajuda de custo</h2>
+      <p class="desc">Se a ação for presencial fora da minha região, essas informações ajudam a fechar a viabilidade da proposta.</p>
+      <label style="margin-bottom:8px;display:block">A empresa oferece ajuda de custo para: <span class="opt">(marque o que se aplica)</span></label>
+      <div class="checks">
+        <label class="chk"><input type="checkbox" name="ajuda_custo" value="Deslocamento / viagem"> Deslocamento / viagem (combustível, passagem, pedágio)</label>
+        <label class="chk"><input type="checkbox" name="ajuda_custo" value="Hospedagem"> Hospedagem</label>
+        <label class="chk"><input type="checkbox" name="ajuda_custo" value="Refeição / alimentação"> Refeição / alimentação</label>
+        <label class="chk"><input type="checkbox" name="ajuda_custo" value="Nenhuma das anteriores"> Nenhuma das anteriores</label>
+      </div>
+      <div class="field" style="margin-top:16px">
+        <label>Orçamento previsto <span class="opt">(opcional, mas agiliza muito a proposta)</span></label>
+        <input type="text" id="orcamento" name="orcamento" placeholder="Ex.: R$ 5.000, ou uma faixa, ou 'a combinar'">
+      </div>
+    </div>
+
+    <!-- 6. FECHAMENTO -->
+    <div class="sec">
+      <h2><span class="num">6</span> Últimos detalhes</h2>
+      <p class="desc">Quase lá.</p>
+      <div class="field">
+        <label>Algo mais que eu precise saber? <span class="opt">(restrições, expectativas, histórico)</span></label>
+        <textarea id="extra" name="observacoes" placeholder="Ex.: já tivemos um treinamento que não engajou; o espaço é um galpão sem projetor; precisa de certificado; tem um tema específico que gostaríamos de abordar; temos um histórico sensível na equipe."></textarea>
+      </div>
+      <label class="chk" style="font-weight:600;margin-top:4px">
+        <input type="checkbox" name="call_briefing" value="Sim">
+        Mesmo com este formulário, gostaria de uma call rápida de alinhamento antes da proposta
+      </label>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="btn-primary" id="btnEnviar" onclick="enviarFormulario()">Solicitar proposta personalizada</button>
+      <button type="button" class="btn-ghost" onclick="copiar()">Copiar tudo</button>
+      <button type="button" class="btn-ghost" onclick="baixar()">Baixar arquivo</button>
+    </div>
+
+    <div class="note">
+      <strong>Privacidade:</strong> suas informações são usadas exclusivamente para elaborar a proposta e não são compartilhadas com terceiros.
+    </div>
+
+    <footer>Paulo Cortez · <strong>PROCRESCER ACADEMY</strong> · Liderança, IA e Desenvolvimento Humano</footer>
+  </form>
+
+  <!-- MENSAGEM DE SUCESSO -->
+  <div class="success" id="sucesso">
+    <div class="icon">✅</div>
+    <h2>Proposta solicitada com sucesso!</h2>
+    <p>Recebi suas informações e vou montar uma proposta personalizada para a <strong id="nomeEmpresa"></strong>. Em breve entro em contato.</p>
+    <button class="back" onclick="reiniciar()">Enviar outra solicitação</button>
+  </div>
+
+</div>
+
+<div class="toast" id="toast">Copiado!</div>
+
+<script>
+  document.querySelectorAll('input[name=formato]').forEach(function(r){
+    r.addEventListener('change', function(){
+      document.getElementById('localWrap').style.display =
+        (this.value === 'Remoto / Online') ? 'none' : 'block';
+    });
+  });
+
+  function val(id){ var e=document.getElementById(id); return e?e.value.trim():''; }
+  function formato(){ var r=document.querySelector('input[name=formato]:checked'); return r?r.value:''; }
+  function custos(){
+    var arr=[];
+    document.querySelectorAll('input[name=ajuda_custo]:checked').forEach(function(c){arr.push(c.value)});
+    return arr.length? arr.join(', ') : 'Não informado';
+  }
+
+  function validar(){
+    var ok=true;
+    ['empresa','nome','email','tema','data','carga','qtd','dor','resultado'].forEach(function(id){
+      var e=document.getElementById(id);
+      if(!e.value.trim()){e.classList.add('err');ok=false;}else{e.classList.remove('err');}
+    });
+    if(!formato()){ok=false;}
+    if(!ok){
+      alert('Por favor, preencha os campos obrigatórios (*).');
+      var first=document.querySelector('.err');
+      if(first)first.scrollIntoView({behavior:'smooth',block:'center'});
+    }
+    return ok;
+  }
+
+  function montarTexto(){
+    var L=[];
+    L.push('SOLICITAÇÃO DE PROPOSTA PERSONALIZADA');
+    L.push('Paulo Cortez · PROCRESCER ACADEMY');
+    L.push('=======================================');
+    L.push('');
+    L.push('1. SOLICITANTE');
+    L.push('Empresa: '      + val('empresa'));
+    L.push('Nome: '         + val('nome'));
+    L.push('E-mail: '       + val('email'));
+    L.push('Telefone: '     + (val('fone')||'Não informado'));
+    L.push('');
+    L.push('2. A AÇÃO');
+    L.push('Tema: '         + val('tema'));
+    L.push('Data prevista: '+ val('data'));
+    L.push('Carga horária: '+ val('carga'));
+    L.push('Formato: '      + (formato()||'Não informado'));
+    L.push('Local: '        + (val('local')||'Não informado'));
+    L.push('');
+    L.push('3. PÚBLICO');
+    L.push('Quantidade: '   + val('qtd') + ' pessoas');
+    L.push('Cargo/nível: '  + (val('cargo')||'Não informado'));
+    L.push('Perfil: '       + (val('perfil')||'Não informado'));
+    L.push('');
+    L.push('4. POR QUE ESTA AÇÃO');
+    L.push('Dor principal: '           + val('dor'));
+    L.push('Motivação para agora: '    + (val('motivacao')||'Não informado'));
+    L.push('Resultado esperado: '      + val('resultado'));
+    L.push('');
+    L.push('5. LOGÍSTICA');
+    L.push('Ajuda de custo: '  + custos());
+    L.push('Orçamento: '       + (val('orcamento')||'Não informado'));
+    L.push('');
+    L.push('6. DETALHES FINAIS');
+    L.push('Observações: '     + (val('extra')||'Nenhuma'));
+    var call = document.querySelector('input[name=call_briefing]:checked');
+    L.push('Deseja call antes: ' + (call ? 'SIM' : 'Não'));
+    L.push('');
+    L.push('=======================================');
+    L.push('Enviado via paulocortez.com.br/proposta');
+    return L.join('\n');
+  }
+
+  function enviarFormulario(){
+    if(!validar()) return;
+
+    // preenche o campo oculto com o resumo formatado
+    document.getElementById('resumo_completo').value = montarTexto();
+
+    var btn = document.getElementById('btnEnviar');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    var form = document.getElementById('f');
+    var data = new FormData(form);
+
+    fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(data).toString()
+    })
+    .then(function(res){
+      if(res.ok){
+        document.getElementById('nomeEmpresa').textContent = val('empresa');
+        form.style.display = 'none';
+        document.getElementById('sucesso').style.display = 'block';
+        window.scrollTo({top:0, behavior:'smooth'});
+      } else {
+        alert('Ocorreu um erro ao enviar. Tente copiar o conteúdo e nos enviar por WhatsApp.');
+        btn.disabled = false;
+        btn.textContent = 'Solicitar proposta personalizada';
+      }
+    })
+    .catch(function(){
+      alert('Sem conexão. Use o botão "Copiar tudo" e nos envie por WhatsApp.');
+      btn.disabled = false;
+      btn.textContent = 'Solicitar proposta personalizada';
+    });
+  }
+
+  function reiniciar(){
+    document.getElementById('f').reset();
+    document.getElementById('f').style.display = 'block';
+    document.getElementById('sucesso').style.display = 'none';
+    document.getElementById('btnEnviar').disabled = false;
+    document.getElementById('btnEnviar').textContent = 'Solicitar proposta personalizada';
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function copiar(){
+    if(!validar()) return;
+    var t = montarTexto();
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(showToast);
+    } else {
+      var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);
+      ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast();
+    }
+  }
+
+  function baixar(){
+    if(!validar()) return;
+    var t = montarTexto();
+    var nome = 'Proposta_'+val('empresa').replace(/[^a-zA-Z0-9]/g,'_')+'.txt';
+    var blob = new Blob([t],{type:'text/plain;charset=utf-8'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = nome;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  }
+
+  function showToast(){
+    var t=document.getElementById('toast');t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');},2200);
+  }
+</script>
+</body>
+</html>
