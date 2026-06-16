@@ -1,411 +1,585 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solicite uma Proposta Personalizada — Paulo Cortez</title>
-<style>
-  :root{
-    --cyan:#00B4C8; --dark:#005F75; --med:#0093A8; --light:#E0F7FA;
-    --ink:#1A1A1A; --gray:#5B6B70; --line:#C8E8ED; --amber:#E6A817; --bg:#F2FBFC;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg);color:var(--ink);line-height:1.5;padding:0 0 60px}
-  .wrap{max-width:760px;margin:0 auto;padding:0 18px}
-  header{background:linear-gradient(135deg,#005F75 0%,#00B4C8 60%,#00D4C0 100%);
-    color:#fff;padding:40px 0 36px;margin-bottom:26px;position:relative;overflow:hidden}
-  header::after{content:'';position:absolute;right:-60px;top:-60px;width:280px;height:280px;
-    border-radius:50%;background:rgba(255,255,255,.06)}
-  header::before{content:'';position:absolute;left:-40px;bottom:-80px;width:200px;height:200px;
-    border-radius:50%;background:rgba(255,255,255,.04)}
-  header .wrap{position:relative;z-index:1}
-  .kicker{color:#B2EEF4;font-size:12px;font-weight:700;letter-spacing:2.5px;
-    text-transform:uppercase;margin-bottom:10px}
-  header h1{font-size:28px;line-height:1.2;margin-bottom:12px;font-weight:800}
-  header p{color:#D8F5F8;font-size:15px;max-width:560px;line-height:1.6}
-  .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);
-    border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:5px 12px;
-    font-size:12px;font-weight:600;color:#fff;margin-top:16px}
-  .badge span{width:6px;height:6px;border-radius:50%;background:#7FE8D0;display:inline-block}
-  .sec{background:#fff;border:1px solid var(--line);border-radius:14px;
-    padding:22px 22px 8px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,180,200,.06)}
-  .sec h2{font-size:17px;color:var(--dark);margin-bottom:4px;display:flex;align-items:center;gap:10px;font-weight:700}
-  .sec .num{background:linear-gradient(135deg,var(--dark),var(--cyan));color:#fff;
-    width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;
-    justify-content:center;font-size:13px;font-weight:800;flex:0 0 auto}
-  .sec .desc{color:var(--gray);font-size:13px;margin:0 0 16px 36px}
-  .field{margin-bottom:16px}
-  label{display:block;font-weight:600;font-size:14px;margin-bottom:6px;color:#1A1A1A}
-  label .opt{font-weight:400;color:var(--gray);font-size:12px}
-  .req{color:var(--amber);font-weight:700}
-  input[type=text],input[type=email],input[type=date],input[type=number],select,textarea{
-    width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:9px;font-size:15px;
-    font-family:inherit;color:var(--ink);background:#fff;transition:border .15s,box-shadow .15s}
-  input:focus,select:focus,textarea:focus{
-    outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,180,200,.12)}
-  textarea{resize:vertical;min-height:72px}
-  .hint{font-size:12px;color:var(--gray);margin-top:5px}
-  .row{display:flex;gap:14px;flex-wrap:wrap}
-  .row .field{flex:1;min-width:200px}
-  .checks{display:flex;flex-direction:column;gap:9px;margin-top:4px}
-  .chk{display:flex;align-items:flex-start;gap:10px;font-weight:400;font-size:14px;cursor:pointer;
-    padding:10px 13px;border:1.5px solid var(--line);border-radius:9px;transition:.15s;color:#1A1A1A}
-  .chk:hover{border-color:var(--cyan);background:var(--light)}
-  .chk input{margin-top:2px;width:17px;height:17px;accent-color:var(--cyan);flex:0 0 auto}
-  .pillset{display:flex;gap:9px;flex-wrap:wrap;margin-top:4px}
-  .pill{position:relative}
-  .pill input{position:absolute;opacity:0}
-  .pill label{display:inline-block;padding:9px 16px;border:1.5px solid var(--line);
-    border-radius:30px;font-weight:500;font-size:14px;cursor:pointer;margin:0;transition:.15s;color:#1A1A1A}
-  .pill input:checked + label{
-    background:linear-gradient(135deg,var(--dark),var(--cyan));color:#fff;border-color:transparent}
-  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-  button{font-family:inherit;font-size:15px;font-weight:700;padding:15px 20px;border-radius:10px;
-    border:none;cursor:pointer;transition:.15s;flex:1;min-width:170px}
-  .btn-primary{background:linear-gradient(135deg,var(--dark) 0%,var(--cyan) 100%);
-    color:#fff;box-shadow:0 4px 14px rgba(0,180,200,.3)}
-  .btn-primary:hover{box-shadow:0 6px 20px rgba(0,180,200,.45);transform:translateY(-1px)}
-  .btn-primary:disabled{opacity:.6;cursor:not-allowed;transform:none}
-  .btn-ghost{background:#fff;color:var(--dark);border:1.5px solid var(--cyan)}
-  .btn-ghost:hover{background:var(--light)}
-  .note{background:var(--light);border-left:4px solid var(--cyan);padding:14px 16px;
-    border-radius:8px;font-size:13px;color:var(--dark);margin-top:18px;line-height:1.6}
-  /* SUCCESS STATE */
-  .success{display:none;text-align:center;padding:48px 24px;background:#fff;
-    border-radius:16px;border:1px solid var(--line);margin-top:8px}
-  .success .icon{font-size:52px;margin-bottom:16px}
-  .success h2{color:var(--dark);font-size:22px;margin-bottom:10px}
-  .success p{color:var(--gray);font-size:15px;max-width:460px;margin:0 auto;line-height:1.6}
-  .success .back{display:inline-block;margin-top:20px;padding:12px 24px;border-radius:10px;
-    background:var(--light);color:var(--dark);font-weight:700;font-size:14px;cursor:pointer;border:none;font-family:inherit}
-  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120px);
-    background:var(--dark);color:#fff;padding:14px 22px;border-radius:30px;font-size:14px;
-    font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);transition:transform .35s;z-index:50}
-  .toast.show{transform:translateX(-50%) translateY(0)}
-  .err{border-color:#D14343 !important;box-shadow:0 0 0 3px rgba(209,67,67,.12) !important}
-  footer{text-align:center;color:var(--gray);font-size:12px;margin-top:28px}
-  footer strong{color:var(--dark)}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicite uma Proposta | Paulo Cortez - ProCrescer Academy</title>
+  <meta name="description" content="Solicite uma proposta de palestra ou treinamento com Paulo Cortez. Programas presenciais e online em liderança, alta performance e desenvolvimento humano para empresas e cooperativas.">
+  <meta name="keywords" content="Paulo Cortez, ProCrescer Academy, solicitar proposta, palestras corporativas, treinamentos, cooperativas, SESCOOP, liderança, desenvolvimento humano, Pederneiras, São Paulo">
+  <meta name="author" content="Paulo Cortez">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230D0D0D'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' fill='%2300B8E6' text-anchor='middle'>PC</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #FFFFFF;
+      --bg-darker: #F4F8FB;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #F0F7FA;
+      --text-white: #1A2B33;
+      --text-gray: #5A6B73;
+      --text-dim: #95A3AB;
+      --accent: #00B8E6;
+      --accent-bright: #00A0CC;
+      --accent-dark: #0086AD;
+      --whatsapp: #25D366;
+      --border: #E2E9ED;
+      --max-width: 1200px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .accent { color: var(--accent); }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      padding: 20px 0;
+      background: rgba(13, 13, 13, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    header.scrolled { padding: 14px 0; }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .logo-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: 0.5px;
+      color: var(--text-white);
+    }
+    .logo-name span { color: var(--accent); }
+    .logo-seal {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-gray);
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .btn-nav {
+      background: var(--accent);
+      color: #FFFFFF !important;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      transition: all 0.2s ease;
+    }
+    .btn-nav:hover { background: var(--accent-bright); transform: translateY(-2px); }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .menu-toggle span {
+      width: 26px; height: 3px;
+      background: var(--text-white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: none;
+    }
+    .btn-primary { background: var(--accent); color: var(--bg-dark); }
+    .btn-primary:hover { background: var(--accent-bright); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,184,230,0.3); }
+    .btn-whatsapp { background: var(--whatsapp); color: #fff; }
+    .btn-whatsapp:hover { background: #20BD5A; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
+
+    /* ===== PROPOSAL HERO ===== */
+    .proposal-hero {
+      padding: 160px 0 60px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0, 184, 230, 0.1), transparent);
+    }
+    .proposal-hero h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      margin-bottom: 18px;
+    }
+    .proposal-hero p {
+      font-size: 18px;
+      color: var(--text-gray);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ===== FORM ===== */
+    .form-section { padding: 40px 0 100px; }
+    .form-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px;
+    }
+
+    .form-group { margin-bottom: 24px; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-white);
+      margin-bottom: 8px;
+    }
+    label .req { color: var(--accent); }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--bg-darker);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-white);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      transition: border-color 0.2s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    input::placeholder, textarea::placeholder { color: var(--text-dim); }
+    textarea { resize: vertical; min-height: 120px; }
+    select { cursor: pointer; }
+    select option { background: var(--bg-darker); }
+
+    /* Radio buttons */
+    .radio-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .radio-option {
+      position: relative;
+    }
+    .radio-option input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .radio-option label {
+      display: inline-block;
+      padding: 11px 22px;
+      background: var(--bg-darker);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 0;
+      transition: all 0.2s ease;
+      font-weight: 500;
+    }
+    .radio-option input:checked + label {
+      background: rgba(0, 184, 230, 0.12);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-submit {
+      width: 100%;
+      justify-content: center;
+      margin-top: 8px;
+      font-size: 16px;
+      padding: 17px;
+    }
+
+    .form-alt {
+      text-align: center;
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .form-alt p { color: var(--text-gray); margin-bottom: 18px; font-size: 15px; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--bg-darker);
+      border-top: 1px solid var(--border);
+      padding: 60px 0 30px;
+    }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 14px;
+      color: var(--text-gray);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+    .socials { display: flex; gap: 14px; }
+    .social-link {
+      width: 44px; height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      transition: all 0.25s ease;
+    }
+    .social-link:hover { background: var(--accent); border-color: var(--accent); }
+    .social-link svg { width: 18px; height: 18px; fill: var(--text-gray); }
+    .social-link:hover svg { fill: var(--bg-dark); }
+    .footer-tagline {
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 40px 0;
+    }
+    .footer-copy {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    /* ===== FLOATING WHATSAPP ===== */
+    .float-whatsapp {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 60px; height: 60px;
+      background: var(--whatsapp);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      animation: floatIn 0.6s ease 1s both;
+      transition: transform 0.25s ease;
+    }
+    .float-whatsapp:hover { transform: scale(1.1); }
+    .float-whatsapp svg { width: 32px; height: 32px; fill: #fff; }
+    @keyframes floatIn {
+      from { opacity: 0; transform: scale(0) translateY(40px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .menu-toggle { display: flex; }
+      .nav-links {
+        position: fixed;
+        top: 0; right: -100%;
+        height: 100vh;
+        width: 75%;
+        max-width: 320px;
+        background: var(--bg-darker);
+        flex-direction: column;
+        justify-content: center;
+        gap: 28px;
+        transition: right 0.35s ease;
+        border-left: 1px solid var(--border);
+      }
+      .nav-links.open { right: 0; }
+      .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+      .menu-toggle.active span:nth-child(2) { opacity: 0; }
+      .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+    }
+
+    @media (max-width: 600px) {
+      .form-wrap { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .footer-grid { flex-direction: column; text-align: center; }
+    }
+
+    .logo { display: flex; flex-direction: row !important; align-items: center; gap: 10px; }
+    .logo-img { height: 40px; width: auto; flex-shrink: 0; }
+    .logo-text-wrap { display: flex; flex-direction: column; line-height: 1.1; }
+  </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <div class="kicker">Paulo Cortez · PROCRESCER ACADEMY</div>
-    <h1>Solicite uma Proposta Personalizada</h1>
-    <p>Preencha as informações abaixo e eu monto uma proposta sob medida para a sua empresa. Com isso já eliminamos uma reunião e você recebe algo concreto, não um modelo genérico.</p>
-    <div class="badge"><span></span> Leva menos de 5 minutos</div>
-  </div>
-</header>
-
-<div class="wrap">
-
-  <!-- FORMULÁRIO -->
-  <form id="f" name="proposta" data-netlify="true" data-netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="proposta">
-    <input type="hidden" name="bot-field" style="display:none">
-    <input type="hidden" name="resumo_completo" id="resumo_completo">
-
-    <!-- 1. CONTATO -->
-    <div class="sec">
-      <h2><span class="num">1</span> Quem está solicitando</h2>
-      <p class="desc">Para eu saber com quem falo e como retornar.</p>
-      <div class="row">
-        <div class="field">
-          <label>Empresa <span class="req">*</span></label>
-          <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa ou organização" required>
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <img src="data:image/png;base64,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" alt="ProCrescer Academy" class="logo-img">
+        <div class="logo-text-wrap">
+          <span class="logo-name">Paulo <span>Cortez</span></span>
+          <span class="logo-seal">ProCrescer Academy</span>
         </div>
-        <div class="field">
-          <label>Seu nome <span class="req">*</span></label>
-          <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
-        </div>
-      </div>
-      <div class="row">
-        <div class="field">
-          <label>E-mail <span class="req">*</span></label>
-          <input type="email" id="email" name="email" placeholder="seu@email.com.br" required>
-        </div>
-        <div class="field">
-          <label>WhatsApp / Telefone <span class="opt">(opcional)</span></label>
-          <input type="text" id="fone" name="telefone" placeholder="(11) 9 0000-0000">
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#temas">Temas</a></li>
+        <li><a href="index.html#metodologia">Metodologia</a></li>
+        <li><a href="index.html#parceiros">Parceiros</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+        <li><a href="proposta.html" class="btn-nav">Solicite uma Proposta</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== PROPOSAL HERO ===== -->
+  <section class="proposal-hero">
+    <div class="container">
+      <h1>Solicite uma <span class="accent">Proposta</span></h1>
+      <p>Conta pra mim o que você precisa. Sem compromisso, sem pressão. Vamos ver se faz sentido pro seu time.</p>
+    </div>
+  </section>
+
+  <!-- ===== FORM ===== -->
+  <section class="form-section">
+    <div class="container">
+      <div class="form-wrap">
+        <!-- Para ativar o envio, troque action pelo seu endpoint Formspree: [INSERIR ENDPOINT FORMSPREE AQUI] -->
+        <form action="" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome">Nome completo <span class="req">*</span></label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="telefone">Telefone / WhatsApp <span class="req">*</span></label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(11) 90000-0000" required>
+            </div>
+            <div class="form-group">
+              <label for="empresa">Empresa ou Cooperativa <span class="req">*</span></label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nome da organização" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cargo">Cargo</label>
+              <input type="text" id="cargo" name="cargo" placeholder="Seu cargo (opcional)">
+            </div>
+            <div class="form-group">
+              <label for="participantes">Número aproximado de participantes</label>
+              <input type="number" id="participantes" name="participantes" placeholder="Ex: 20 (opcional)" min="1">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="tema">Tema de interesse</label>
+            <select id="tema" name="tema">
+              <option value="">Selecione um tema</option>
+              <option>IA e a Nova Produtividade</option>
+              <option>Neurociência da Priorização e Foco</option>
+              <option>Liderança Humanizada com PNL</option>
+              <option>Inteligência TRIPLA (Financeira, Emocional e Relacional)</option>
+              <option>Liderança com Metodologia DISC</option>
+              <option>Sinergia Geracional e Conflitos</option>
+              <option>Engenharia de Times de Alta Performance</option>
+              <option>Saúde Mental e Bem-Estar no Trabalho</option>
+              <option>Comunicação Corporativa e Oratória</option>
+              <option>Educação Financeira e Gestão Organizacional</option>
+              <option>Gestão do Tempo e Produtividade</option>
+              <option>Ética, Cooperativismo e Responsabilidade Social</option>
+              <option>Não sei ainda, quero orientação</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Modalidade</label>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="presencial" name="modalidade" value="Presencial">
+                <label for="presencial">Presencial</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="online" name="modalidade" value="Online">
+                <label for="online">Online</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="hibrido" name="modalidade" value="Híbrido">
+                <label for="hibrido">Híbrido</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="adefinir" name="modalidade" value="A definir" checked>
+                <label for="adefinir">A definir</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="data">Data pretendida</label>
+            <input type="date" id="data" name="data">
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem">Conta um pouco mais sobre o que você precisa</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Desafios do time, contexto, objetivos... (opcional)"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-submit">Enviar solicitação</button>
+        </form>
+
+        <div class="form-alt">
+          <p>Prefere falar direto? Me chama no WhatsApp.</p>
+          <a href="https://wa.me/5511920182998?text=Olá%2C%20Paulo!%20Gostaria%20de%20solicitar%20uma%20proposta." target="_blank" class="btn btn-whatsapp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Fale no WhatsApp
+          </a>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- 2. A ACAO -->
-    <div class="sec">
-      <h2><span class="num">2</span> A ação</h2>
-      <p class="desc">O básico do que você precisa.</p>
-      <div class="field">
-        <label>Qual o tema ou assunto desejado? <span class="req">*</span></label>
-        <input type="text" id="tema" name="tema" placeholder="Ex.: liderança, IA aplicada, comunicação, saúde mental, produtividade..." required>
-      </div>
-      <div class="row">
-        <div class="field">
-          <label>Data prevista da ação <span class="req">*</span></label>
-          <input type="date" id="data" name="data" required>
-          <div class="hint">Se ainda não há data fechada, coloque a mais provável.</div>
-        </div>
-        <div class="field">
-          <label>Carga horária prevista <span class="req">*</span></label>
-          <input type="text" id="carga" name="carga_horaria" placeholder="Ex.: 1h palestra, 4h curso, dia inteiro..." required>
-        </div>
-      </div>
-      <div class="field">
-        <label>Formato <span class="req">*</span></label>
-        <div class="pillset">
-          <span class="pill"><input type="radio" name="formato" id="fp" value="Presencial" required><label for="fp">Presencial</label></span>
-          <span class="pill"><input type="radio" name="formato" id="fr" value="Remoto / Online"><label for="fr">Remoto / Online</label></span>
-          <span class="pill"><input type="radio" name="formato" id="fh" value="Híbrido"><label for="fh">Híbrido</label></span>
-        </div>
-      </div>
-      <div class="field" id="localWrap">
-        <label>Cidade / local da ação <span class="opt">(se presencial ou híbrido)</span></label>
-        <input type="text" id="local" name="local" placeholder="Cidade, estado ou nome do local/auditório">
-      </div>
-    </div>
-
-    <!-- 3. PUBLICO -->
-    <div class="sec">
-      <h2><span class="num">3</span> Quem vai participar</h2>
-      <p class="desc">Quanto melhor eu conhecer o público, mais certeira fica a entrega.</p>
-      <div class="row">
-        <div class="field">
-          <label>Quantidade de pessoas <span class="req">*</span></label>
-          <input type="number" id="qtd" name="quantidade_pessoas" min="1" placeholder="Ex.: 40" required>
-        </div>
-        <div class="field">
-          <label>Cargo / nível predominante</label>
-          <input type="text" id="cargo" name="cargo_nivel" placeholder="Ex.: lideranças, time comercial, diretoria, misto">
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <a href="index.html" class="logo">
+          <img src="data:image/png;base64,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" alt="ProCrescer Academy" class="logo-img">
+          <div class="logo-text-wrap">
+            <span class="logo-name">Paulo <span>Cortez</span></span>
+            <span class="logo-seal">ProCrescer Academy</span>
+          </div>
+        </a>
+        <ul class="footer-links">
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#temas">Temas</a></li>
+          <li><a href="index.html#metodologia">Metodologia</a></li>
+          <li><a href="index.html#parceiros">Parceiros</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+        <div class="socials">
+          <a href="https://instagram.com/opaulocortez" target="_blank" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.41-10.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/opaulocortez" target="_blank" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
         </div>
       </div>
-      <div class="field">
-        <label>Perfil dos profissionais <span class="opt">(faixa etária, área, experiência com o tema)</span></label>
-        <textarea id="perfil" name="perfil_publico" placeholder="Ex.: gestores de 30 a 50 anos, área comercial, nunca fizeram treinamento de liderança; ou equipe jovem, primeiro emprego, ambiente de alta pressão."></textarea>
-      </div>
+
+      <p class="footer-tagline">"Porque, no fim das contas, é sempre sobre pessoas."</p>
+
+      <p class="footer-copy">© 2026 Paulo Cortez | ProCrescer Academy — Todos os direitos reservados.</p>
     </div>
+  </footer>
 
-    <!-- 4. DOR E MOTIVACAO -->
-    <div class="sec">
-      <h2><span class="num">4</span> O porquê desta ação</h2>
-      <p class="desc">Esta é a parte mais importante. É o que transforma uma palestra genérica em algo que resolve o problema real da sua empresa.</p>
-      <div class="field">
-        <label>Qual a principal dor ou situação que motivou esta contratação? <span class="req">*</span></label>
-        <textarea id="dor" name="dor_principal" placeholder="Ex.: as lideranças estão sobrecarregadas e o clima caiu; o time comercial perdeu motivação após uma reestruturação; queremos preparar a equipe para um novo ciclo de crescimento." required></textarea>
-      </div>
-      <div class="field">
-        <label>O que motivou buscar isso agora? <span class="opt">(o que mudou ou está acontecendo)</span></label>
-        <textarea id="motivacao" name="motivacao" placeholder="Ex.: novo ciclo estratégico; pesquisa de clima; convenção anual; SIPAT; troca de liderança; meta de reduzir turnover."></textarea>
-      </div>
-      <div class="field">
-        <label>Qual resultado você espera ao final do encontro? <span class="req">*</span></label>
-        <textarea id="resultado" name="resultado_esperado" placeholder="Ex.: que as lideranças saiam com ferramentas práticas para aplicar na semana seguinte; que o time saia mais unido e engajado; que as pessoas entendam a mudança e se sintam parte dela." required></textarea>
-        <div class="hint">Pense no sucesso: o que as pessoas devem sentir, saber ou fazer diferente depois.</div>
-      </div>
-    </div>
+  <!-- ===== FLOATING WHATSAPP ===== -->
+  <a href="https://wa.me/5511920182998?text=Olá%2C%20Paulo!%20Gostaria%20de%20saber%20mais%20sobre%20suas%20palestras%20e%20treinamentos." target="_blank" class="float-whatsapp" title="Fale comigo agora" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 
-    <!-- 5. LOGISTICA -->
-    <div class="sec">
-      <h2><span class="num">5</span> Logística e ajuda de custo</h2>
-      <p class="desc">Se a ação for presencial fora da minha região, essas informações ajudam a fechar a viabilidade da proposta.</p>
-      <label style="margin-bottom:8px;display:block">A empresa oferece ajuda de custo para: <span class="opt">(marque o que se aplica)</span></label>
-      <div class="checks">
-        <label class="chk"><input type="checkbox" name="ajuda_custo" value="Deslocamento / viagem"> Deslocamento / viagem (combustível, passagem, pedágio)</label>
-        <label class="chk"><input type="checkbox" name="ajuda_custo" value="Hospedagem"> Hospedagem</label>
-        <label class="chk"><input type="checkbox" name="ajuda_custo" value="Refeição / alimentação"> Refeição / alimentação</label>
-        <label class="chk"><input type="checkbox" name="ajuda_custo" value="Nenhuma das anteriores"> Nenhuma das anteriores</label>
-      </div>
-      <div class="field" style="margin-top:16px">
-        <label>Orçamento previsto <span class="opt">(opcional, mas agiliza muito a proposta)</span></label>
-        <input type="text" id="orcamento" name="orcamento" placeholder="Ex.: R$ 5.000, ou uma faixa, ou 'a combinar'">
-      </div>
-    </div>
-
-    <!-- 6. FECHAMENTO -->
-    <div class="sec">
-      <h2><span class="num">6</span> Últimos detalhes</h2>
-      <p class="desc">Quase lá.</p>
-      <div class="field">
-        <label>Algo mais que eu precise saber? <span class="opt">(restrições, expectativas, histórico)</span></label>
-        <textarea id="extra" name="observacoes" placeholder="Ex.: já tivemos um treinamento que não engajou; o espaço é um galpão sem projetor; precisa de certificado; tem um tema específico que gostaríamos de abordar; temos um histórico sensível na equipe."></textarea>
-      </div>
-      <label class="chk" style="font-weight:600;margin-top:4px">
-        <input type="checkbox" name="call_briefing" value="Sim">
-        Mesmo com este formulário, gostaria de uma call rápida de alinhamento antes da proposta
-      </label>
-    </div>
-
-    <div class="actions">
-      <button type="button" class="btn-primary" id="btnEnviar" onclick="enviarFormulario()">Solicitar proposta personalizada</button>
-      <button type="button" class="btn-ghost" onclick="copiar()">Copiar tudo</button>
-      <button type="button" class="btn-ghost" onclick="baixar()">Baixar arquivo</button>
-    </div>
-
-    <div class="note">
-      <strong>Privacidade:</strong> suas informações são usadas exclusivamente para elaborar a proposta e não são compartilhadas com terceiros.
-    </div>
-
-    <footer>Paulo Cortez · <strong>PROCRESCER ACADEMY</strong> · Liderança, IA e Desenvolvimento Humano</footer>
-  </form>
-
-  <!-- MENSAGEM DE SUCESSO -->
-  <div class="success" id="sucesso">
-    <div class="icon">✅</div>
-    <h2>Proposta solicitada com sucesso!</h2>
-    <p>Recebi suas informações e vou montar uma proposta personalizada para a <strong id="nomeEmpresa"></strong>. Em breve entro em contato.</p>
-    <button class="back" onclick="reiniciar()">Enviar outra solicitação</button>
-  </div>
-
-</div>
-
-<div class="toast" id="toast">Copiado!</div>
-
-<script>
-  document.querySelectorAll('input[name=formato]').forEach(function(r){
-    r.addEventListener('change', function(){
-      document.getElementById('localWrap').style.display =
-        (this.value === 'Remoto / Online') ? 'none' : 'block';
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
     });
-  });
 
-  function val(id){ var e=document.getElementById(id); return e?e.value.trim():''; }
-  function formato(){ var r=document.querySelector('input[name=formato]:checked'); return r?r.value:''; }
-  function custos(){
-    var arr=[];
-    document.querySelectorAll('input[name=ajuda_custo]:checked').forEach(function(c){arr.push(c.value)});
-    return arr.length? arr.join(', ') : 'Não informado';
-  }
-
-  function validar(){
-    var ok=true;
-    ['empresa','nome','email','tema','data','carga','qtd','dor','resultado'].forEach(function(id){
-      var e=document.getElementById(id);
-      if(!e.value.trim()){e.classList.add('err');ok=false;}else{e.classList.remove('err');}
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('open');
     });
-    if(!formato()){ok=false;}
-    if(!ok){
-      alert('Por favor, preencha os campos obrigatórios (*).');
-      var first=document.querySelector('.err');
-      if(first)first.scrollIntoView({behavior:'smooth',block:'center'});
-    }
-    return ok;
-  }
-
-  function montarTexto(){
-    var L=[];
-    L.push('SOLICITAÇÃO DE PROPOSTA PERSONALIZADA');
-    L.push('Paulo Cortez · PROCRESCER ACADEMY');
-    L.push('=======================================');
-    L.push('');
-    L.push('1. SOLICITANTE');
-    L.push('Empresa: '      + val('empresa'));
-    L.push('Nome: '         + val('nome'));
-    L.push('E-mail: '       + val('email'));
-    L.push('Telefone: '     + (val('fone')||'Não informado'));
-    L.push('');
-    L.push('2. A AÇÃO');
-    L.push('Tema: '         + val('tema'));
-    L.push('Data prevista: '+ val('data'));
-    L.push('Carga horária: '+ val('carga'));
-    L.push('Formato: '      + (formato()||'Não informado'));
-    L.push('Local: '        + (val('local')||'Não informado'));
-    L.push('');
-    L.push('3. PÚBLICO');
-    L.push('Quantidade: '   + val('qtd') + ' pessoas');
-    L.push('Cargo/nível: '  + (val('cargo')||'Não informado'));
-    L.push('Perfil: '       + (val('perfil')||'Não informado'));
-    L.push('');
-    L.push('4. POR QUE ESTA AÇÃO');
-    L.push('Dor principal: '           + val('dor'));
-    L.push('Motivação para agora: '    + (val('motivacao')||'Não informado'));
-    L.push('Resultado esperado: '      + val('resultado'));
-    L.push('');
-    L.push('5. LOGÍSTICA');
-    L.push('Ajuda de custo: '  + custos());
-    L.push('Orçamento: '       + (val('orcamento')||'Não informado'));
-    L.push('');
-    L.push('6. DETALHES FINAIS');
-    L.push('Observações: '     + (val('extra')||'Nenhuma'));
-    var call = document.querySelector('input[name=call_briefing]:checked');
-    L.push('Deseja call antes: ' + (call ? 'SIM' : 'Não'));
-    L.push('');
-    L.push('=======================================');
-    L.push('Enviado via paulocortez.com.br/proposta');
-    return L.join('\n');
-  }
-
-  function enviarFormulario(){
-    if(!validar()) return;
-
-    // preenche o campo oculto com o resumo formatado
-    document.getElementById('resumo_completo').value = montarTexto();
-
-    var btn = document.getElementById('btnEnviar');
-    btn.disabled = true;
-    btn.textContent = 'Enviando...';
-
-    var form = document.getElementById('f');
-    var data = new FormData(form);
-
-    fetch('/', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-      body: new URLSearchParams(data).toString()
-    })
-    .then(function(res){
-      if(res.ok){
-        document.getElementById('nomeEmpresa').textContent = val('empresa');
-        form.style.display = 'none';
-        document.getElementById('sucesso').style.display = 'block';
-        window.scrollTo({top:0, behavior:'smooth'});
-      } else {
-        alert('Ocorreu um erro ao enviar. Tente copiar o conteúdo e nos enviar por WhatsApp.');
-        btn.disabled = false;
-        btn.textContent = 'Solicitar proposta personalizada';
-      }
-    })
-    .catch(function(){
-      alert('Sem conexão. Use o botão "Copiar tudo" e nos envie por WhatsApp.');
-      btn.disabled = false;
-      btn.textContent = 'Solicitar proposta personalizada';
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('open');
+      });
     });
-  }
-
-  function reiniciar(){
-    document.getElementById('f').reset();
-    document.getElementById('f').style.display = 'block';
-    document.getElementById('sucesso').style.display = 'none';
-    document.getElementById('btnEnviar').disabled = false;
-    document.getElementById('btnEnviar').textContent = 'Solicitar proposta personalizada';
-    window.scrollTo({top:0, behavior:'smooth'});
-  }
-
-  function copiar(){
-    if(!validar()) return;
-    var t = montarTexto();
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(t).then(showToast);
-    } else {
-      var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);
-      ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast();
-    }
-  }
-
-  function baixar(){
-    if(!validar()) return;
-    var t = montarTexto();
-    var nome = 'Proposta_'+val('empresa').replace(/[^a-zA-Z0-9]/g,'_')+'.txt';
-    var blob = new Blob([t],{type:'text/plain;charset=utf-8'});
-    var a = document.createElement('a');
-    a.href = URL.createObjectURL(blob); a.download = nome;
-    document.body.appendChild(a); a.click(); document.body.removeChild(a);
-  }
-
-  function showToast(){
-    var t=document.getElementById('toast');t.classList.add('show');
-    setTimeout(function(){t.classList.remove('show');},2200);
-  }
-</script>
+  </script>
 </body>
 </html>
