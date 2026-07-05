@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Depoimentos | Paulo Cortez</title>
+<meta name="description" content="O que profissionais, líderes e gestores dizem sobre os treinamentos e trilhas de Paulo Cortez.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0F2A33;--ink-soft:#3D5860;--ink-light:#7A9099;
+  --teal:#0099B0;--teal-deep:#006478;--teal-dark:#013D49;
+  --paper:#FFFFFF;--paper-warm:#F6F9FA;--paper-edge:#E4EDF0;--gold:#C8902A;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--paper-edge);padding:0 6%}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:74px;max-width:1240px;margin:0 auto}
+.logo{display:flex;flex-direction:row;align-items:center;gap:10px;line-height:1.1}
+.logo-img{width:36px;height:36px;object-fit:contain;flex-shrink:0}
+.logo-txt{display:flex;flex-direction:column}
+.logo-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:var(--ink);letter-spacing:-.01em}
+.logo-sub{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-top:1px}
+.back{font-size:14px;color:var(--ink-soft);display:flex;align-items:center;gap:8px;transition:color .2s}
+.back:hover{color:var(--teal-deep)}
+.back svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hero{padding:130px 6% 56px;max-width:1240px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--teal-deep);margin-bottom:18px}
+.eyebrow::before{content:'';width:28px;height:1.5px;background:var(--teal)}
+.title{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,4.6vw,52px);font-weight:600;line-height:1.04;letter-spacing:-.02em;margin-bottom:16px;color:var(--ink)}
+.lead{font-size:18px;color:var(--ink-soft);line-height:1.7;max-width:600px}
+.statbar{background:var(--paper-warm);border-top:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge);padding:44px 6%}
+.statbar-in{max-width:1240px;margin:0 auto;display:flex;gap:64px;flex-wrap:wrap}
+.sb-num{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--teal-deep);line-height:1}
+.sb-label{font-size:13px;color:var(--ink-soft);margin-top:5px}
+.section{padding:72px 6%}
+.sec{max-width:1240px;margin:0 auto}
+.block-label{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--ink-light);letter-spacing:.04em;text-transform:uppercase;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--paper-edge)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
+.card{background:#fff;border:1px solid var(--paper-edge);border-radius:3px;padding:32px;transition:box-shadow .25s,transform .25s}
+.card:hover{box-shadow:0 16px 48px rgba(15,42,51,.08);transform:translateY(-3px)}
+.stars{display:flex;gap:3px;margin-bottom:16px}
+.stars svg{width:15px;height:15px;fill:var(--gold)}
+.text{font-size:15.5px;color:var(--ink);line-height:1.72;margin-bottom:22px}
+.div{border:none;border-top:1px solid var(--paper-edge);margin-bottom:16px}
+.by{font-size:14px;font-weight:600;color:var(--teal-deep)}
+.role{font-size:13px;color:var(--ink-light);margin-top:2px}
+.prints-note{font-size:14px;color:var(--ink-light);margin-bottom:24px}
+.print-card{padding:0;overflow:hidden;border-radius:4px}
+.print-img{width:100%;height:auto;display:block;border-radius:3px}
+.print-src{display:block;font-size:12px;color:var(--ink-light);padding:8px 14px;border-top:1px solid var(--paper-edge)}
+
+.print-card{padding:14px}
+.print-ph{width:100%;height:210px;background:var(--paper-warm);border:1px dashed var(--paper-edge);border-radius:3px;display:flex;align-items:center;justify-content:center;color:var(--ink-light);font-size:13px}
+.cta{background:var(--paper-warm);border-top:1px solid var(--paper-edge);text-align:center;padding:84px 6%;position:relative}
+
+.cta-in{max-width:640px;margin:0 auto;position:relative}
+.cta h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3.2vw,38px);font-weight:700;color:var(--ink);line-height:1.12;margin-bottom:16px}
+.cta p{font-size:16px;color:var(--ink-soft);margin-bottom:34px}
+.cta-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.b-light{background:var(--ink);color:#fff;font-weight:600;font-size:15px;padding:14px 28px;border-radius:2px;transition:background .25s}
+.b-light:hover{background:var(--teal-deep)}
+.b-ghost{border:1.5px solid var(--paper-edge);color:var(--ink);background:#fff;font-weight:600;font-size:15px;padding:14px 28px;border-radius:2px;transition:all .2s}
+.b-ghost:hover{border-color:var(--teal);color:var(--teal-deep)}
+footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);padding:32px 6%;text-align:center}
+.foot-t{font-size:13px;color:var(--ink-light)}
+.foot-t a{color:var(--teal-deep);margin-left:14px}
+.wpp{position:fixed;bottom:28px;right:28px;z-index:200;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);transition:transform .2s}
+.wpp:hover{transform:scale(1.08)}
+.wpp svg{width:30px;height:30px;fill:#fff}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.statbar-in{gap:36px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/logo.png" alt="ProCrescer Academy" class="logo-img">
+      <span class="logo-txt">
+        <span class="logo-name">Paulo Cortez</span>
+        <span class="logo-sub">ProCrescer Academy</span>
+      </span>
+    </a>
+    <a href="index.html" class="back"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Voltar ao site</a>
+  </div>
+</header>
+
+<div class="hero">
+  <span class="eyebrow">O que dizem</span>
+  <h1 class="title">Quem passou pelos programas</h1>
+  <p class="lead">Depoimentos de profissionais, líderes e gestores que participaram de treinamentos, workshops e trilhas de ensino.</p>
+</div>
+
+<div class="statbar">
+  <div class="statbar-in">
+    <div><div class="sb-num">500+</div><div class="sb-label">Profissionais formados</div></div>
+    <div><div class="sb-num">8</div><div class="sb-label">Estados atendidos</div></div>
+    <div><div class="sb-num">5.0</div><div class="sb-label">Avaliação no Google</div></div>
+    <div><div class="sb-num">10+</div><div class="sb-label">Anos de experiência</div></div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="sec">
+    <div class="block-label">Textos de participantes</div>
+    <div class="grid">
+      <div class="card"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p class="text">O treinamento mudou minha forma de liderar. Aprendi a ouvir antes de reagir, e os resultados do meu time melhoraram muito.</p><hr class="div"><div class="by">Participante</div><div class="role">Liderança Operacional</div></div>
+      <div class="card"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p class="text">Paulo tem um jeito direto de passar o conteúdo sem enrolação. O que aprendi apliquei na semana seguinte no trabalho.</p><hr class="div"><div class="by">Participante</div><div class="role">Supervisor de Equipe</div></div>
+      <div class="card"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p class="text">A metodologia é diferente. Não é teoria pela teoria. É algo que você usa de verdade com a equipe no dia a dia.</p><hr class="div"><div class="by">Participante</div><div class="role">Coordenadora de RH</div></div>
+      <div class="card"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p class="text">Participei de três programas diferentes com o Paulo. Cada um com mais profundidade. Recomendo sem hesitar.</p><hr class="div"><div class="by">Participante</div><div class="role">Gerente de Cooperativa</div></div>
+      <div class="card"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p class="text">Nosso RH contratou um ciclo de workshops. O retorno dos líderes foi excelente. Já planejamos o próximo.</p><hr class="div"><div class="by">Participante</div><div class="role">Gerente de RH</div></div>
+      <div class="card"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p class="text">Conteúdo denso, entregue de forma acessível. Saímos com ações claras para implementar na área.</p><hr class="div"><div class="by">Participante</div><div class="role">Analista de Desenvolvimento</div></div>
+    </div>
+
+        <div class="block-label" style="margin-top:56px">Prints de feedback</div>
+    <div class="grid" id="prints-grid">
+      <div class="card print-card">
+        <img src="assets/prints/Feedback.PNG" alt="Feedback de participante - Cocred" class="print-img" loading="lazy" />
+        <span class="print-src">Cocred</span>
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/Feedback_Cocred.PNG" alt="Feedback de participante - Cocred" class="print-img" loading="lazy" />
+        <span class="print-src">Cocred</span>
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/Feedback_Cocred2.PNG" alt="Feedback de participante - Cocred" class="print-img" loading="lazy" />
+        <span class="print-src">Cocred</span>
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/Feedback_Andradina.PNG" alt="Feedback de participante - Andradina" class="print-img" loading="lazy" />
+        <span class="print-src">Andradina</span>
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/Feedback_Campinas.PNG" alt="Feedback de participante - Campinas" class="print-img" loading="lazy" />
+        <span class="print-src">Campinas</span>
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/Feedback_Campinas2.PNG" alt="Feedback de participante - Campinas" class="print-img" loading="lazy" />
+        <span class="print-src">Campinas</span>
+      </div>
+    </div>
+    <div class="grid" id="prints-extra" style="margin-top:18px;display:none">
+      <div class="card print-card">
+        <img src="assets/prints/Feedback_Santos.PNG" alt="Feedback de participante - Santos" class="print-img" loading="lazy" />
+        <span class="print-src">Santos</span>
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/Feedback_Santos2.PNG" alt="Feedback de participante - Santos" class="print-img" loading="lazy" />
+        <span class="print-src">Santos</span>
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/Feedback_Santos3.PNG" alt="Feedback de participante - Santos" class="print-img" loading="lazy" />
+        <span class="print-src">Santos</span>
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/Feedback_Santos4.PNG" alt="Feedback de participante - Santos" class="print-img" loading="lazy" />
+        <span class="print-src">Santos</span>
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/Unimed_SJRP.PNG" alt="Feedback de participante - Unimed SJRP" class="print-img" loading="lazy" />
+        <span class="print-src">Unimed SJRP</span>
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/Coplana_Guariba.PNG" alt="Feedback de participante - Coplana Guariba" class="print-img" loading="lazy" />
+        <span class="print-src">Coplana Guariba</span>
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/depoimentos.PNG" alt="Feedback de participante" class="print-img" loading="lazy" />
+        
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/depoimentos_SJRP.PNG" alt="Feedback de participante - SJRP" class="print-img" loading="lazy" />
+        <span class="print-src">SJRP</span>
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/depoimentos_SJRP2.PNG" alt="Feedback de participante - SJRP" class="print-img" loading="lazy" />
+        <span class="print-src">SJRP</span>
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/depoimentos_SJRP3.PNG" alt="Feedback de participante - SJRP" class="print-img" loading="lazy" />
+        <span class="print-src">SJRP</span>
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/Feed2.PNG" alt="Feedback de participante" class="print-img" loading="lazy" />
+        
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/Feed3.PNG" alt="Feedback de participante" class="print-img" loading="lazy" />
+        
+      </div>
+      <div class="card print-card">
+        <img src="assets/prints/Feed_fiancas.PNG" alt="Feedback de participante" class="print-img" loading="lazy" />
+        
+      </div>
+    </div>
+    <div class="vermais" style="margin-top:28px">
+      <button class="btn-vm" id="btnPrints" onclick="togglePrints()">Ver mais prints</button>
+    </div>
+</section>
+
+<section class="cta">
+  <div class="cta-in">
+    <h2>Quer fazer parte desses resultados?</h2>
+    <p>Fale comigo e vamos construir uma solução para o seu time.</p>
+    <div class="cta-acts">
+      <a href="proposta.html" class="b-light">Solicitar Proposta</a>
+      <a href="mailto:opaulocortez@outlook.com?subject=Contato pelo site" class="b-ghost">Enviar E-mail</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-t">&copy; 2026 Paulo Cortez. Todos os direitos reservados.<a href="index.html">Voltar ao início</a></div>
+</footer>
+
+<a href="https://wa.me/5511920182998?text=Ola%20Paulo%2C%20vim%20pelo%20site." target="_blank" class="wpp" aria-label="WhatsApp"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+
+<script>
+function togglePrints(){
+  var el=document.getElementById('prints-extra');
+  var btn=document.getElementById('btnPrints');
+  var hidden=el.style.display==='none';
+  el.style.display=hidden?'grid':'none';
+  btn.textContent=hidden?'Ver menos':'Ver mais prints';
+}
+</script>
+</body>
+</html>
