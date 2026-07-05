@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alta Liderança via Enora | Paulo Cortez</title>
+<meta name="description" content="Programas de alta liderança e desenvolvimento executivo via parceria Enora. Entenda a diferença entre a entrega Paulo Cortez e a entrega Enora.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0F2A33;--ink-soft:#3D5860;--ink-light:#7A9099;
+  --teal:#0099B0;--teal-deep:#006478;--teal-dark:#013D49;
+  --paper:#FFFFFF;--paper-warm:#F6F9FA;--paper-edge:#E4EDF0;--gold:#C8902A;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--paper-edge);padding:0 6%}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:74px;max-width:1240px;margin:0 auto}
+.logo{display:flex;flex-direction:row;align-items:center;gap:10px;line-height:1.1}
+.logo-img{width:36px;height:36px;object-fit:contain;flex-shrink:0}
+.logo-txt{display:flex;flex-direction:column}
+.logo-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:var(--ink)}
+.logo-sub{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-top:1px}
+.back{font-size:14px;color:var(--ink-soft);display:flex;align-items:center;gap:8px;transition:color .2s}
+.back:hover{color:var(--teal-deep)}
+.back svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* HERO */
+.hero{padding:130px 6% 80px;background:linear-gradient(180deg,var(--paper-warm) 0%,var(--paper) 100%)}
+.hero-in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--teal-deep);margin-bottom:18px}
+.eyebrow::before{content:'';width:28px;height:1.5px;background:var(--teal)}
+h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin-bottom:20px;color:var(--ink)}
+h1 em{font-style:normal;color:var(--teal-deep)}
+.lead{font-size:18px;color:var(--ink-soft);line-height:1.75;margin-bottom:32px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--ink);color:#fff;font-weight:600;font-size:15px;padding:14px 28px;border-radius:2px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:background .25s;display:inline-block}
+.btn-primary:hover{background:var(--teal-deep)}
+.btn-sec{border:1.5px solid var(--paper-edge);color:var(--ink);font-weight:600;font-size:15px;padding:14px 28px;border-radius:2px;transition:all .2s;display:inline-block}
+.btn-sec:hover{border-color:var(--teal);color:var(--teal-deep)}
+.hero-enora-card{background:#fff;border:1px solid var(--paper-edge);border-radius:6px;padding:36px;box-shadow:0 12px 40px rgba(15,42,51,.07)}
+.enora-logo-wrap{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--paper-edge)}
+.enora-logo{height:44px;object-fit:contain}
+.enora-desc{font-size:15px;color:var(--ink-soft);line-height:1.7;margin-bottom:20px}
+.enora-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,153,176,.06);border:1px solid rgba(0,153,176,.2);border-radius:2px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--teal-deep)}
+.enora-badge svg{width:15px;height:15px;stroke:var(--teal);fill:none;stroke-width:2}
+
+/* DIFERENCA */
+.diferenca{padding:88px 6%;background:var(--paper-warm);border-top:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge)}
+.dif-in{max-width:1240px;margin:0 auto}
+.dif-head{text-align:center;margin-bottom:56px}
+.sec-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3vw,38px);font-weight:700;line-height:1.12;color:var(--ink);margin-bottom:14px}
+.sec-lead{font-size:17px;color:var(--ink-soft);max-width:600px;margin:0 auto}
+.dif-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.dif-card{background:#fff;border:1px solid var(--paper-edge);border-radius:4px;padding:36px;position:relative}
+.dif-card-pc{border-top:3px solid var(--teal)}
+.dif-card-en{border-top:3px solid var(--gold)}
+.dif-tag{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-light);margin-bottom:16px}
+.dif-card h3{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.dif-sub{font-size:14px;color:var(--ink-light);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--paper-edge)}
+.dif-items{list-style:none;display:flex;flex-direction:column;gap:12px}
+.dif-items li{display:flex;align-items:flex-start;gap:11px;font-size:15px;color:var(--ink-soft)}
+.dif-items svg{width:18px;height:18px;flex-shrink:0;margin-top:1px}
+.dif-pc svg{stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dif-en svg{stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dif-cta{margin-top:24px;padding-top:20px;border-top:1px solid var(--paper-edge)}
+.dif-cta a{font-size:14px;font-weight:600;color:var(--teal-deep);display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
+.dif-cta a:hover{gap:10px}
+.dif-cta a svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+.dif-cta-en a{color:var(--gold)}
+
+/* QUANDO ESCOLHER */
+.quando{padding:88px 6%}
+.quando-in{max-width:1240px;margin:0 auto}
+.quando-head{margin-bottom:48px;max-width:640px}
+.quando-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.quando-card{border:1px solid var(--paper-edge);border-radius:4px;padding:32px}
+.quando-card h4{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;margin-bottom:16px;color:var(--ink)}
+.quando-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.quando-list li{font-size:15px;color:var(--ink-soft);display:flex;align-items:flex-start;gap:10px}
+.quando-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:8px}
+.quando-card.enora-card .quando-list li::before{background:var(--gold)}
+.quando-card.enora-card{background:var(--paper-warm)}
+
+/* CTA FINAL */
+.cta-final{background:var(--paper-warm);border-top:1px solid var(--paper-edge);padding:88px 6%;text-align:center;position:relative}
+
+.cta-in{max-width:700px;margin:0 auto;position:relative}
+.cta-final .eyebrow{justify-content:center}
+
+.cta-final h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3vw,38px);font-weight:700;color:var(--ink);margin-bottom:16px}
+.cta-final p{font-size:16px;color:var(--ink-soft);margin-bottom:36px}
+.cta-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-light{background:var(--ink);color:#fff;font-weight:600;font-size:15px;padding:14px 28px;border-radius:2px;transition:background .25s;display:inline-block}
+.btn-light:hover{background:var(--teal-deep)}
+.btn-ghost{border:1.5px solid var(--paper-edge);color:var(--ink);background:#fff;font-weight:600;font-size:15px;padding:14px 28px;border-radius:2px;transition:all .2s;display:inline-block}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal-deep)}
+
+footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);padding:28px 6%;text-align:center}
+.foot-t{font-size:13px;color:var(--ink-light)}
+.foot-t a{color:var(--teal-deep);margin-left:14px}
+
+.wpp{position:fixed;bottom:28px;right:28px;z-index:200;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);transition:transform .2s}
+.wpp:hover{transform:scale(1.08)}
+.wpp svg{width:30px;height:30px;fill:#fff}
+
+@media(max-width:860px){
+  .hero-in,.dif-grid,.quando-grid{grid-template-columns:1fr;gap:32px}
+  .hero-enora-card{order:-1}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/logo.png" alt="ProCrescer Academy" class="logo-img">
+      <span class="logo-txt">
+        <span class="logo-name">Paulo Cortez</span>
+        <span class="logo-sub">ProCrescer Academy</span>
+      </span>
+    </a>
+    <a href="index.html" class="back"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Voltar ao site</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Alta Liderança via Parceria</span>
+      <h1>Para quem lidera no topo, a solução é <em>diferente</em></h1>
+      <p class="lead">O desenvolvimento de pessoas não é igual em todos os níveis. Para operação e liderança de primeiro nível, atuo diretamente. Para alta liderança e C-Level, atuo via parceria com a Enora, plataforma especializada nesse perfil.</p>
+      <div class="hero-actions">
+        <a href="#diferenca" class="btn-primary">Entender as diferenças</a>
+        <a href="proposta.html" class="btn-sec">Solicitar Proposta</a>
+      </div>
+    </div>
+    <div class="hero-enora-card">
+      <div class="enora-logo-wrap">
+        <img src="assets/enora.png" alt="Enora" class="enora-logo">
+      </div>
+      <p class="enora-desc">A Enora é uma plataforma de desenvolvimento de lideranças executivas com metodologia própria para C-Level, diretores e gestores estratégicos.</p>
+      <p class="enora-desc">Minha atuação via Enora traz a combinação entre a metodologia da plataforma e minha experiência em comportamento humano e desenvolvimento de pessoas.</p>
+      <span class="enora-badge"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Parceria ativa com a Enora</span>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCA -->
+<section class="diferenca" id="diferenca">
+  <div class="dif-in">
+    <div class="dif-head">
+      <span class="eyebrow">A diferença entre as duas entregas</span>
+      <h2 class="sec-title">Qual solução é certa para você?</h2>
+      <p class="sec-lead">A escolha entre Paulo Cortez e Enora depende do nível de liderança que você quer desenvolver. Veja abaixo o que cada entrega cobre.</p>
+    </div>
+    <div class="dif-grid">
+      <div class="dif-card dif-card-pc">
+        <div class="dif-tag">Entrega direta</div>
+        <h3>Paulo Cortez</h3>
+        <p class="dif-sub">Operação, liderança de primeiro nível e média gestão</p>
+        <ul class="dif-items dif-pc">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Equipes operacionais e de linha de frente</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Líderes e supervisores de primeiro nível</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Coordenadores e gestores de média gestão</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Treinamentos, palestras e trilhas de ensino</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Atuação em parceria com SESCOOP e SEBRAE</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Programas in-company e eventos corporativos</li>
+        </ul>
+        <div class="dif-cta">
+          <a href="proposta.html">Solicitar proposta <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="dif-card dif-card-en">
+        <div class="dif-tag">Via parceria Enora</div>
+        <h3>Enora</h3>
+        <p class="dif-sub">Alta liderança, diretorias e C-Level</p>
+        <ul class="dif-items dif-en">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Diretores e gerentes sênior</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>C-Level: CEO, CFO, COO, CHO</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Conselhos e alta governança</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Desenvolvimento executivo e estratégico</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Trilhas de liderança de alta complexidade</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Programas de mentoria executiva</li>
+        </ul>
+        <div class="dif-cta dif-cta-en">
+          <a href="mailto:opaulocortez@outlook.com?subject=Alta Lideranca via Enora">Falar sobre a Enora <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUANDO ESCOLHER -->
+<section class="quando">
+  <div class="quando-in">
+    <div class="quando-head">
+      <span class="eyebrow">Como escolher</span>
+      <h2 class="sec-title">Em qual situação procurar cada solução</h2>
+    </div>
+    <div class="quando-grid">
+      <div class="quando-card">
+        <h4>Procure Paulo Cortez quando...</h4>
+        <ul class="quando-list">
+          <li>Sua equipe operacional precisa de mais engajamento e resultado</li>
+          <li>Seus supervisores ou líderes de equipe precisam de desenvolvimento prático</li>
+          <li>Você quer uma palestra ou workshop para um evento corporativo</li>
+          <li>Precisa de uma trilha de ensino estruturada para vários níveis</li>
+          <li>Sua cooperativa ou empresa atua com SESCOOP ou SEBRAE</li>
+          <li>O foco é comportamento, comunicação e liderança no dia a dia</li>
+        </ul>
+      </div>
+      <div class="quando-card enora-card">
+        <h4>Procure a Enora quando...</h4>
+        <ul class="quando-list">
+          <li>A demanda é para a diretoria ou C-Level da organização</li>
+          <li>Você precisa de desenvolvimento executivo de alta complexidade</li>
+          <li>O programa envolve governança e estratégia organizacional</li>
+          <li>Precisa de mentoria ou coaching para lideranças executivas</li>
+          <li>O objetivo é preparar sucessores para cargos de alta liderança</li>
+          <li>A organização está em processo de transformação cultural no topo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-final">
+  <div class="cta-in">
+    <span class="eyebrow">Proximo passo</span>
+    <h2>Não sabe por onde começar?</h2>
+    <p>Me conta o que você precisa. Eu identifico qual é a solução mais adequada e te direciono para o caminho certo, seja diretamente comigo ou via Enora.</p>
+    <div class="cta-acts">
+      <a href="https://wa.me/5511920182998?text=Ola%20Paulo%2C%20quero%20entender%20qual%20solucao%20e%20mais%20adequada%20para%20minha%20organizacao." target="_blank" class="btn-light">Falar pelo WhatsApp</a>
+      <a href="proposta.html" class="btn-ghost">Preencher Briefing</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-t">&copy; 2026 Paulo Cortez. Todos os direitos reservados.<a href="index.html">Voltar ao site</a></div>
+</footer>
+
+<a href="https://wa.me/5511920182998?text=Ola%20Paulo%2C%20vim%20pelo%20site." target="_blank" class="wpp" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
