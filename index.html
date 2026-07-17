@@ -97,6 +97,15 @@ section{padding:104px 6%}
 .serv-icon svg{width:22px;height:22px;stroke:var(--teal-deep);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}
 .serv-card h3{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;color:var(--ink);line-height:1.2}
 .serv-card p{font-size:14.5px;color:var(--ink-soft);line-height:1.7}
+.serv-temas{margin-top:40px;padding-top:32px;border-top:1px solid var(--paper-edge)}
+.serv-temas-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;color:var(--ink);margin-bottom:16px}
+.serv-temas-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 24px;padding:0}
+.serv-temas-list li{font-size:14px;color:var(--ink-soft);position:relative;padding-left:18px;line-height:1.5}
+.serv-temas-list li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.serv-portfolio{margin-top:32px;text-align:center}
+.btn-portfolio{display:inline-flex;align-items:center;gap:9px;background:var(--teal-deep);color:#fff;font-weight:600;font-size:15px;padding:14px 28px;border-radius:2px;transition:background .2s}
+.btn-portfolio:hover{background:var(--ink)}
+.btn-portfolio svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
 /* ENORA / TRILHAS - secao dedicada */
 
@@ -212,6 +221,12 @@ section{padding:104px 6%}
 .btn-ghost:hover{border-color:var(--teal);color:var(--teal-deep)}
 
 /* FOOTER */
+.marcas{padding:72px 6% 88px;text-align:center;border-top:1px solid var(--paper-edge)}
+.marcas .eyebrow{justify-content:center}
+.marcas .sec-title{margin-bottom:40px}
+.marcas-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px 56px}
+.marcas-grid img{height:38px;width:auto;max-width:140px;object-fit:contain;filter:grayscale(100%);opacity:.55;transition:filter .25s,opacity .25s}
+.marcas-grid img:hover{filter:grayscale(0%);opacity:1}
 footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);padding:72px 6% 32px;color:var(--ink)}
 .foot-in{max-width:1240px;margin:0 auto}
 .foot-top{display:grid;grid-template-columns:2fr 1fr 1.3fr;gap:56px;margin-bottom:44px}
@@ -274,11 +289,11 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
       </span>
     </a>
     <nav id="nav">
+      <a href="#sobre">Sobre</a>
       <a href="#servicos">Serviços</a>
       <a href="#parceiros">Parceiros</a>
       <a href="#material">Material Gratuito</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#depoimentos">Depoimentos</a>
+      <a href="depoimentos.html">Depoimentos</a>
       <a href="proposta.html" class="nav-cta">Solicitar Proposta</a>
     </nav>
     <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -346,6 +361,24 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
         <p>Mapeamento das necessidades de desenvolvimento, com análise de perfil comportamental e identificação de gaps de liderança.</p>
       </div>
     </div>
+    <div class="serv-temas">
+      <h4 class="serv-temas-title">Outros temas trabalhados</h4>
+      <ul class="serv-temas-list">
+        <li>IA e a Nova Produtividade</li>
+        <li>Neurociência da Priorização e Foco</li>
+        <li>Liderança Humanizada com PNL</li>
+        <li>Inteligência Tripla (Financeira, Emocional e Relacional)</li>
+        <li>Liderança com Metodologia DISC</li>
+        <li>Sinergia Geracional e Conflitos</li>
+        <li>Engenharia de Times de Alta Performance</li>
+      </ul>
+    </div>
+    <div class="serv-portfolio">
+      <a href="https://drive.google.com/file/d/1LXYw204IrQHHs4vBU2kY3Xe9nqrHlDVR/view?usp=sharing" target="_blank" rel="noopener" class="btn-portfolio">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Baixar Portfólio Completo
+      </a>
+    </div>
   </div>
 </section>
 
@@ -383,7 +416,7 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
       </div>
       <div class="parc-card parc-card-destaque">
         <div class="parc-logo-wrap parc-logo-wrap-enora">
-          <img src="assets/enora.png" alt="Enora" class="parc-logo" />
+          <a href="https://enora.com.br" target="_blank" rel="noopener"><img src="assets/enora.png" alt="Enora" class="parc-logo" /></a>
         </div>
         <h3>Enora <span class="parc-tag">Alta Liderança</span></h3>
         <p>Para programas de alta liderança, atuo em parceria com a Enora, plataforma especializada em desenvolvimento de lideranças executivas e estratégicas.</p>
@@ -534,6 +567,28 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
     <div class="cta-acts">
       <a href="proposta.html" class="btn-light">Preencher Briefing</a>
       <a href="mailto:opaulocortez@outlook.com?subject=Contato pelo site paulocortez.com.br" class="btn-ghost">Enviar E-mail</a>
+    </div>
+  </div>
+</section>
+
+<section class="marcas">
+  <div class="sec">
+    <span class="eyebrow">Confiança</span>
+    <h2 class="sec-title">Empresas atendidas</h2>
+    <div class="marcas-grid">
+      <img src="assets/marcas/mercado-livre.png" alt="Mercado Livre" />
+      <img src="assets/marcas/mercado-pago.png" alt="Mercado Pago" />
+      <img src="assets/marcas/coopercitrus.png" alt="Coopercitrus" />
+      <img src="assets/marcas/unimed.png" alt="Unimed" />
+      <img src="assets/marcas/coplana.png" alt="Coplana" />
+      <img src="assets/marcas/sao-martinho.png" alt="São Martinho" />
+      <img src="assets/marcas/sicoob.png" alt="Sicoob" />
+      <img src="assets/marcas/unicred.png" alt="Unicred" />
+      <img src="assets/marcas/cocal.png" alt="Cocal" />
+      <img src="assets/marcas/gsk.png" alt="GSK" />
+      <img src="assets/marcas/raizen.png" alt="Raízen" />
+      <img src="assets/marcas/tereos.png" alt="Tereos" />
+      <img src="assets/marcas/ab-mauri.png" alt="AB Mauri" />
     </div>
   </div>
 </section>
