@@ -100,9 +100,6 @@ section{padding:104px 6%}
 .serv-temas{margin-top:40px;padding-top:32px;border-top:1px solid var(--paper-edge)}
 .serv-temas-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;color:var(--ink);margin-bottom:22px;text-align:center}
 .temas-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:980px;margin:0 auto}
-.temas-grid .tema-card:nth-child(5){grid-column:1 / span 1}
-.temas-grid .tema-card:nth-child(6){grid-column:2 / span 1}
-.temas-grid .tema-card:nth-child(7){grid-column:3 / span 1}
 .tema-card{
   display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;
   background:#fff;border:1px solid var(--paper-edge);border-radius:6px;
@@ -115,7 +112,6 @@ section{padding:104px 6%}
 .tema-nome{font-size:15.5px;font-weight:600;color:var(--ink);line-height:1.35}
 @media(max-width:860px){
   .temas-grid{grid-template-columns:repeat(2,1fr)}
-  .temas-grid .tema-card:nth-child(5),.temas-grid .tema-card:nth-child(6),.temas-grid .tema-card:nth-child(7){grid-column:auto}
 }
 @media(max-width:520px){.temas-grid{grid-template-columns:1fr}}
 .serv-portfolio{margin-top:32px;text-align:center}
@@ -131,7 +127,6 @@ section{padding:104px 6%}
 .parc-head{margin-bottom:48px;max-width:700px}
 .parc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .parc-card{background:#fff;border:1px solid var(--paper-edge);border-radius:4px;padding:32px 28px;display:flex;flex-direction:column;gap:0}
-.parc-card-destaque{border-color:var(--teal);position:relative}
 .parc-logo-wrap{height:64px;display:flex;align-items:center;margin-bottom:20px}
 .parc-logo{max-height:52px;max-width:140px;object-fit:contain}
 .parc-logo-wrap-enora{align-items:center}
@@ -148,20 +143,26 @@ section{padding:104px 6%}
 
 /* MATERIAL GRATUITO */
 .material{background:var(--paper-warm);border-top:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge)}
-.mat-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.mat-head{text-align:center;max-width:640px;margin:0 auto 48px}
+.mat-head .eyebrow{justify-content:center}
+.mat-head .sec-lead{margin:0 auto}
+.mat-grid2{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
 .mat-body .sec-lead{max-width:100%;margin-bottom:26px}
-.mat-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:8px}
+.mat-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
 .mat-list li{display:flex;align-items:flex-start;gap:11px;font-size:15px;color:var(--ink-soft)}
 .mat-list svg{width:19px;height:19px;stroke:var(--teal);fill:none;stroke-width:2;flex-shrink:0;margin-top:1px}
-.mat-card{background:#fff;border:1px solid var(--paper-edge);border-radius:6px;padding:36px;box-shadow:0 12px 40px rgba(15,42,51,.06)}
+.mat-card{background:#fff;border:1px solid var(--paper-edge);border-radius:6px;padding:36px;box-shadow:0 12px 40px rgba(15,42,51,.06);height:100%}
 .mat-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--teal-dark);color:#fff;padding:4px 11px;border-radius:2px;margin-bottom:18px}
+.mat-tag-ferramenta{background:var(--gold)}
 .mat-title{font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:700;color:var(--ink);line-height:1.25;margin-bottom:14px}
 .mat-sub{font-size:14px;color:var(--ink-soft);line-height:1.7;margin-bottom:24px}
+.mat-sub strong{color:var(--ink)}
 .mat-form{display:flex;flex-direction:column;gap:12px}
 .mat-form input{background:var(--paper-warm);border:1px solid var(--paper-edge);border-radius:3px;padding:12px 15px;font-size:14px;color:var(--ink);font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}
 .mat-form input:focus{border-color:var(--teal)}
 .mat-btn{background:var(--ink);color:#fff;font-weight:600;font-size:15px;padding:14px 22px;border-radius:3px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:background .25s;margin-top:4px}
 .mat-btn:hover{background:var(--teal-deep)}
+.mat-btn-link{display:block;width:100%;text-align:center;text-decoration:none;box-sizing:border-box}
 .mat-note{font-size:11.5px;color:var(--ink-light);text-align:center;margin-top:10px}
 .mat-ok{display:none;text-align:center;padding:20px}
 .mat-ok.on{display:block}
@@ -170,7 +171,7 @@ section{padding:104px 6%}
 .mat-ok a{display:inline-block;background:var(--teal-deep);color:#fff;font-weight:600;font-size:14px;padding:12px 24px;border-radius:3px;transition:background .2s}
 .mat-ok a:hover{background:var(--ink)}
 .dn{display:none}
-@media(max-width:860px){.mat-inner{grid-template-columns:1fr;gap:40px}}
+@media(max-width:860px){.mat-grid2{grid-template-columns:1fr;gap:24px}}
 
 /* SOBRE */
 .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
@@ -277,6 +278,7 @@ section{padding:104px 6%}
 .banner-disc{background:linear-gradient(135deg,#0099B0,#004b5c)}
 .banner-geracional{background:linear-gradient(135deg,#3D5860,#0F2A33)}
 .banner-performance{background:linear-gradient(135deg,#006478,#00343F)}
+.banner-financeira{background:linear-gradient(135deg,#C8902A,#5c4210)}
 .tema-conteudo{padding:30px 32px 34px}
 .tema-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--teal-deep);margin-bottom:10px}
 .tema-eyebrow::before{content:'';width:20px;height:1.5px;background:var(--teal)}
@@ -460,6 +462,10 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
           <span class="tema-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
           <span class="tema-nome">Engenharia de Times de Alta Performance</span>
         </button>
+        <button type="button" class="tema-card" onclick="abrirTema('financeira')">
+          <span class="tema-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+          <span class="tema-nome">Educação e Inteligência Financeira</span>
+        </button>
       </div>
     </div>
     <div class="serv-portfolio">
@@ -476,7 +482,7 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
     <div class="parc-head">
       <span class="eyebrow">Atuações com Parceiros</span>
       <h2 class="sec-title">Parceiros que ampliam o alcance do desenvolvimento</h2>
-      <p class="sec-lead">Atuo em parceria com o SESCOOP, SEBRAE e Enora, instituições que ampliam o alcance do desenvolvimento de pessoas em cooperativas, empresas e alta liderança no Brasil.</p>
+      <p class="sec-lead">Parceria com o SESCOOP, SEBRAE e Enora, instituições que ampliam o alcance do desenvolvimento de pessoas em cooperativas, empresas e alta liderança no Brasil e no mundo.</p>
     </div>
     <div class="parc-grid">
       <div class="parc-card">
@@ -503,7 +509,7 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
           <li>Palestras e treinamentos para empreendedores</li>
         </ul>
       </div>
-      <div class="parc-card parc-card-destaque">
+      <div class="parc-card">
         <div class="parc-logo-wrap parc-logo-wrap-enora">
           <a href="https://enora.com.br" target="_blank" rel="noopener"><img src="assets/enora.png" alt="Enora" class="parc-logo" /></a>
         </div>
@@ -590,21 +596,23 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
 
 <section class="material" id="material">
   <div class="sec">
-    <div class="mat-inner">
-      <div class="mat-body">
-        <span class="eyebrow">Material Gratuito</span>
-        <h2 class="sec-title">10 sinais de que sua lideranca precisa de desenvolvimento</h2>
-        <p class="sec-lead">Um checklist pratico para identificar hoje mesmo se os supervisores e lideres de primeiro nivel da sua equipe estao prontos para o proximo passo.</p>
-        <ul class="mat-list">
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>10 sinais praticos para avaliar sua equipe agora</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Tabela de leitura de resultado e prioridade de acao</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Pronto para usar em 5 minutos, sem enrolacao</li>
-        </ul>
-      </div>
+    <div class="mat-head">
+      <span class="eyebrow">Materiais e Ferramentas Gratuitas</span>
+      <h2 class="sec-title">Presentes para usar agora mesmo</h2>
+      <p class="sec-lead">Conteúdo e ferramentas prontos para você aplicar no seu dia a dia ou com a sua equipe, sem custo.</p>
+    </div>
+
+    <div class="mat-grid2">
+
       <div class="mat-card">
         <span class="mat-tag">PDF Gratuito</span>
-        <h3 class="mat-title">Baixe o checklist completo</h3>
-        <p class="mat-sub">Preencha seu nome e e-mail para receber o material agora.</p>
+        <h3 class="mat-title">10 sinais de que sua liderança precisa de desenvolvimento</h3>
+        <p class="mat-sub">Um checklist prático para identificar hoje mesmo se os supervisores e líderes de primeiro nível da sua equipe estão prontos para o próximo passo.</p>
+        <ul class="mat-list">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>10 sinais práticos para avaliar sua equipe agora</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Tabela de leitura de resultado e prioridade de ação</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Pronto para usar em 5 minutos, sem enrolação</li>
+        </ul>
 
         <form id="form-material" name="material-gratuito" method="POST" data-netlify="true" netlify-honeypot="bot-field-material">
           <input type="hidden" name="form-name" value="material-gratuito">
@@ -615,15 +623,30 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
             <input type="email" name="email" placeholder="Seu e-mail" required>
             <button type="submit" class="mat-btn">Baixar checklist gratuito</button>
           </div>
-          <p class="mat-note">Sem spam. Voce recebe apenas o material.</p>
+          <p class="mat-note">Sem spam. Você recebe apenas o material.</p>
         </form>
 
         <div class="mat-ok" id="mat-ok">
           <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          <p>Pronto. Clique no botao abaixo para baixar o seu checklist.</p>
+          <p>Pronto. Clique no botão abaixo para baixar o seu checklist.</p>
           <a href="assets/materiais/10-sinais-lideranca-primeiro-nivel.pdf" download>Baixar PDF agora</a>
         </div>
       </div>
+
+      <div class="mat-card">
+        <span class="mat-tag mat-tag-ferramenta">Ferramenta Gratuita</span>
+        <h3 class="mat-title">Matriz de Decisão</h3>
+        <p class="mat-sub">Uma ferramenta simples para organizar suas tarefas por prioridade. Basta salvar o link no navegador e usar sempre que precisar decidir o que fazer primeiro, sem se perder em meio a tantas demandas.</p>
+        <ul class="mat-list">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Organize tarefas por urgência e importância</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Use direto no navegador, sem precisar instalar nada</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Salve como favorito e acesse sempre que precisar</li>
+        </ul>
+        <p class="mat-sub" style="margin-top:-6px;margin-bottom:20px"><strong>Como usar:</strong> abra o link, liste suas tarefas e posicione cada uma na matriz conforme o nível de urgência e importância. O resultado mostra o que fazer primeiro, o que agendar, o que delegar e o que descartar.</p>
+        <a href="https://www.paulocortez.com.br/matrizdecisao" target="_blank" rel="noopener" class="mat-btn mat-btn-link">Abrir Matriz de Decisão</a>
+        <p class="mat-note">www.paulocortez.com.br/matrizdecisao</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -872,6 +895,20 @@ var TEMAS = {
       'Construção de rituais de time que sustentam performance no longo prazo'
     ],
     publico: 'Gestores e lideranças que já têm uma equipe funcional, mas querem elevar o padrão de entrega e transformar um time bom em um time de alta performance.'
+  },
+  financeira: {
+    banner: 'banner-financeira',
+    icon: '<svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+    titulo: 'Educação e Inteligência Financeira',
+    objetivo: 'Ajudar pessoas a organizarem sua vida financeira na prática, desde decisões do dia a dia até a construção de um caminho sólido rumo aos investimentos, reduzindo o estresse que dívidas e desorganização financeira causam dentro e fora do trabalho.',
+    modulos: [
+      'Como escolher a taxa de juros certa e entender o custo real de cada crédito',
+      'Qual dívida pagar primeiro: método prático de priorização de dívidas',
+      'Ciladas financeiras mais comuns e como se proteger delas',
+      'Organização do orçamento pessoal e controle de gastos no dia a dia',
+      'Primeiros passos para sair do vermelho e começar a investir com segurança'
+    ],
+    publico: 'Público geral dentro das empresas, muito aplicado em SIPATs e ações de bem-estar corporativo, especialmente organizações com alto número de colaboradores endividados ou com dificuldade de organização financeira.'
   }
 };
 
