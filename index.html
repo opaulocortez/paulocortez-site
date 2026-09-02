@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paulo Cortez | Desenvolvimento de Pessoas, Liderança e Operações</title>
-<meta name="description" content="Treinamentos, palestras e trilhas de ensino para desenvolvimento de pessoas, liderança e operações em cooperativas e empresas.">
+<title>Paulo Cortez | Treinamentos e Trilhas de Liderança para Cooperativas</title>
+<meta name="description" content="Treinamentos, palestras e trilhas de liderança para cooperativas e empresas. Desenvolvimento de pessoas da operação à liderança, com atuação em 8 estados. Peça uma proposta.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,14 +14,14 @@
 :root{
   --ink:#0F2A33;
   --ink-soft:#3D5860;
-  --ink-light:#7A9099;
+  --ink-light:#59717B;
   --teal:#0099B0;
   --teal-deep:#006478;
   --teal-dark:#013D49;
   --paper:#FFFFFF;
   --paper-warm:#F6F9FA;
   --paper-edge:#E4EDF0;
-  --gold:#C8902A;
+  --gold:#C8902A;--gold-cta:#946818;
 }
 
 html{scroll-behavior:smooth}
@@ -40,8 +40,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,2
 nav{display:flex;gap:34px;align-items:center}
 nav a{font-size:14px;font-weight:500;color:var(--ink-soft);transition:color .2s}
 nav a:hover{color:var(--teal)}
-.nav-cta{background:var(--gold);color:#fff!important;font-weight:700!important;padding:10px 22px;border-radius:2px;font-size:13px!important;transition:background .25s!important;box-shadow:0 3px 10px rgba(200,144,42,.28)}
-.nav-cta:hover{background:#a8761f!important}
+.nav-cta{background:var(--gold-cta);color:#fff!important;font-weight:700!important;padding:10px 22px;border-radius:2px;font-size:13px!important;transition:background .25s!important;box-shadow:0 3px 10px rgba(148,104,24,.3)}
+.nav-cta:hover{background:#7d570f!important}
 .header-acoes{display:flex;align-items:center;gap:14px}
 .menu-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
 .menu-toggle span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px}
@@ -57,8 +57,8 @@ nav a:hover{color:var(--teal)}
 .hero h1 em{font-style:italic;color:var(--teal-deep)}
 .hero-desc{font-size:18px;color:var(--ink-soft);max-width:480px;margin-bottom:38px;line-height:1.7}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.btn-primary{background:var(--gold);color:#fff;font-weight:700;font-size:15px;padding:15px 30px;border-radius:2px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:background .25s,transform .15s,box-shadow .25s;display:inline-block;box-shadow:0 4px 14px rgba(200,144,42,.28)}
-.btn-primary:hover{background:#a8761f;transform:translateY(-2px);box-shadow:0 8px 22px rgba(200,144,42,.36)}
+.btn-primary{background:var(--gold-cta);color:#fff;font-weight:700;font-size:15px;padding:15px 30px;border-radius:2px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:background .25s,transform .15s,box-shadow .25s;display:inline-block;box-shadow:0 4px 14px rgba(148,104,24,.3)}
+.btn-primary:hover{background:#7d570f;transform:translateY(-2px);box-shadow:0 8px 22px rgba(148,104,24,.4)}
 /* SECUNDARIO padrao: contorno */
 .btn-sec{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1.5px solid var(--paper-edge);background:#fff;color:var(--ink);font-weight:600;font-size:15px;padding:14px 28px;border-radius:2px;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
 .btn-sec:hover{border-color:var(--teal);color:var(--teal-deep)}
@@ -77,14 +77,14 @@ nav a:hover{color:var(--teal)}
 .hero-cred-s{font-size:12px;color:var(--ink-light);margin-top:2px}
 
 /* TRUST STRIP discreta */
-.trust{max-width:1240px;margin:0 auto;padding:0 6%;}
+.trust{max-width:1240px;margin:0 auto;padding:0 6%}
 .trust-inner{display:flex;gap:56px;flex-wrap:wrap;padding:36px 0 4px;border-top:1px solid var(--paper-edge)}
 .trust-item{display:flex;flex-direction:column}
-.trust-num{font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:600;color:var(--ink);line-height:1}
+.trust-num{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--teal-deep);line-height:1;letter-spacing:-.01em}
 .trust-label{font-size:13px;color:var(--ink-light);margin-top:6px;max-width:140px}
 
 /* SECTIONS */
-section{padding:104px 6%}
+section{padding:96px 6%}
 .sec{max-width:1240px;margin:0 auto}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--teal-deep);margin-bottom:18px}
 .eyebrow::before{content:'';width:28px;height:1.5px;background:var(--teal)}
@@ -94,8 +94,8 @@ section{padding:104px 6%}
 /* SERVICOS */
 .servicos{background:var(--paper-warm);border-top:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge)}
 .serv-head{margin-bottom:56px;max-width:600px}
-.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:1px;background:var(--paper-edge);border:1px solid var(--paper-edge)}
-.serv-card{background:var(--paper);padding:40px 32px;transition:background .25s}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:1px;background:var(--paper-edge);border:1px solid var(--paper-edge);align-items:stretch}
+.serv-card{background:var(--paper);padding:40px 32px;transition:background .25s;display:flex;flex-direction:column;height:100%}
 .serv-card:hover{background:#fff}
 .serv-card:hover .serv-icon{background:var(--teal-deep)}
 .serv-card:hover .serv-icon svg{stroke:#fff}
@@ -159,7 +159,7 @@ section{padding:104px 6%}
 .mat-list svg{width:19px;height:19px;stroke:var(--teal);fill:none;stroke-width:2;flex-shrink:0;margin-top:1px}
 .mat-card{background:#fff;border:1px solid var(--paper-edge);border-radius:6px;padding:36px;box-shadow:0 12px 40px rgba(15,42,51,.06);height:100%}
 .mat-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--teal-dark);color:#fff;padding:4px 11px;border-radius:2px;margin-bottom:18px}
-.mat-tag-ferramenta{background:var(--gold)}
+.mat-tag-ferramenta{background:var(--gold-cta)}
 .mat-title{font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:700;color:var(--ink);line-height:1.25;margin-bottom:14px}
 .mat-sub{font-size:14px;color:var(--ink-soft);line-height:1.7;margin-bottom:24px}
 .mat-sub strong{color:var(--ink)}
@@ -189,7 +189,7 @@ section{padding:104px 6%}
 .sobre-st{padding:32px 28px;border-right:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge)}
 .sobre-st:nth-child(2n){border-right:none}
 .sobre-st:nth-child(n+3){border-bottom:none}
-.sobre-st-n{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:600;color:var(--teal-deep);line-height:1}
+.sobre-st-n{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--teal-deep);line-height:1;letter-spacing:-.01em}
 .sobre-st-l{font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.4}
 
 /* ATUACAO */
@@ -202,18 +202,23 @@ section{padding:104px 6%}
 
 /* DEPOIMENTOS */
 .depo-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:24px}
-.depo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:24px}
+.depo-carrossel{display:flex;align-items:center;gap:14px}
+.depo-viewport{overflow:hidden;flex:1}
+.depo-track{display:flex;gap:24px;transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.depo-track .depo{flex:0 0 calc((100% - 48px)/3);box-sizing:border-box}
+.depo-nav{width:42px;height:42px;flex-shrink:0;border-radius:50%;border:1.5px solid var(--paper-edge);background:#fff;color:var(--ink-soft);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.depo-nav:hover:not(:disabled){border-color:var(--teal);color:var(--teal-deep)}
+.depo-nav:disabled{opacity:.35;cursor:default}
+.depo-nav svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.depo-dots{display:flex;justify-content:center;gap:8px;margin-top:28px}
+.depo-dot{width:8px;height:8px;border-radius:50%;border:none;background:var(--paper-edge);cursor:pointer;padding:0;transition:all .25s}
+.depo-dot.on{background:var(--teal-deep);width:24px;border-radius:4px}
 .depo{background:#fff;border:1px solid var(--paper-edge);border-radius:3px;padding:32px;transition:box-shadow .25s,transform .25s;position:relative}
 .depo:hover{box-shadow:0 16px 48px rgba(15,42,51,.08);transform:translateY(-3px)}
 .depo-mark{font-family:'Space Grotesk',sans-serif;font-size:54px;line-height:.6;color:var(--teal);opacity:.18;margin-bottom:8px}
 .depo-text{font-size:15.5px;color:var(--ink);line-height:1.7;margin-bottom:22px}
 .depo-by{font-size:14px;font-weight:600;color:var(--teal-deep)}
 .depo-role{font-size:13px;color:var(--ink-light);margin-top:2px}
-.depo-x{display:none}
-.depo-x.on{display:block}
-.vermais{text-align:center;margin-top:40px}
-.btn-vm{background:none;border:1.5px solid var(--paper-edge);color:var(--ink-soft);font-size:14px;font-weight:600;padding:13px 30px;border-radius:2px;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
-.btn-vm:hover{border-color:var(--teal);color:var(--teal-deep)}
 
 /* IA */
 .ia{background:var(--paper-warm);border-top:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge)}
@@ -230,7 +235,7 @@ section{padding:104px 6%}
 .ia-msg.me{background:var(--teal-deep);color:#fff;border-radius:12px 2px 12px 12px;margin-left:auto;max-width:80%}
 
 /* CTA */
-.cta{background:var(--paper-warm);border-top:1px solid var(--paper-edge);text-align:center;padding:100px 6%;position:relative}
+.cta{background:var(--paper-warm);border-top:1px solid var(--paper-edge);text-align:center;padding:96px 6%;position:relative}
 
 .cta-in{max-width:680px;margin:0 auto;position:relative}
 .cta .eyebrow{justify-content:center}
@@ -238,19 +243,32 @@ section{padding:104px 6%}
 .cta-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.4vw,42px);font-weight:700;color:var(--ink);line-height:1.12;margin-bottom:18px}
 .cta-sub{font-size:17px;color:var(--ink-soft);margin-bottom:38px}
 .cta-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn-light{background:var(--gold);color:#fff;font-weight:700;font-size:15px;padding:15px 30px;border-radius:2px;transition:background .25s,transform .15s,box-shadow .25s;box-shadow:0 4px 14px rgba(200,144,42,.28)}
-.btn-light:hover{background:#a8761f;transform:translateY(-2px);box-shadow:0 8px 22px rgba(200,144,42,.36)}
+.btn-light{background:var(--gold-cta);color:#fff;font-weight:700;font-size:15px;padding:15px 30px;border-radius:2px;transition:background .25s,transform .15s,box-shadow .25s;box-shadow:0 4px 14px rgba(148,104,24,.3)}
+.btn-light:hover{background:#7d570f;transform:translateY(-2px);box-shadow:0 8px 22px rgba(148,104,24,.4)}
 .btn-ghost{border:1.5px solid var(--paper-edge);color:var(--ink);font-weight:600;font-size:15px;padding:15px 30px;border-radius:2px;transition:all .2s;background:#fff}
 .btn-ghost:hover{border-color:var(--teal);color:var(--teal-deep)}
 
 /* FOOTER */
-.marcas{padding:56px 6% 64px;text-align:center;background:var(--paper-warm);border-top:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge)}
+.marcas{padding:64px 6%;text-align:center;background:var(--paper-warm);border-top:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge)}
 .marcas .eyebrow{justify-content:center}
 .marcas .sec-title{margin-bottom:34px;font-size:clamp(20px,2.2vw,26px)}
 .marcas-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px 56px}
 .marcas-grid img{height:38px;width:auto;max-width:140px;object-fit:contain;filter:grayscale(100%);opacity:.55;transition:filter .25s,opacity .25s}
 .marcas-grid img.marca-lg{height:54px;max-width:170px}
 .marcas-grid img:hover{filter:grayscale(0%);opacity:1}
+
+/* FAQ */
+.faq{background:var(--paper);border-top:1px solid var(--paper-edge)}
+.faq-head{text-align:center;max-width:640px;margin:0 auto 44px}
+.faq-head .eyebrow{justify-content:center}
+.faq-list{max-width:820px;margin:0 auto;border-top:1px solid var(--paper-edge)}
+.faq-item{border-bottom:1px solid var(--paper-edge)}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 40px 22px 0;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:var(--ink);position:relative;line-height:1.4}
+.faq-q::after{content:'';position:absolute;right:6px;top:50%;width:10px;height:10px;border-right:2px solid var(--teal-deep);border-bottom:2px solid var(--teal-deep);transform:translateY(-70%) rotate(45deg);transition:transform .25s}
+.faq-item.on .faq-q::after{transform:translateY(-30%) rotate(-135deg)}
+.faq-a{font-size:15px;color:var(--ink-soft);line-height:1.75;padding:0 40px 24px 0;display:none}
+.faq-item.on .faq-a{display:block}
+
 /* MODAL DE TEMAS */
 .tema-modal-overlay{
   display:none;position:fixed;inset:0;z-index:300;
@@ -284,7 +302,7 @@ section{padding:104px 6%}
 .banner-disc{background:linear-gradient(135deg,#0099B0,#004b5c)}
 .banner-geracional{background:linear-gradient(135deg,#3D5860,#0F2A33)}
 .banner-performance{background:linear-gradient(135deg,#006478,#00343F)}
-.banner-financeira{background:linear-gradient(135deg,#C8902A,#5c4210)}
+.banner-financeira{background:linear-gradient(135deg,#946818,#4a340c)}
 .tema-conteudo{padding:30px 32px 34px}
 .tema-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--teal-deep);margin-bottom:10px}
 .tema-eyebrow::before{content:'';width:20px;height:1.5px;background:var(--teal)}
@@ -335,6 +353,13 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
 .wpp:hover{transform:scale(1.08)}
 .wpp svg{width:30px;height:30px;fill:#fff}
 
+@media(max-width:960px){
+  .depo-track .depo{flex:0 0 calc((100% - 24px)/2)}
+}
+@media(max-width:640px){
+  .depo-track .depo{flex:0 0 100%}
+  .depo-track{gap:16px}
+}
 @media(max-width:860px){
   nav{display:none;position:absolute;top:74px;left:0;right:0;background:#fff;padding:22px 6%;flex-direction:column;gap:18px;border-bottom:1px solid var(--paper-edge);box-shadow:0 10px 30px rgba(0,0,0,.08)}
   nav.open{display:flex}
@@ -347,22 +372,130 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
   .hero-figure{order:-1;max-width:380px}
   .foot-top{grid-template-columns:1fr;gap:32px}
 }
+@media(max-width:640px){
+  .marcas-grid{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;gap:32px;padding:4px 6% 14px;margin:0 -6%;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .marcas-grid::-webkit-scrollbar{height:3px}
+  .marcas-grid::-webkit-scrollbar-thumb{background:var(--paper-edge);border-radius:3px}
+  .marcas-grid img{flex:0 0 auto;scroll-snap-align:center;height:34px;max-width:120px;opacity:.7}
+  .marcas-grid img.marca-lg{height:46px;max-width:140px}
+}
 @media(max-width:520px){
   .nav-cta{padding:8px 12px;font-size:11.5px!important}
   .logo-img{width:30px;height:30px}
-  .serv-grid,.depo-grid{grid-template-columns:1fr}
+  .serv-grid{grid-template-columns:1fr}
   .sobre-stats{grid-template-columns:1fr 1fr}
   .trust-inner{gap:32px}
   .hero-cred{left:0}
 }
 </style>
+<link rel="canonical" href="https://www.paulocortez.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Paulo Cortez | Treinamentos e Trilhas de Liderança para Cooperativas">
+<meta property="og:description" content="Treinamentos, palestras e trilhas de liderança para cooperativas e empresas. Desenvolvimento de pessoas da operação à liderança.">
+<meta property="og:url" content="https://www.paulocortez.com.br/">
+<meta property="og:image" content="https://www.paulocortez.com.br/assets/paulo.webp">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.paulocortez.com.br/#paulocortez",
+      "name": "Paulo Cortez",
+      "jobTitle": "Consultor e Facilitador em Desenvolvimento de Pessoas",
+      "description": "Engenheiro de Produção com MBA em Gestão de Pessoas pela FGV. Atua com treinamentos, palestras e trilhas de ensino para cooperativas e empresas.",
+      "url": "https://www.paulocortez.com.br/",
+      "image": "https://www.paulocortez.com.br/assets/paulo.webp",
+      "worksFor": { "@id": "https://www.paulocortez.com.br/#procrescer" },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Fundação Getulio Vargas (FGV)"
+      },
+      "knowsAbout": [
+        "Desenvolvimento de lideranças",
+        "Metodologia DISC",
+        "Programação Neurolinguística",
+        "Educação financeira",
+        "Gestão de conflitos",
+        "Cooperativismo"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/opaulocortez/",
+        "https://www.instagram.com/opaulocortez/"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.paulocortez.com.br/#procrescer",
+      "name": "ProCrescer Academy",
+      "description": "Treinamentos, palestras e trilhas de ensino em desenvolvimento de pessoas, liderança e operações para cooperativas e empresas.",
+      "url": "https://www.paulocortez.com.br/",
+      "founder": { "@id": "https://www.paulocortez.com.br/#paulocortez" },
+      "areaServed": { "@type": "Country", "name": "Brasil" },
+      "serviceType": [
+        "Treinamentos corporativos",
+        "Palestras e workshops",
+        "Trilhas de ensino",
+        "Diagnóstico organizacional"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "ratingCount": "12"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.paulocortez.com.br/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quem é Paulo Cortez?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Paulo Cortez é consultor e facilitador em desenvolvimento de pessoas, formado em Engenharia de Produção com MBA em Gestão de Pessoas pela FGV. Atua com treinamentos, palestras e trilhas de ensino para cooperativas e empresas, com foco em equipes operacionais e lideranças de primeiro nível. Tem atuação em 8 estados brasileiros, além de Moçambique e China."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que a ProCrescer Academy oferece para cooperativas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A ProCrescer Academy oferece quatro linhas de serviço para cooperativas: treinamentos corporativos para equipes e lideranças, palestras e workshops sobre temas comportamentais, trilhas de ensino estruturadas de aprendizagem contínua, e diagnóstico organizacional com análise de perfil comportamental. Os temas incluem liderança com metodologia DISC, educação financeira, neurociência da priorização, sinergia geracional e programação neurolinguística."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais cooperativas já foram atendidas por Paulo Cortez?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Entre as cooperativas e empresas atendidas estão Coopercitrus, Sicoob, Unicred, Unimed, Coplana, Cocal, São Martinho, Raízen, Tereos, AB Mauri, Mercado Livre, Mercado Pago e GSK. A atuação inclui parceria institucional com SESCOOP e SEBRAE."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona uma trilha de ensino para lideranças de cooperativa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Uma trilha de ensino é um programa estruturado de aprendizagem contínua, desenhado sob medida para o perfil das lideranças e os objetivos da cooperativa. Diferente de uma palestra isolada, a trilha combina encontros sequenciais, aplicação prática entre as sessões e acompanhamento de resultados. O desenho começa com um diagnóstico das necessidades reais da organização."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <header>
   <div class="header-inner">
     <a href="index.html" class="logo">
-      <img src="assets/logo.png" alt="ProCrescer Academy" class="logo-img" />
+      <img loading="lazy" decoding="async" src="assets/logo.webp" alt="Logo ProCrescer Academy, marca de treinamentos de Paulo Cortez" class="logo-img" />
       <span class="logo-txt">
         <span class="logo-name">Paulo Cortez</span>
         <span class="logo-sub">ProCrescer Academy</span>
@@ -396,7 +529,7 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
     </div>
     <div class="hero-figure">
       <div class="hero-photo">
-        <img src="assets/paulo.jpg" alt="Paulo Cortez" />
+        <img fetchpriority="high" decoding="async" src="assets/paulo.webp" alt="Paulo Cortez, especialista em desenvolvimento de lideranças para cooperativas" />
       </div>
       <div class="hero-cred">
         <div class="hero-cred-t">MBA em Gestão de Pessoas</div>
@@ -420,19 +553,19 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
     <span class="eyebrow">Confiança</span>
     <h2 class="sec-title">Empresas atendidas</h2>
     <div class="marcas-grid">
-      <img src="assets/marcas/mercado-livre.png" alt="Mercado Livre" />
-      <img src="assets/marcas/mercado-pago.png" alt="Mercado Pago" class="marca-lg" />
-      <img src="assets/marcas/coopercitrus.png" alt="Coopercitrus" />
-      <img src="assets/marcas/unimed.png" alt="Unimed" class="marca-lg" />
-      <img src="assets/marcas/coplana.png" alt="Coplana" class="marca-lg" />
-      <img src="assets/marcas/sao-martinho.png" alt="São Martinho" class="marca-lg" />
-      <img src="assets/marcas/sicoob.png" alt="Sicoob" />
-      <img src="assets/marcas/unicred.png" alt="Unicred" class="marca-lg" />
-      <img src="assets/marcas/cocal.png" alt="Cocal" />
-      <img src="assets/marcas/gsk.png" alt="GSK" class="marca-lg" />
-      <img src="assets/marcas/raizen.png" alt="Raízen" />
-      <img src="assets/marcas/tereos.png" alt="Tereos" class="marca-lg" />
-      <img src="assets/marcas/ab-mauri.png" alt="AB Mauri" />
+      <img loading="lazy" decoding="async" src="assets/marcas/mercado-livre.webp" alt="Logo Mercado Livre, cliente de treinamento de liderança" />
+      <img loading="lazy" decoding="async" src="assets/marcas/mercado-pago.webp" alt="Logo Mercado Pago, cliente de treinamento de liderança" class="marca-lg" />
+      <img loading="lazy" decoding="async" src="assets/marcas/coopercitrus.webp" alt="Logo Coopercitrus, cooperativa cliente de treinamento de liderança" />
+      <img loading="lazy" decoding="async" src="assets/marcas/unimed.webp" alt="Logo Unimed, cooperativa de saúde cliente de treinamento de liderança" class="marca-lg" />
+      <img loading="lazy" decoding="async" src="assets/marcas/coplana.webp" alt="Logo Coplana, cooperativa agropecuária cliente de treinamento de liderança" class="marca-lg" />
+      <img loading="lazy" decoding="async" src="assets/marcas/sao-martinho.webp" alt="Logo São Martinho, cliente de treinamento de liderança" class="marca-lg" />
+      <img loading="lazy" decoding="async" src="assets/marcas/sicoob.webp" alt="Logo Sicoob, cooperativa de crédito cliente de treinamento de liderança" />
+      <img loading="lazy" decoding="async" src="assets/marcas/unicred.webp" alt="Logo Unicred, cooperativa de crédito cliente de treinamento de liderança" class="marca-lg" />
+      <img loading="lazy" decoding="async" src="assets/marcas/cocal.webp" alt="Logo Cocal, cliente de treinamento de liderança" />
+      <img loading="lazy" decoding="async" src="assets/marcas/gsk.webp" alt="Logo GSK, cliente de treinamento de liderança" class="marca-lg" />
+      <img loading="lazy" decoding="async" src="assets/marcas/raizen.webp" alt="Logo Raízen, cliente de treinamento de liderança" />
+      <img loading="lazy" decoding="async" src="assets/marcas/tereos.webp" alt="Logo Tereos, cliente de treinamento de liderança" class="marca-lg" />
+      <img loading="lazy" decoding="async" src="assets/marcas/ab-mauri.webp" alt="Logo AB Mauri, cliente de treinamento de liderança" />
     </div>
   </div>
 </section>
@@ -522,7 +655,7 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
     <div class="parc-grid">
       <div class="parc-card">
         <div class="parc-logo-wrap">
-          <img src="assets/sescoop.png" alt="SESCOOP" class="parc-logo" />
+          <img loading="lazy" decoding="async" src="assets/sescoop.webp" alt="Logo SESCOOP, parceiro institucional em cooperativismo" class="parc-logo" />
         </div>
         <h3>SESCOOP</h3>
         <p>Parceria com o Serviço Nacional de Aprendizagem do Cooperativismo para desenvolvimento de pessoas em cooperativas de todo o Brasil.</p>
@@ -534,7 +667,7 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
       </div>
       <div class="parc-card">
         <div class="parc-logo-wrap">
-          <img src="assets/sebrae.png" alt="SEBRAE" class="parc-logo" />
+          <img loading="lazy" decoding="async" src="assets/sebrae.webp" alt="Logo SEBRAE, parceiro institucional em capacitação empresarial" class="parc-logo" />
         </div>
         <h3>SEBRAE</h3>
         <p>Parceria com o Serviço Brasileiro de Apoio às Micro e Pequenas Empresas para capacitação e desenvolvimento de pessoas em pequenos negócios.</p>
@@ -546,7 +679,7 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
       </div>
       <div class="parc-card">
         <div class="parc-logo-wrap parc-logo-wrap-enora">
-          <a href="https://enora.com.br" target="_blank" rel="noopener"><img src="assets/enora.png" alt="Enora" class="parc-logo" /></a>
+          <a href="https://enora.com.br" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/enora.webp" alt="Logo Enora, parceira em programas de alta liderança" class="parc-logo" /></a>
         </div>
         <h3>Enora <span class="parc-tag">Alta Liderança</span></h3>
         <p>Para programas de alta liderança, atuo em parceria com a Enora, plataforma especializada em desenvolvimento de lideranças executivas e estratégicas.</p>
@@ -617,15 +750,25 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
       </div>
       <a href="depoimentos.html" class="btn-text">Ver todos <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
-    <div class="depo-grid">
-      <div class="depo"><div class="depo-mark">"</div><p class="depo-text">O treinamento mudou minha forma de liderar. Aprendi a ouvir antes de reagir, e os resultados do meu time melhoraram muito.</p><div class="depo-by">Participante</div><div class="depo-role">Liderança Operacional</div></div>
-      <div class="depo"><div class="depo-mark">"</div><p class="depo-text">Paulo tem um jeito direto de passar o conteúdo sem enrolação. O que aprendi apliquei na semana seguinte no trabalho.</p><div class="depo-by">Participante</div><div class="depo-role">Supervisor de Equipe</div></div>
-      <div class="depo"><div class="depo-mark">"</div><p class="depo-text">A metodologia é diferente. Não é teoria pela teoria. É algo que você usa de verdade com a equipe no dia a dia.</p><div class="depo-by">Participante</div><div class="depo-role">Coordenadora de RH</div></div>
-      <div class="depo depo-x"><div class="depo-mark">"</div><p class="depo-text">Participei de três programas diferentes com o Paulo. Cada um com mais profundidade. Recomendo sem hesitar.</p><div class="depo-by">Participante</div><div class="depo-role">Gerente de Cooperativa</div></div>
-      <div class="depo depo-x"><div class="depo-mark">"</div><p class="depo-text">Nosso RH contratou um ciclo de workshops. O retorno dos líderes foi excelente. Já planejamos o próximo.</p><div class="depo-by">Participante</div><div class="depo-role">Gerente de RH</div></div>
-      <div class="depo depo-x"><div class="depo-mark">"</div><p class="depo-text">Conteúdo denso, entregue de forma acessível. Saímos com ações claras para implementar na área.</p><div class="depo-by">Participante</div><div class="depo-role">Analista de Desenvolvimento</div></div>
+    <div class="depo-carrossel">
+      <button type="button" class="depo-nav depo-prev" onclick="depoMove(-1)" aria-label="Depoimento anterior">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="depo-viewport">
+        <div class="depo-track" id="depoTrack">
+          <div class="depo"><div class="depo-mark">"</div><p class="depo-text">O treinamento mudou minha forma de liderar. Aprendi a ouvir antes de reagir, e os resultados do meu time melhoraram muito.</p><div class="depo-by">Liderança Operacional</div><div class="depo-role">Cooperativa do agronegócio</div></div>
+          <div class="depo"><div class="depo-mark">"</div><p class="depo-text">Paulo tem um jeito direto de passar o conteúdo sem enrolação. O que aprendi apliquei na semana seguinte no trabalho.</p><div class="depo-by">Supervisor de Equipe</div><div class="depo-role">Cooperativa de crédito</div></div>
+          <div class="depo"><div class="depo-mark">"</div><p class="depo-text">A metodologia é diferente. Não é teoria pela teoria. É algo que você usa de verdade com a equipe no dia a dia.</p><div class="depo-by">Coordenadora de RH</div><div class="depo-role">Cooperativa de saúde</div></div>
+          <div class="depo"><div class="depo-mark">"</div><p class="depo-text">Participei de três programas diferentes com o Paulo. Cada um com mais profundidade. Recomendo sem hesitar.</p><div class="depo-by">Gerente de Cooperativa</div><div class="depo-role">Sistema cooperativista</div></div>
+          <div class="depo"><div class="depo-mark">"</div><p class="depo-text">Nosso RH contratou um ciclo de workshops. O retorno dos líderes foi excelente. Já planejamos o próximo.</p><div class="depo-by">Gerente de RH</div><div class="depo-role">Indústria de grande porte</div></div>
+          <div class="depo"><div class="depo-mark">"</div><p class="depo-text">Conteúdo denso, entregue de forma acessível. Saímos com ações claras para implementar na área.</p><div class="depo-by">Analista de Desenvolvimento</div><div class="depo-role">Cooperativa agropecuária</div></div>
+        </div>
+      </div>
+      <button type="button" class="depo-nav depo-next" onclick="depoMove(1)" aria-label="Próximo depoimento">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
     </div>
-    <div class="vermais"><button class="btn-vm" id="btnVM" onclick="vm()">Ver mais depoimentos</button></div>
+    <div class="depo-dots" id="depoDots"></div>
   </div>
 </section>
 
@@ -702,6 +845,33 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
       <div class="ia-msg">Oi! Posso explicar como o Paulo apoia o desenvolvimento da sua equipe. O que você precisa?</div>
       <div class="ia-msg me">Trabalho com RH numa cooperativa. Temos dificuldade com as lideranças de primeiro nível.</div>
       <div class="ia-msg">Esse é o foco principal dele. Trilhas e treinamentos práticos para supervisores e líderes operacionais. Quer saber como seria no seu caso?</div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="sec">
+    <div class="faq-head">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2 class="sec-title">Dúvidas comuns</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item on">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">Quem é Paulo Cortez?</button>
+        <div class="faq-a">Paulo Cortez é consultor e facilitador em desenvolvimento de pessoas, formado em Engenharia de Produção com MBA em Gestão de Pessoas pela FGV. Atua com treinamentos, palestras e trilhas de ensino para cooperativas e empresas, com foco em equipes operacionais e lideranças de primeiro nível. Tem atuação em 8 estados brasileiros, além de Moçambique e China.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">O que a ProCrescer Academy oferece para cooperativas?</button>
+        <div class="faq-a">A ProCrescer Academy oferece quatro linhas de serviço para cooperativas: treinamentos corporativos para equipes e lideranças, palestras e workshops sobre temas comportamentais, trilhas de ensino estruturadas de aprendizagem contínua, e diagnóstico organizacional com análise de perfil comportamental. Os temas incluem liderança com metodologia DISC, educação financeira, neurociência da priorização, sinergia geracional e programação neurolinguística.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">Quais cooperativas já foram atendidas por Paulo Cortez?</button>
+        <div class="faq-a">Entre as cooperativas e empresas atendidas estão Coopercitrus, Sicoob, Unicred, Unimed, Coplana, Cocal, São Martinho, Raízen, Tereos, AB Mauri, Mercado Livre, Mercado Pago e GSK. A atuação inclui parceria institucional com SESCOOP e SEBRAE.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">Como funciona uma trilha de ensino para lideranças de cooperativa?</button>
+        <div class="faq-a">Uma trilha de ensino é um programa estruturado de aprendizagem contínua, desenhado sob medida para o perfil das lideranças e os objetivos da cooperativa. Diferente de uma palestra isolada, a trilha combina encontros sequenciais, aplicação prática entre as sessões e acompanhamento de resultados. O desenho começa com um diagnóstico das necessidades reais da organização.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -784,7 +954,39 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
 
 <script>
 document.getElementById('menuToggle').addEventListener('click',function(){document.getElementById('nav').classList.toggle('open')});
-function vm(){var x=document.querySelectorAll('.depo-x'),b=document.getElementById('btnVM'),o=x[0].classList.contains('on');x.forEach(function(e){e.classList.toggle('on',!o)});b.textContent=o?'Ver mais depoimentos':'Ver menos'}
+var depoIdx=0;
+function depoVis(){var w=window.innerWidth;return w<=640?1:(w<=960?2:3);}
+function depoMax(){var t=document.getElementById('depoTrack');if(!t)return 0;return Math.max(0,t.children.length-depoVis());}
+function depoRender(){
+  var t=document.getElementById('depoTrack');if(!t)return;
+  var vis=depoVis(),max=depoMax();
+  if(depoIdx>max)depoIdx=max;
+  if(depoIdx<0)depoIdx=0;
+  var card=t.children[0];
+  if(!card)return;
+  var gap=parseFloat(getComputedStyle(t).gap)||24;
+  var step=card.getBoundingClientRect().width+gap;
+  t.style.transform='translateX(-'+(depoIdx*step)+'px)';
+  var prev=document.querySelector('.depo-prev'),next=document.querySelector('.depo-next');
+  if(prev)prev.disabled=(depoIdx===0);
+  if(next)next.disabled=(depoIdx>=max);
+  var dots=document.getElementById('depoDots');
+  if(dots){
+    dots.innerHTML='';
+    for(var i=0;i<=max;i++){
+      var b=document.createElement('button');
+      b.className='depo-dot'+(i===depoIdx?' on':'');
+      b.type='button';
+      b.setAttribute('aria-label','Ir para depoimento '+(i+1));
+      b.onclick=(function(n){return function(){depoIdx=n;depoRender();};})(i);
+      dots.appendChild(b);
+    }
+  }
+}
+function depoMove(d){depoIdx+=d;depoRender();}
+window.addEventListener('resize',depoRender);
+document.addEventListener('DOMContentLoaded',depoRender);
+depoRender();
 </script>
 <script>
 document.getElementById('form-material').addEventListener('submit', function(e){
@@ -967,6 +1169,11 @@ function fecharTema(){
 document.addEventListener('keydown', function(e){
   if(e.key === 'Escape') fecharTema();
 });
+
+function toggleFaq(btn){
+  var item = btn.parentElement;
+  item.classList.toggle('on');
+}
 </script>
 
 </body>
