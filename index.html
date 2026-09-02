@@ -48,7 +48,9 @@ nav a:hover{color:var(--teal)}
 /* HERO */
 .hero{padding:140px 6% 90px;background:linear-gradient(180deg,var(--paper-warm) 0%,var(--paper) 100%);position:relative;overflow:hidden}
 .hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--teal-deep);margin-bottom:28px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--teal-deep);margin-bottom:12px}
+.hero-credibilidade{font-size:13px;color:var(--ink-light);font-weight:500;margin-bottom:18px;display:flex;align-items:center;gap:7px}
+.hero-credibilidade::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
 .hero-eyebrow::before{content:'';width:28px;height:1.5px;background:var(--teal)}
 .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,4.6vw,62px);font-weight:600;line-height:1.04;letter-spacing:-.02em;margin-bottom:26px;color:var(--ink)}
 .hero h1 em{font-style:italic;color:var(--teal-deep)}
@@ -238,9 +240,9 @@ section{padding:104px 6%}
 .btn-ghost:hover{border-color:var(--teal);color:var(--teal-deep)}
 
 /* FOOTER */
-.marcas{padding:72px 6% 88px;text-align:center;border-top:1px solid var(--paper-edge)}
+.marcas{padding:56px 6% 64px;text-align:center;background:var(--paper-warm);border-top:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge)}
 .marcas .eyebrow{justify-content:center}
-.marcas .sec-title{margin-bottom:40px}
+.marcas .sec-title{margin-bottom:34px;font-size:clamp(20px,2.2vw,26px)}
 .marcas-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px 56px}
 .marcas-grid img{height:38px;width:auto;max-width:140px;object-fit:contain;filter:grayscale(100%);opacity:.55;transition:filter .25s,opacity .25s}
 .marcas-grid img.marca-lg{height:54px;max-width:170px}
@@ -374,6 +376,7 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
   <div class="hero-inner">
     <div class="hero-text">
       <span class="hero-eyebrow">Desenvolvimento de Pessoas</span>
+      <p class="hero-credibilidade">Usado por RH de Coopercitrus, Sicoob e Unicred</p>
       <h1>Desenvolver pessoas é mais do que <em>treinar</em></h1>
       <p class="hero-desc">Treinamentos, palestras e trilhas de ensino para pessoas em todos os níveis, da operação à liderança. Conteúdo aplicado para o dia a dia, não apenas para o slide.</p>
       <div class="hero-actions">
@@ -401,6 +404,28 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
     <div class="trust-item"><span class="trust-num">10+</span><span class="trust-label">Anos formando lideranças</span></div>
   </div>
 </div>
+
+<section class="marcas">
+  <div class="sec">
+    <span class="eyebrow">Confiança</span>
+    <h2 class="sec-title">Empresas atendidas</h2>
+    <div class="marcas-grid">
+      <img src="assets/marcas/mercado-livre.png" alt="Mercado Livre" />
+      <img src="assets/marcas/mercado-pago.png" alt="Mercado Pago" class="marca-lg" />
+      <img src="assets/marcas/coopercitrus.png" alt="Coopercitrus" />
+      <img src="assets/marcas/unimed.png" alt="Unimed" class="marca-lg" />
+      <img src="assets/marcas/coplana.png" alt="Coplana" class="marca-lg" />
+      <img src="assets/marcas/sao-martinho.png" alt="São Martinho" class="marca-lg" />
+      <img src="assets/marcas/sicoob.png" alt="Sicoob" />
+      <img src="assets/marcas/unicred.png" alt="Unicred" class="marca-lg" />
+      <img src="assets/marcas/cocal.png" alt="Cocal" />
+      <img src="assets/marcas/gsk.png" alt="GSK" class="marca-lg" />
+      <img src="assets/marcas/raizen.png" alt="Raízen" />
+      <img src="assets/marcas/tereos.png" alt="Tereos" class="marca-lg" />
+      <img src="assets/marcas/ab-mauri.png" alt="AB Mauri" />
+    </div>
+  </div>
+</section>
 
 <section class="servicos" id="servicos">
   <div class="sec">
@@ -683,27 +708,6 @@ footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);paddi
   </div>
 </section>
 
-<section class="marcas">
-  <div class="sec">
-    <span class="eyebrow">Confiança</span>
-    <h2 class="sec-title">Empresas atendidas</h2>
-    <div class="marcas-grid">
-      <img src="assets/marcas/mercado-livre.png" alt="Mercado Livre" />
-      <img src="assets/marcas/mercado-pago.png" alt="Mercado Pago" class="marca-lg" />
-      <img src="assets/marcas/coopercitrus.png" alt="Coopercitrus" />
-      <img src="assets/marcas/unimed.png" alt="Unimed" class="marca-lg" />
-      <img src="assets/marcas/coplana.png" alt="Coplana" class="marca-lg" />
-      <img src="assets/marcas/sao-martinho.png" alt="São Martinho" class="marca-lg" />
-      <img src="assets/marcas/sicoob.png" alt="Sicoob" />
-      <img src="assets/marcas/unicred.png" alt="Unicred" class="marca-lg" />
-      <img src="assets/marcas/cocal.png" alt="Cocal" />
-      <img src="assets/marcas/gsk.png" alt="GSK" class="marca-lg" />
-      <img src="assets/marcas/raizen.png" alt="Raízen" />
-      <img src="assets/marcas/tereos.png" alt="Tereos" class="marca-lg" />
-      <img src="assets/marcas/ab-mauri.png" alt="AB Mauri" />
-    </div>
-  </div>
-</section>
 
 <footer>
   <div class="foot-in">
