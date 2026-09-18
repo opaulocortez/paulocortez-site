@@ -1,1177 +1,673 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paulo Cortez | Treinamentos e Trilhas de Liderança para Cooperativas</title>
-<meta name="description" content="Treinamentos, palestras e trilhas de liderança para cooperativas e empresas. Desenvolvimento de pessoas da operação à liderança, com atuação em 8 estados. Peça uma proposta.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paulo Cortez | Treinamentos e Trilhas de Liderança para Cooperativas</title>
+  <meta name="description" content="Treinamentos, palestras e trilhas de liderança para cooperativas e empresas. Desenvolvimento de pessoas da operação à liderança, com atuação em 8 estados. Peça uma proposta.">
+  <link rel="canonical" href="https://www.paulocortez.com.br/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Paulo Cortez | Treinamentos e Trilhas de Liderança para Cooperativas">
+  <meta property="og:description" content="Treinamentos, palestras e trilhas de liderança para cooperativas e empresas. Desenvolvimento de pessoas da operação à liderança.">
+  <meta property="og:url" content="https://www.paulocortez.com.br/">
+  <meta property="og:image" content="https://www.paulocortez.com.br/assets/images/og.webp">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="assets/fonts/space-grotesk-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
 
-:root{
-  --ink:#0F2A33;
-  --ink-soft:#3D5860;
-  --ink-light:#59717B;
-  --teal:#0099B0;
-  --teal-deep:#006478;
-  --teal-dark:#013D49;
-  --paper:#FFFFFF;
-  --paper-warm:#F6F9FA;
-  --paper-edge:#E4EDF0;
-  --gold:#C8902A;--gold-cta:#946818;
-}
-
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-
-/* HEADER */
-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--paper-edge);padding:0 6%}
-.header-inner{display:flex;align-items:center;justify-content:space-between;height:74px;max-width:1240px;margin:0 auto}
-.logo{display:flex;flex-direction:row;align-items:center;gap:11px;line-height:1.1}
-.logo-img{width:38px;height:38px;object-fit:contain;flex-shrink:0}
-.logo-txt{display:flex;flex-direction:column}
-.logo-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:var(--ink);letter-spacing:-.01em}
-.logo-sub{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-top:1px}
-nav{display:flex;gap:34px;align-items:center}
-nav a{font-size:14px;font-weight:500;color:var(--ink-soft);transition:color .2s}
-nav a:hover{color:var(--teal)}
-.nav-cta{background:var(--gold-cta);color:#fff!important;font-weight:700!important;padding:10px 22px;border-radius:2px;font-size:13px!important;transition:background .25s!important;box-shadow:0 3px 10px rgba(148,104,24,.3)}
-.nav-cta:hover{background:#7d570f!important}
-.header-acoes{display:flex;align-items:center;gap:14px}
-.menu-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
-.menu-toggle span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px}
-
-/* HERO */
-.hero{padding:140px 6% 90px;background:linear-gradient(180deg,var(--paper-warm) 0%,var(--paper) 100%);position:relative;overflow:hidden}
-.hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--teal-deep);margin-bottom:12px}
-.hero-eyebrow::before{content:'';width:28px;height:1.5px;background:var(--teal)}
-.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,4.6vw,62px);font-weight:600;line-height:1.04;letter-spacing:-.02em;margin-bottom:26px;color:var(--ink)}
-.hero h1 em{font-style:italic;color:var(--teal-deep)}
-.hero-desc{font-size:18px;color:var(--ink-soft);max-width:480px;margin-bottom:38px;line-height:1.7}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.btn-primary{background:var(--gold-cta);color:#fff;font-weight:700;font-size:15px;padding:15px 30px;border-radius:2px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:background .25s,transform .15s,box-shadow .25s;display:inline-block;box-shadow:0 4px 14px rgba(148,104,24,.3)}
-.btn-primary:hover{background:#7d570f;transform:translateY(-2px);box-shadow:0 8px 22px rgba(148,104,24,.4)}
-/* SECUNDARIO padrao: contorno */
-.btn-sec{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1.5px solid var(--paper-edge);background:#fff;color:var(--ink);font-weight:600;font-size:15px;padding:14px 28px;border-radius:2px;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
-.btn-sec:hover{border-color:var(--teal);color:var(--teal-deep)}
-.btn-text{font-weight:600;font-size:15px;color:var(--ink);display:inline-flex;align-items:center;gap:8px;transition:gap .2s,color .2s}
-.btn-text:hover{color:var(--teal-deep);gap:12px}
-.btn-text svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
-
-.hero-figure{position:relative}
-.hero-photo{width:100%;aspect-ratio:4/5;border-radius:3px;overflow:hidden;background:var(--paper-edge);position:relative}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.hero-photo-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:linear-gradient(135deg,#EEF4F6,#E0EBEE)}
-.hero-photo-ph span{font-size:13px;color:var(--ink-light);font-weight:500}
-.hero-figure::before{content:'';position:absolute;top:-16px;right:-16px;width:90px;height:90px;border-top:2px solid var(--teal);border-right:2px solid var(--teal);opacity:.5}
-.hero-cred{position:absolute;left:-24px;bottom:32px;background:#fff;padding:16px 22px;border-radius:2px;box-shadow:0 12px 40px rgba(15,42,51,.12);border-left:3px solid var(--gold)}
-.hero-cred-t{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--ink)}
-.hero-cred-s{font-size:12px;color:var(--ink-light);margin-top:2px}
-
-/* TRUST STRIP discreta */
-.trust{max-width:1240px;margin:0 auto;padding:0 6%}
-.trust-inner{display:flex;gap:56px;flex-wrap:wrap;padding:36px 0 4px;border-top:1px solid var(--paper-edge)}
-.trust-item{display:flex;flex-direction:column}
-.trust-num{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--teal-deep);line-height:1;letter-spacing:-.01em}
-.trust-label{font-size:13px;color:var(--ink-light);margin-top:6px;max-width:140px}
-
-/* SECTIONS */
-section{padding:96px 6%}
-.sec{max-width:1240px;margin:0 auto}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--teal-deep);margin-bottom:18px}
-.eyebrow::before{content:'';width:28px;height:1.5px;background:var(--teal)}
-.sec-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.4vw,44px);font-weight:600;line-height:1.1;letter-spacing:-.015em;color:var(--ink);margin-bottom:18px}
-.sec-lead{font-size:18px;color:var(--ink-soft);max-width:600px;line-height:1.7}
-
-/* SERVICOS */
-.servicos{background:var(--paper-warm);border-top:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge)}
-.serv-head{margin-bottom:56px;max-width:600px}
-.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:1px;background:var(--paper-edge);border:1px solid var(--paper-edge);align-items:stretch}
-.serv-card{background:var(--paper);padding:40px 32px;transition:background .25s;display:flex;flex-direction:column;height:100%}
-.serv-card:hover{background:#fff}
-.serv-card:hover .serv-icon{background:var(--teal-deep)}
-.serv-card:hover .serv-icon svg{stroke:#fff}
-.serv-icon{width:48px;height:48px;border-radius:2px;background:var(--paper-warm);border:1px solid var(--paper-edge);display:flex;align-items:center;justify-content:center;margin-bottom:24px;transition:background .25s}
-.serv-icon svg{width:22px;height:22px;stroke:var(--teal-deep);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}
-.serv-card h3{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;color:var(--ink);line-height:1.2}
-.serv-card p{font-size:14.5px;color:var(--ink-soft);line-height:1.7}
-.serv-temas{margin-top:40px;padding-top:32px;border-top:1px solid var(--paper-edge)}
-.serv-temas-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;color:var(--ink);margin-bottom:22px;text-align:center}
-.temas-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;max-width:980px;margin:0 auto}
-.tema-card{
-  display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;
-  background:#fff;border:1px solid var(--paper-edge);border-radius:6px;
-  padding:22px 14px;cursor:pointer;font-family:'Inter',sans-serif;
-  transition:border-color .2s,box-shadow .2s,transform .2s
-}
-.tema-card:hover{border-color:var(--teal);box-shadow:0 8px 28px rgba(0,153,176,.1);transform:translateY(-2px)}
-.tema-icon{width:44px;height:44px;border-radius:8px;background:rgba(0,153,176,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.tema-icon svg{width:22px;height:22px;stroke:var(--teal-deep);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.tema-nome{font-size:15.5px;font-weight:600;color:var(--ink);line-height:1.35}
-@media(max-width:860px){
-  .temas-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:520px){.temas-grid{grid-template-columns:1fr}}
-.serv-portfolio{margin-top:32px;text-align:center}
-.btn-portfolio{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1.5px solid var(--paper-edge);color:var(--ink);font-weight:600;font-size:15px;padding:14px 28px;border-radius:2px;transition:all .2s}
-.btn-portfolio:hover{border-color:var(--teal);color:var(--teal-deep)}
-.btn-portfolio svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-
-/* ENORA / TRILHAS - secao dedicada */
-
-
-/* PARCEIROS */
-.parceiros{background:var(--paper-warm);border-top:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge)}
-.parc-head{margin-bottom:48px;max-width:700px}
-.parc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.parc-card{background:#fff;border:1px solid var(--paper-edge);border-radius:4px;padding:32px 28px;display:flex;flex-direction:column;gap:0}
-.parc-logo-wrap{height:64px;display:flex;align-items:center;margin-bottom:20px}
-.parc-logo{max-height:52px;max-width:140px;object-fit:contain}
-.parc-logo-wrap-enora{align-items:center}
-.parc-card h3{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700;color:var(--ink);margin-bottom:10px;display:flex;align-items:center;gap:10px}
-.parc-tag{font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;background:var(--teal-dark);color:#fff;padding:3px 9px;border-radius:2px}
-.parc-card p{font-size:14.5px;color:var(--ink-soft);line-height:1.7;margin-bottom:16px}
-.parc-items{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
-.parc-items li{font-size:14px;color:var(--ink-soft);display:flex;align-items:flex-start;gap:8px}
-.parc-items li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:7px}
-.parc-cta{display:inline-block;margin-top:auto;font-size:14px;font-weight:600;color:var(--teal-deep);border-bottom:1.5px solid var(--teal);padding-bottom:1px;transition:color .2s}
-.parc-cta:hover{color:var(--ink)}
-@media(max-width:860px){.parc-grid{grid-template-columns:1fr}}
-
-
-/* MATERIAL GRATUITO */
-.material{background:var(--paper-warm);border-top:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge)}
-.mat-head{text-align:center;max-width:640px;margin:0 auto 48px}
-.mat-head .eyebrow{justify-content:center}
-.mat-head .sec-lead{margin:0 auto}
-.mat-grid2{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
-.mat-body .sec-lead{max-width:100%;margin-bottom:26px}
-.mat-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
-.mat-list li{display:flex;align-items:flex-start;gap:11px;font-size:15px;color:var(--ink-soft)}
-.mat-list svg{width:19px;height:19px;stroke:var(--teal);fill:none;stroke-width:2;flex-shrink:0;margin-top:1px}
-.mat-card{background:#fff;border:1px solid var(--paper-edge);border-radius:6px;padding:36px;box-shadow:0 12px 40px rgba(15,42,51,.06);height:100%}
-.mat-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--teal-dark);color:#fff;padding:4px 11px;border-radius:2px;margin-bottom:18px}
-.mat-tag-ferramenta{background:var(--gold-cta)}
-.mat-title{font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:700;color:var(--ink);line-height:1.25;margin-bottom:14px}
-.mat-sub{font-size:14px;color:var(--ink-soft);line-height:1.7;margin-bottom:24px}
-.mat-sub strong{color:var(--ink)}
-.mat-form{display:flex;flex-direction:column;gap:12px}
-.mat-form input{background:var(--paper-warm);border:1px solid var(--paper-edge);border-radius:3px;padding:12px 15px;font-size:14px;color:var(--ink);font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}
-.mat-form input:focus{border-color:var(--teal)}
-.mat-btn{background:#fff;border:1.5px solid var(--paper-edge);color:var(--ink);font-weight:600;font-size:15px;padding:14px 22px;border-radius:3px;cursor:pointer;font-family:'Inter',sans-serif;transition:all .25s;margin-top:4px}
-.mat-btn:hover{border-color:var(--teal);color:var(--teal-deep)}
-.mat-btn-link{display:block;width:100%;text-align:center;text-decoration:none;box-sizing:border-box}
-.mat-note{font-size:11.5px;color:var(--ink-light);text-align:center;margin-top:10px}
-.mat-ok{display:none;text-align:center;padding:20px}
-.mat-ok.on{display:block}
-.mat-ok svg{width:40px;height:40px;stroke:var(--teal-deep);fill:none;stroke-width:2;margin-bottom:12px}
-.mat-ok p{font-size:14px;color:var(--ink-soft);margin-bottom:16px}
-.mat-ok a{display:inline-block;background:#fff;border:1.5px solid var(--teal);color:var(--teal-deep);font-weight:600;font-size:14px;padding:12px 24px;border-radius:3px;transition:all .2s}
-.mat-ok a:hover{background:var(--teal-deep);color:#fff}
-.dn{display:none}
-@media(max-width:860px){.mat-grid2{grid-template-columns:1fr;gap:24px}}
-
-/* SOBRE */
-.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.sobre-body .sec-lead{max-width:100%;margin-bottom:18px}
-.sobre-list{list-style:none;display:flex;flex-direction:column;gap:0;margin-top:28px;border-top:1px solid var(--paper-edge)}
-.sobre-list li{padding:15px 0;border-bottom:1px solid var(--paper-edge);font-size:15px;color:var(--ink-soft);display:flex;align-items:center;gap:14px}
-.sobre-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--teal);flex-shrink:0}
-.sobre-stats{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--paper-edge)}
-.sobre-st{padding:32px 28px;border-right:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge)}
-.sobre-st:nth-child(2n){border-right:none}
-.sobre-st:nth-child(n+3){border-bottom:none}
-.sobre-st-n{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--teal-deep);line-height:1;letter-spacing:-.01em}
-.sobre-st-l{font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.4}
-
-/* ATUACAO */
-.atuacao{background:var(--paper-warm);border-top:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge)}
-.atu-head{margin-bottom:40px;max-width:600px}
-.estados{display:flex;flex-wrap:wrap;gap:10px}
-.estado{background:#fff;border:1px solid var(--paper-edge);border-radius:2px;padding:9px 18px;font-size:14px;font-weight:500;color:var(--ink-soft);transition:all .2s}
-.estado:hover{border-color:var(--teal);color:var(--teal-deep)}
-.estado.hl{border-color:var(--gold);color:var(--gold);background:rgba(200,144,42,.05)}
-
-/* DEPOIMENTOS */
-.depo-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:24px}
-.depo-carrossel{display:flex;align-items:center;gap:14px}
-.depo-viewport{overflow:hidden;flex:1}
-.depo-track{display:flex;gap:24px;transition:transform .4s cubic-bezier(.4,0,.2,1)}
-.depo-track .depo{flex:0 0 calc((100% - 48px)/3);box-sizing:border-box}
-.depo-nav{width:42px;height:42px;flex-shrink:0;border-radius:50%;border:1.5px solid var(--paper-edge);background:#fff;color:var(--ink-soft);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.depo-nav:hover:not(:disabled){border-color:var(--teal);color:var(--teal-deep)}
-.depo-nav:disabled{opacity:.35;cursor:default}
-.depo-nav svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.depo-dots{display:flex;justify-content:center;gap:8px;margin-top:28px}
-.depo-dot{width:8px;height:8px;border-radius:50%;border:none;background:var(--paper-edge);cursor:pointer;padding:0;transition:all .25s}
-.depo-dot.on{background:var(--teal-deep);width:24px;border-radius:4px}
-.depo{background:#fff;border:1px solid var(--paper-edge);border-radius:3px;padding:32px;transition:box-shadow .25s,transform .25s;position:relative}
-.depo:hover{box-shadow:0 16px 48px rgba(15,42,51,.08);transform:translateY(-3px)}
-.depo-mark{font-family:'Space Grotesk',sans-serif;font-size:54px;line-height:.6;color:var(--teal);opacity:.18;margin-bottom:8px}
-.depo-text{font-size:15.5px;color:var(--ink);line-height:1.7;margin-bottom:22px}
-.depo-by{font-size:14px;font-weight:600;color:var(--teal-deep)}
-.depo-role{font-size:13px;color:var(--ink-light);margin-top:2px}
-
-/* IA */
-.ia{background:var(--paper-warm);border-top:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge)}
-.ia-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.ia-body .sec-lead{max-width:100%;margin-bottom:28px}
-.ia-chat{background:#fff;border:1px solid var(--paper-edge);border-radius:6px;padding:28px;box-shadow:0 12px 40px rgba(15,42,51,.06)}
-.ia-top{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--paper-edge)}
-.ia-av{width:42px;height:42px;border-radius:50%;background:var(--teal-deep);display:flex;align-items:center;justify-content:center}
-.ia-av svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.ia-name{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--ink)}
-.ia-status{font-size:12px;color:#22A06B;display:flex;align-items:center;gap:5px}
-.ia-status::before{content:'';width:6px;height:6px;border-radius:50%;background:#22A06B}
-.ia-msg{font-size:14px;line-height:1.6;padding:12px 15px;border-radius:2px 12px 12px 12px;background:var(--paper-warm);color:var(--ink-soft);margin-bottom:10px;max-width:90%}
-.ia-msg.me{background:var(--teal-deep);color:#fff;border-radius:12px 2px 12px 12px;margin-left:auto;max-width:80%}
-
-/* CTA */
-.cta{background:var(--paper-warm);border-top:1px solid var(--paper-edge);text-align:center;padding:96px 6%;position:relative}
-
-.cta-in{max-width:680px;margin:0 auto;position:relative}
-.cta .eyebrow{justify-content:center}
-
-.cta-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.4vw,42px);font-weight:700;color:var(--ink);line-height:1.12;margin-bottom:18px}
-.cta-sub{font-size:17px;color:var(--ink-soft);margin-bottom:38px}
-.cta-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn-light{background:var(--gold-cta);color:#fff;font-weight:700;font-size:15px;padding:15px 30px;border-radius:2px;transition:background .25s,transform .15s,box-shadow .25s;box-shadow:0 4px 14px rgba(148,104,24,.3)}
-.btn-light:hover{background:#7d570f;transform:translateY(-2px);box-shadow:0 8px 22px rgba(148,104,24,.4)}
-.btn-ghost{border:1.5px solid var(--paper-edge);color:var(--ink);font-weight:600;font-size:15px;padding:15px 30px;border-radius:2px;transition:all .2s;background:#fff}
-.btn-ghost:hover{border-color:var(--teal);color:var(--teal-deep)}
-
-/* FOOTER */
-.marcas{padding:64px 6%;text-align:center;background:var(--paper-warm);border-top:1px solid var(--paper-edge);border-bottom:1px solid var(--paper-edge)}
-.marcas .eyebrow{justify-content:center}
-.marcas .sec-title{margin-bottom:34px;font-size:clamp(20px,2.2vw,26px)}
-.marcas-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:40px 56px}
-.marcas-grid img{height:38px;width:auto;max-width:140px;object-fit:contain;filter:grayscale(100%);opacity:.55;transition:filter .25s,opacity .25s}
-.marcas-grid img.marca-lg{height:54px;max-width:170px}
-.marcas-grid img:hover{filter:grayscale(0%);opacity:1}
-
-/* FAQ */
-.faq{background:var(--paper);border-top:1px solid var(--paper-edge)}
-.faq-head{text-align:center;max-width:640px;margin:0 auto 44px}
-.faq-head .eyebrow{justify-content:center}
-.faq-list{max-width:820px;margin:0 auto;border-top:1px solid var(--paper-edge)}
-.faq-item{border-bottom:1px solid var(--paper-edge)}
-.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 40px 22px 0;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:var(--ink);position:relative;line-height:1.4}
-.faq-q::after{content:'';position:absolute;right:6px;top:50%;width:10px;height:10px;border-right:2px solid var(--teal-deep);border-bottom:2px solid var(--teal-deep);transform:translateY(-70%) rotate(45deg);transition:transform .25s}
-.faq-item.on .faq-q::after{transform:translateY(-30%) rotate(-135deg)}
-.faq-a{font-size:15px;color:var(--ink-soft);line-height:1.75;padding:0 40px 24px 0;display:none}
-.faq-item.on .faq-a{display:block}
-
-/* MODAL DE TEMAS */
-.tema-modal-overlay{
-  display:none;position:fixed;inset:0;z-index:300;
-  background:rgba(15,42,51,.55);backdrop-filter:blur(3px);
-  align-items:center;justify-content:center;padding:24px
-}
-.tema-modal-overlay.on{display:flex}
-.tema-modal{
-  background:#fff;border-radius:8px;max-width:640px;width:100%;
-  max-height:88vh;overflow-y:auto;position:relative;
-  box-shadow:0 24px 80px rgba(0,0,0,.3);
-  animation:temaIn .25s ease
-}
-@keyframes temaIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
-.tema-modal-close{
-  position:absolute;top:16px;right:16px;z-index:2;
-  width:36px;height:36px;border-radius:50%;border:none;
-  background:rgba(255,255,255,.9);color:var(--ink);cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:background .2s;box-shadow:0 2px 10px rgba(0,0,0,.15)
-}
-.tema-modal-close:hover{background:#fff}
-.tema-modal-close svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
-.tema-banner{height:130px;display:flex;align-items:center;justify-content:center;border-radius:8px 8px 0 0}
-.tema-banner-icon{width:64px;height:64px;border-radius:14px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center}
-.tema-banner-icon svg{width:32px;height:32px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.banner-ia{background:linear-gradient(135deg,#0099B0,#013D49)}
-.banner-neuro{background:linear-gradient(135deg,#006478,#0F2A33)}
-.banner-pnl{background:linear-gradient(135deg,#00B4C8,#005F75)}
-.banner-tripla{background:linear-gradient(135deg,#C8902A,#8a5f16)}
-.banner-disc{background:linear-gradient(135deg,#0099B0,#004b5c)}
-.banner-geracional{background:linear-gradient(135deg,#3D5860,#0F2A33)}
-.banner-performance{background:linear-gradient(135deg,#006478,#00343F)}
-.banner-financeira{background:linear-gradient(135deg,#946818,#4a340c)}
-.tema-conteudo{padding:30px 32px 34px}
-.tema-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--teal-deep);margin-bottom:10px}
-.tema-eyebrow::before{content:'';width:20px;height:1.5px;background:var(--teal)}
-.tema-titulo{font-family:'Space Grotesk',sans-serif;font-size:23px;font-weight:700;color:var(--ink);line-height:1.25;margin-bottom:22px}
-.tema-bloco{margin-bottom:20px}
-.tema-bloco h4{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--teal-deep);margin-bottom:8px}
-.tema-bloco p{font-size:14.5px;color:var(--ink-soft);line-height:1.7}
-.tema-modulos{list-style:none;display:flex;flex-direction:column;gap:8px}
-.tema-modulos li{font-size:14.5px;color:var(--ink-soft);line-height:1.6;position:relative;padding-left:20px}
-.tema-modulos li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
-.tema-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;padding-top:22px;border-top:1px solid var(--paper-edge)}
-@media(max-width:600px){.tema-conteudo{padding:24px 20px 28px}.tema-titulo{font-size:20px}}
-
-footer{background:var(--paper-warm);border-top:1px solid var(--paper-edge);padding:72px 6% 32px;color:var(--ink)}
-.foot-in{max-width:1240px;margin:0 auto}
-.foot-top{display:grid;grid-template-columns:2fr 1fr 1.3fr;gap:56px;margin-bottom:44px}
-.foot-name{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:var(--ink)}
-.foot-sub{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-top:3px}
-.foot-desc{font-size:14px;color:var(--ink-soft);margin-top:16px;line-height:1.7;max-width:280px}
-.foot-h{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ink);margin-bottom:16px}
-.foot-links{list-style:none;display:flex;flex-direction:column;gap:10px}
-.foot-links a{font-size:14px;color:var(--ink-soft);transition:color .2s}
-.foot-links a:hover{color:var(--teal-deep)}
-.foot-c{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-soft);margin-bottom:11px;transition:color .2s}
-.foot-c:hover{color:var(--teal-deep)}
-.foot-c svg{width:15px;height:15px;stroke:var(--teal);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-.grating{border-top:1px solid var(--paper-edge);padding-top:22px;margin-top:6px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
-.gr-left{display:flex;align-items:center;gap:12px}
-.gr-logo{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--ink-soft)}
-.gr-logo svg{width:18px;height:18px}
-.gr-stars{display:flex;align-items:center;gap:3px}
-.gr-stars svg{width:15px;height:15px;fill:var(--gold)}
-.gr-nota{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:var(--ink);margin-left:5px}
-.btn-rate{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--paper-edge);color:var(--ink-soft);background:#fff;font-size:13px;font-weight:600;padding:9px 16px;border-radius:2px;transition:all .2s;white-space:nowrap}
-.btn-rate:hover{border-color:var(--gold);color:var(--gold)}
-.btn-rate svg{width:13px;height:13px;fill:currentColor}
-.foot-bot{border-top:1px solid var(--paper-edge);padding-top:24px;margin-top:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.foot-bot p{font-size:13px;color:var(--ink-light)}
-.foot-soc{display:flex;gap:16px}
-.foot-soc a{font-size:13px;font-weight:500;color:var(--ink-soft);transition:color .2s}
-.foot-soc a:hover{color:var(--teal-deep)}
-.foot-soc-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;border:1px solid var(--paper-edge);color:var(--ink-soft);transition:all .2s}
-.foot-soc-icon:hover{background:var(--teal-deep);border-color:var(--teal-deep);color:#fff}
-.foot-soc-icon svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-
-/* WHATSAPP */
-.wpp{position:fixed;bottom:28px;right:28px;z-index:200;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);transition:transform .2s}
-.wpp:hover{transform:scale(1.08)}
-.wpp svg{width:30px;height:30px;fill:#fff}
-
-@media(max-width:960px){
-  .depo-track .depo{flex:0 0 calc((100% - 24px)/2)}
-}
-@media(max-width:640px){
-  .depo-track .depo{flex:0 0 100%}
-  .depo-track{gap:16px}
-}
-@media(max-width:860px){
-  nav{display:none;position:absolute;top:74px;left:0;right:0;background:#fff;padding:22px 6%;flex-direction:column;gap:18px;border-bottom:1px solid var(--paper-edge);box-shadow:0 10px 30px rgba(0,0,0,.08)}
-  nav.open{display:flex}
-  .menu-toggle{display:flex}
-  .nav-cta{padding:9px 14px;font-size:12px!important;white-space:nowrap}
-  .header-acoes{gap:10px}
-  .logo-sub{font-size:8px;letter-spacing:1.6px}
-  .logo-name{font-size:16px}
-  .hero-inner,.sobre-grid,.ia-inner{grid-template-columns:1fr;gap:48px}
-  .hero-figure{order:-1;max-width:380px}
-  .foot-top{grid-template-columns:1fr;gap:32px}
-}
-@media(max-width:640px){
-  .marcas-grid{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;gap:32px;padding:4px 6% 14px;margin:0 -6%;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
-  .marcas-grid::-webkit-scrollbar{height:3px}
-  .marcas-grid::-webkit-scrollbar-thumb{background:var(--paper-edge);border-radius:3px}
-  .marcas-grid img{flex:0 0 auto;scroll-snap-align:center;height:34px;max-width:120px;opacity:.7}
-  .marcas-grid img.marca-lg{height:46px;max-width:140px}
-}
-@media(max-width:520px){
-  .nav-cta{padding:8px 12px;font-size:11.5px!important}
-  .logo-img{width:30px;height:30px}
-  .serv-grid{grid-template-columns:1fr}
-  .sobre-stats{grid-template-columns:1fr 1fr}
-  .trust-inner{gap:32px}
-  .hero-cred{left:0}
-}
-</style>
-<link rel="canonical" href="https://www.paulocortez.com.br/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Paulo Cortez | Treinamentos e Trilhas de Liderança para Cooperativas">
-<meta property="og:description" content="Treinamentos, palestras e trilhas de liderança para cooperativas e empresas. Desenvolvimento de pessoas da operação à liderança.">
-<meta property="og:url" content="https://www.paulocortez.com.br/">
-<meta property="og:image" content="https://www.paulocortez.com.br/assets/paulo.webp">
-<meta property="og:locale" content="pt_BR">
-<meta name="twitter:card" content="summary_large_image">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://www.paulocortez.com.br/#paulocortez",
-      "name": "Paulo Cortez",
-      "jobTitle": "Consultor e Facilitador em Desenvolvimento de Pessoas",
-      "description": "Engenheiro de Produção com MBA em Gestão de Pessoas pela FGV. Atua com treinamentos, palestras e trilhas de ensino para cooperativas e empresas.",
-      "url": "https://www.paulocortez.com.br/",
-      "image": "https://www.paulocortez.com.br/assets/paulo.webp",
-      "worksFor": { "@id": "https://www.paulocortez.com.br/#procrescer" },
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Fundação Getulio Vargas (FGV)"
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://www.paulocortez.com.br/#paulocortez",
+        "name": "Paulo Cortez",
+        "jobTitle": "Consultor e Facilitador em Desenvolvimento de Pessoas",
+        "description": "Engenheiro de Produção com MBA em Gestão de Pessoas pela FGV. Atua com treinamentos, palestras e trilhas de ensino para cooperativas e empresas.",
+        "url": "https://www.paulocortez.com.br/",
+        "image": "https://www.paulocortez.com.br/assets/images/paulo.webp",
+        "worksFor": { "@id": "https://www.paulocortez.com.br/#procrescer" },
+        "alumniOf": { "@type": "EducationalOrganization", "name": "Fundação Getulio Vargas (FGV)" },
+        "sameAs": ["https://www.linkedin.com/in/opaulocortez/","https://www.instagram.com/opaulocortez/"]
       },
-      "knowsAbout": [
-        "Desenvolvimento de lideranças",
-        "Metodologia DISC",
-        "Programação Neurolinguística",
-        "Educação financeira",
-        "Gestão de conflitos",
-        "Cooperativismo"
-      ],
-      "sameAs": [
-        "https://www.linkedin.com/in/opaulocortez/",
-        "https://www.instagram.com/opaulocortez/"
-      ]
-    },
-    {
-      "@type": "ProfessionalService",
-      "@id": "https://www.paulocortez.com.br/#procrescer",
-      "name": "ProCrescer Academy",
-      "description": "Treinamentos, palestras e trilhas de ensino em desenvolvimento de pessoas, liderança e operações para cooperativas e empresas.",
-      "url": "https://www.paulocortez.com.br/",
-      "founder": { "@id": "https://www.paulocortez.com.br/#paulocortez" },
-      "areaServed": { "@type": "Country", "name": "Brasil" },
-      "serviceType": [
-        "Treinamentos corporativos",
-        "Palestras e workshops",
-        "Trilhas de ensino",
-        "Diagnóstico organizacional"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "bestRating": "5",
-        "ratingCount": "12"
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.paulocortez.com.br/#procrescer",
+        "name": "Paulo Cortez — ProCrescer Academy",
+        "url": "https://www.paulocortez.com.br/",
+        "founder": { "@id": "https://www.paulocortez.com.br/#paulocortez" },
+        "areaServed": { "@type": "Country", "name": "Brasil" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "bestRating": "5", "ratingCount": "12" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Quem é Paulo Cortez?", "acceptedAnswer": { "@type": "Answer", "text": "Paulo Cortez é consultor e facilitador em desenvolvimento de pessoas, Engenheiro de Produção com MBA em Gestão de Pessoas pela FGV. Atua com treinamentos, palestras e trilhas de ensino para cooperativas e empresas, com foco em equipes operacionais e lideranças de primeiro nível." }},
+          { "@type": "Question", "name": "O que a ProCrescer Academy oferece para cooperativas?", "acceptedAnswer": { "@type": "Answer", "text": "Quatro linhas de serviço: treinamentos corporativos, palestras e workshops, trilhas de ensino estruturadas e diagnóstico organizacional. Os temas incluem liderança com DISC, educação financeira, neurociência da priorização, sinergia geracional e PNL." }},
+          { "@type": "Question", "name": "Quais cooperativas já foram atendidas?", "acceptedAnswer": { "@type": "Answer", "text": "Coopercitrus, Sicoob, Unicred, Unimed, Coplana, Cocal, São Martinho, Raízen, Tereos, AB Mauri, Mercado Livre, Mercado Pago e GSK. Com parceria institucional do SESCOOP e SEBRAE." }},
+          { "@type": "Question", "name": "Como funciona uma trilha de ensino para lideranças?", "acceptedAnswer": { "@type": "Answer", "text": "Uma trilha é um programa estruturado de aprendizagem contínua desenhado sob medida para as lideranças da organização. Combina encontros sequenciais, aplicação prática entre sessões e acompanhamento de resultados. Começa com diagnóstico das necessidades reais." }}
+        ]
       }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.paulocortez.com.br/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Quem é Paulo Cortez?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Paulo Cortez é consultor e facilitador em desenvolvimento de pessoas, formado em Engenharia de Produção com MBA em Gestão de Pessoas pela FGV. Atua com treinamentos, palestras e trilhas de ensino para cooperativas e empresas, com foco em equipes operacionais e lideranças de primeiro nível. Tem atuação em 8 estados brasileiros, além de Moçambique e China."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "O que a ProCrescer Academy oferece para cooperativas?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A ProCrescer Academy oferece quatro linhas de serviço para cooperativas: treinamentos corporativos para equipes e lideranças, palestras e workshops sobre temas comportamentais, trilhas de ensino estruturadas de aprendizagem contínua, e diagnóstico organizacional com análise de perfil comportamental. Os temas incluem liderança com metodologia DISC, educação financeira, neurociência da priorização, sinergia geracional e programação neurolinguística."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quais cooperativas já foram atendidas por Paulo Cortez?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Entre as cooperativas e empresas atendidas estão Coopercitrus, Sicoob, Unicred, Unimed, Coplana, Cocal, São Martinho, Raízen, Tereos, AB Mauri, Mercado Livre, Mercado Pago e GSK. A atuação inclui parceria institucional com SESCOOP e SEBRAE."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Como funciona uma trilha de ensino para lideranças de cooperativa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Uma trilha de ensino é um programa estruturado de aprendizagem contínua, desenhado sob medida para o perfil das lideranças e os objetivos da cooperativa. Diferente de uma palestra isolada, a trilha combina encontros sequenciais, aplicação prática entre as sessões e acompanhamento de resultados. O desenho começa com um diagnóstico das necessidades reais da organização."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
+    ]
+  }
+  </script>
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo">
-      <img loading="lazy" decoding="async" src="assets/logo.webp" alt="Logo ProCrescer Academy, marca de treinamentos de Paulo Cortez" class="logo-img" />
-      <span class="logo-txt">
-        <span class="logo-name">Paulo Cortez</span>
-        <span class="logo-sub">ProCrescer Academy</span>
-      </span>
+<!-- ══ HEADER ══════════════════════════════ -->
+<header id="header" class="hero-active">
+  <div class="container header-inner">
+    <a href="/" class="header-logo" aria-label="Paulo Cortez — Página inicial">
+      <img src="assets/images/logo.webp" alt="Logo ProCrescer Academy" width="36" height="36">
+      <div class="header-logo-text">
+        <span class="header-logo-name">Paulo Cortez</span>
+        <span class="header-logo-sub">ProCrescer Academy</span>
+      </div>
     </a>
-    <nav id="nav">
-      <a href="#sobre">Sobre</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#parceiros">Parceiros</a>
-      <a href="#material">Material Gratuito</a>
-      <a href="depoimentos.html">Depoimentos</a>
+
+    <nav class="header-nav" aria-label="Navegação principal">
+      <a href="#services">Serviços</a>
+      <a href="#about">Sobre</a>
+      <a href="#testimonials">Depoimentos</a>
+      <a href="#partners">Parceiros</a>
+      <a href="#materials">Materiais</a>
     </nav>
-    <div class="header-acoes">
-      <a href="proposta.html" class="nav-cta">Solicitar Proposta</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+
+    <div class="header-actions">
+      <a href="proposta.html" class="btn-primary">Solicitar Proposta</a>
+      <button class="header-menu-toggle" id="menuToggle" aria-expanded="false" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <span class="hero-eyebrow">Desenvolvimento de Pessoas</span>
-      <h1>Desenvolver pessoas é mais do que <em>treinar</em></h1>
-      <p class="hero-desc">Treinamentos, palestras e trilhas de ensino para pessoas em todos os níveis, da operação à liderança. Conteúdo aplicado para o dia a dia, não apenas para o slide.</p>
-      <div class="hero-actions">
-        <a href="proposta.html" class="btn-primary">Solicitar Proposta</a>
-        <a href="#servicos" class="btn-text">Ver serviços <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-    <div class="hero-figure">
-      <div class="hero-photo">
-        <img fetchpriority="high" decoding="async" src="assets/paulo.webp" alt="Paulo Cortez, especialista em desenvolvimento de lideranças para cooperativas" />
-      </div>
-      <div class="hero-cred">
-        <div class="hero-cred-t">MBA em Gestão de Pessoas</div>
-        <div class="hero-cred-s">FGV · Engenheiro de Produção</div>
-      </div>
-    </div>
+<!-- Mobile nav -->
+<nav id="mobile-nav" aria-label="Menu mobile">
+  <a href="#services" class="mobile-nav-link">Serviços</a>
+  <a href="#about" class="mobile-nav-link">Sobre</a>
+  <a href="#testimonials" class="mobile-nav-link">Depoimentos</a>
+  <a href="#partners" class="mobile-nav-link">Parceiros</a>
+  <a href="#materials" class="mobile-nav-link">Materiais</a>
+  <a href="proposta.html" class="btn-primary mobile-nav-cta">Solicitar Proposta</a>
+</nav>
+
+<!-- ══ HERO ═════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg">
+    <img
+      src="assets/images/paulo.webp"
+      alt="Paulo Cortez, especialista em desenvolvimento de lideranças para cooperativas"
+      class="hero-bg-img"
+      fetchpriority="high"
+      decoding="async"
+    >
   </div>
-</section>
+  <div class="hero-accent"></div>
 
-<div class="trust">
-  <div class="trust-inner">
-    <div class="trust-item"><span class="trust-num">500+</span><span class="trust-label">Profissionais formados</span></div>
-    <div class="trust-item"><span class="trust-num">8</span><span class="trust-label">Estados brasileiros atendidos</span></div>
-    <div class="trust-item"><span class="trust-num">3</span><span class="trust-label">Países com atuação</span></div>
-    <div class="trust-item"><span class="trust-num">10+</span><span class="trust-label">Anos formando lideranças</span></div>
-  </div>
-</div>
-
-<section class="marcas">
-  <div class="sec">
-    <span class="eyebrow">Confiança</span>
-    <h2 class="sec-title">Algumas das empresas já atendidas</h2>
-    <div class="marcas-grid">
-      <img loading="lazy" decoding="async" src="assets/marcas/mercado-livre.webp" alt="Logo Mercado Livre, cliente de treinamento de liderança" />
-      <img loading="lazy" decoding="async" src="assets/marcas/mercado-pago.webp" alt="Logo Mercado Pago, cliente de treinamento de liderança" class="marca-lg" />
-      <img loading="lazy" decoding="async" src="assets/marcas/coopercitrus.webp" alt="Logo Coopercitrus, cooperativa cliente de treinamento de liderança" />
-      <img loading="lazy" decoding="async" src="assets/marcas/unimed.webp" alt="Logo Unimed, cooperativa de saúde cliente de treinamento de liderança" class="marca-lg" />
-      <img loading="lazy" decoding="async" src="assets/marcas/coplana.webp" alt="Logo Coplana, cooperativa agropecuária cliente de treinamento de liderança" class="marca-lg" />
-      <img loading="lazy" decoding="async" src="assets/marcas/sao-martinho.webp" alt="Logo São Martinho, cliente de treinamento de liderança" class="marca-lg" />
-      <img loading="lazy" decoding="async" src="assets/marcas/sicoob.webp" alt="Logo Sicoob, cooperativa de crédito cliente de treinamento de liderança" />
-      <img loading="lazy" decoding="async" src="assets/marcas/unicred.webp" alt="Logo Unicred, cooperativa de crédito cliente de treinamento de liderança" class="marca-lg" />
-      <img loading="lazy" decoding="async" src="assets/marcas/cocal.webp" alt="Logo Cocal, cliente de treinamento de liderança" />
-      <img loading="lazy" decoding="async" src="assets/marcas/gsk.webp" alt="Logo GSK, cliente de treinamento de liderança" class="marca-lg" />
-      <img loading="lazy" decoding="async" src="assets/marcas/raizen.webp" alt="Logo Raízen, cliente de treinamento de liderança" />
-      <img loading="lazy" decoding="async" src="assets/marcas/tereos.webp" alt="Logo Tereos, cliente de treinamento de liderança" class="marca-lg" />
-      <img loading="lazy" decoding="async" src="assets/marcas/ab-mauri.webp" alt="Logo AB Mauri, cliente de treinamento de liderança" />
-    </div>
-  </div>
-</section>
-
-<section class="servicos" id="servicos">
-  <div class="sec">
-    <div class="serv-head">
-      <span class="eyebrow">O que faço</span>
-      <h2 class="sec-title">Serviços para RH e gestão de pessoas</h2>
-      <p class="sec-lead">Soluções práticas para desenvolver pessoas, da operação à liderança, em cooperativas e empresas.</p>
-    </div>
-    <div class="serv-grid">
-      <div class="serv-card">
-        <div class="serv-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Treinamentos corporativos</h3>
-        <p>Programas presenciais e online para lideranças de primeiro nível e equipes operacionais, com foco em comportamento, comunicação e resultado.</p>
-      </div>
-      <div class="serv-card">
-        <div class="serv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-        <h3>Palestras e workshops</h3>
-        <p>Conteúdo aplicado em liderança, comportamento, neurociência e gestão de conflitos. Ajustado ao contexto da sua organização.</p>
-      </div>
-      <div class="serv-card">
-        <div class="serv-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-        <h3>Trilhas de ensino</h3>
-        <p>Programas estruturados de aprendizagem contínua, desenhados sob medida para o perfil das suas lideranças e os objetivos da organização.</p>
-      </div>
-      <div class="serv-card">
-        <div class="serv-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h3>Diagnóstico organizacional</h3>
-        <p>Mapeamento das necessidades de desenvolvimento, com análise de perfil comportamental e identificação de gaps de liderança.</p>
-      </div>
-    </div>
-    <div class="serv-temas">
-      <h4 class="serv-temas-title">Alguns dos temas trabalhados</h4>
-      <div class="temas-grid">
-        <button type="button" class="tema-card" onclick="abrirTema('ia')">
-          <span class="tema-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></span>
-          <span class="tema-nome">IA e a Nova Produtividade</span>
-        </button>
-        <button type="button" class="tema-card" onclick="abrirTema('neuro')">
-          <span class="tema-icon"><svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 0 7 4.5v.5A2.5 2.5 0 0 0 4.5 7 2.5 2.5 0 0 0 2 9.5 2.5 2.5 0 0 0 4.5 12a2.5 2.5 0 0 0 0 5A2.5 2.5 0 0 0 7 19.5v.5A2.5 2.5 0 0 0 9.5 22h1a2.5 2.5 0 0 0 2.5-2.5v-15A2.5 2.5 0 0 0 10.5 2h-1z"/><path d="M14.5 2A2.5 2.5 0 0 1 17 4.5v.5a2.5 2.5 0 0 1 2.5 2 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5 2.5 2.5 0 0 1 0 5A2.5 2.5 0 0 1 17 19.5v.5a2.5 2.5 0 0 1-2.5 2.5h-1a2.5 2.5 0 0 1-2.5-2.5v-15A2.5 2.5 0 0 1 13.5 2h1z"/></svg></span>
-          <span class="tema-nome">Neurociência da Priorização e Foco</span>
-        </button>
-        <button type="button" class="tema-card" onclick="abrirTema('pnl')">
-          <span class="tema-icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
-          <span class="tema-nome">Liderança Humanizada com PNL</span>
-        </button>
-        <button type="button" class="tema-card" onclick="abrirTema('tripla')">
-          <span class="tema-icon"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6L12 2z"/></svg></span>
-          <span class="tema-nome">Inteligência Tripla</span>
-        </button>
-        <button type="button" class="tema-card" onclick="abrirTema('disc')">
-          <span class="tema-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span>
-          <span class="tema-nome">Liderança com Metodologia DISC</span>
-        </button>
-        <button type="button" class="tema-card" onclick="abrirTema('geracional')">
-          <span class="tema-icon"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 21v-2a5 5 0 0 1 5-5h0a5 5 0 0 1 5 5v2"/><path d="M12 21v-2a5 5 0 0 1 5-5h0a5 5 0 0 1 5 5v2"/></svg></span>
-          <span class="tema-nome">Sinergia Geracional e Conflitos</span>
-        </button>
-        <button type="button" class="tema-card" onclick="abrirTema('performance')">
-          <span class="tema-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>
-          <span class="tema-nome">Engenharia de Times de Alta Performance</span>
-        </button>
-        <button type="button" class="tema-card" onclick="abrirTema('financeira')">
-          <span class="tema-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-          <span class="tema-nome">Educação e Inteligência Financeira</span>
-        </button>
-      </div>
-    </div>
-    <div class="serv-portfolio">
-      <a href="https://drive.google.com/file/d/1LXYw204IrQHHs4vBU2kY3Xe9nqrHlDVR/view?usp=sharing" target="_blank" rel="noopener" class="btn-portfolio">
-        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Baixar Portfólio Completo
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="parceiros" id="parceiros">
-  <div class="sec">
-    <div class="parc-head">
-      <span class="eyebrow">Atuações com Parceiros</span>
-      <h2 class="sec-title">Parceiros que ampliam o alcance do desenvolvimento</h2>
-      <p class="sec-lead">Parceria com o SESCOOP, SEBRAE e Enora, instituições que ampliam o alcance do desenvolvimento de pessoas em cooperativas, empresas e alta liderança no Brasil e no mundo.</p>
-    </div>
-    <div class="parc-grid">
-      <div class="parc-card">
-        <div class="parc-logo-wrap">
-          <img loading="lazy" decoding="async" src="assets/sescoop.webp" alt="Logo SESCOOP, parceiro institucional em cooperativismo" class="parc-logo" />
-        </div>
-        <h3>SESCOOP</h3>
-        <p>Parceria com o Serviço Nacional de Aprendizagem do Cooperativismo para desenvolvimento de pessoas em cooperativas de todo o Brasil.</p>
-        <ul class="parc-items">
-          <li>Treinamentos para cooperados e colaboradores</li>
-          <li>Programas de liderança e gestão cooperativista</li>
-          <li>Palestras e workshops em eventos do sistema</li>
-        </ul>
-      </div>
-      <div class="parc-card">
-        <div class="parc-logo-wrap">
-          <img loading="lazy" decoding="async" src="assets/sebrae.webp" alt="Logo SEBRAE, parceiro institucional em capacitação empresarial" class="parc-logo" />
-        </div>
-        <h3>SEBRAE</h3>
-        <p>Parceria com o Serviço Brasileiro de Apoio às Micro e Pequenas Empresas para capacitação e desenvolvimento de pessoas em pequenos negócios.</p>
-        <ul class="parc-items">
-          <li>Capacitação de equipes e gestores</li>
-          <li>Programas de desenvolvimento comportamental</li>
-          <li>Palestras e treinamentos para empreendedores</li>
-        </ul>
-      </div>
-      <div class="parc-card">
-        <div class="parc-logo-wrap parc-logo-wrap-enora">
-          <a href="https://enora.com.br" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/enora.webp" alt="Logo Enora, parceira em programas de alta liderança" class="parc-logo" /></a>
-        </div>
-        <h3>Enora <span class="parc-tag">Alta Liderança</span></h3>
-        <p>Para programas de alta liderança, atuo em parceria com a Enora, plataforma especializada em desenvolvimento de lideranças executivas e estratégicas.</p>
-        <ul class="parc-items">
-          <li>Programas para C-Level e diretoria</li>
-          <li>Trilhas de alta liderança e governança</li>
-          <li>Desenvolvimento de lideranças estratégicas</li>
-        </ul>
-        <a href="enora.html" class="parc-cta">Saiba mais sobre a Enora</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="sobre">
-  <div class="sec">
-    <div class="sobre-grid">
-      <div class="sobre-body">
-        <span class="eyebrow">Sobre Paulo Cortez</span>
-        <h2 class="sec-title">Formação de engenheiro, leitura de gente</h2>
-        <p class="sec-lead">Engenheiro de Producao com MBA em Gestão de Pessoas pela FGV. Uno o rigor de processo com a leitura do comportamento humano.</p>
-        <p class="sec-lead" style="margin-top:14px">Atuo com cooperativas e empresas de diferentes portes, combinando neurociência aplicada, NLP e psicanálise numa abordagem direta, para quem opera e decide no dia a dia.</p>
-        <ul class="sobre-list">
-          <li>Neurociência aplicada ao desenvolvimento de lideranças</li>
-          <li>Programação Neurolinguística (NLP)</li>
-          <li>Inteligência emocional, social e financeira</li>
-          <li>Gestão de conflitos e comunicação assertiva</li>
-        </ul>
-      </div>
-      <div class="sobre-stats">
-        <div class="sobre-st"><div class="sobre-st-n">500+</div><div class="sobre-st-l">Profissionais desenvolvidos</div></div>
-        <div class="sobre-st"><div class="sobre-st-n">8</div><div class="sobre-st-l">Estados brasileiros</div></div>
-        <div class="sobre-st"><div class="sobre-st-n">3</div><div class="sobre-st-l">Países com atuação</div></div>
-        <div class="sobre-st"><div class="sobre-st-n">10+</div><div class="sobre-st-l">Anos de experiência</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="atuacao">
-  <div class="sec">
-    <div class="atu-head">
-      <span class="eyebrow">Atuacao nacional e internacional</span>
-      <h2 class="sec-title">Presente em todo o Brasil e além</h2>
-      <p class="sec-lead">Treinamentos e palestras em cooperativas e empresas ao longo de toda a rede nacional.</p>
-    </div>
-    <div class="estados">
-      <span class="estado hl">São Paulo</span>
-      <span class="estado">Minas Gerais</span>
-      <span class="estado">Parana</span>
-      <span class="estado">Santa Catarina</span>
-      <span class="estado">Rio Grande do Sul</span>
-      <span class="estado">Mato Grosso do Sul</span>
-      <span class="estado">Goiás</span>
-      <span class="estado">Bahia</span>
-      <span class="estado hl">Moçambique</span>
-      <span class="estado hl">China</span>
-    </div>
-  </div>
-</section>
-
-<section id="depoimentos">
-  <div class="sec">
-    <div class="depo-head">
-      <div>
-        <span class="eyebrow">O que dizem</span>
-        <h2 class="sec-title">Quem passou por aqui</h2>
-      </div>
-      <a href="depoimentos.html" class="btn-text">Ver todos <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-    <div class="depo-carrossel">
-      <button type="button" class="depo-nav depo-prev" onclick="depoMove(-1)" aria-label="Depoimento anterior">
-        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <div class="depo-viewport">
-        <div class="depo-track" id="depoTrack">
-          <div class="depo"><div class="depo-mark">"</div><p class="depo-text">O treinamento mudou minha forma de liderar. Aprendi a ouvir antes de reagir, e os resultados do meu time melhoraram muito.</p><div class="depo-by">Liderança Operacional</div><div class="depo-role">Cooperativa do agronegócio</div></div>
-          <div class="depo"><div class="depo-mark">"</div><p class="depo-text">Paulo tem um jeito direto de passar o conteúdo sem enrolação. O que aprendi apliquei na semana seguinte no trabalho.</p><div class="depo-by">Supervisor de Equipe</div><div class="depo-role">Cooperativa de crédito</div></div>
-          <div class="depo"><div class="depo-mark">"</div><p class="depo-text">A metodologia é diferente. Não é teoria pela teoria. É algo que você usa de verdade com a equipe no dia a dia.</p><div class="depo-by">Coordenadora de RH</div><div class="depo-role">Cooperativa de saúde</div></div>
-          <div class="depo"><div class="depo-mark">"</div><p class="depo-text">Participei de três programas diferentes com o Paulo. Cada um com mais profundidade. Recomendo sem hesitar.</p><div class="depo-by">Gerente de Cooperativa</div><div class="depo-role">Sistema cooperativista</div></div>
-          <div class="depo"><div class="depo-mark">"</div><p class="depo-text">Nosso RH contratou um ciclo de workshops. O retorno dos líderes foi excelente. Já planejamos o próximo.</p><div class="depo-by">Gerente de RH</div><div class="depo-role">Indústria de grande porte</div></div>
-          <div class="depo"><div class="depo-mark">"</div><p class="depo-text">Conteúdo denso, entregue de forma acessível. Saímos com ações claras para implementar na área.</p><div class="depo-by">Analista de Desenvolvimento</div><div class="depo-role">Cooperativa agropecuária</div></div>
-        </div>
-      </div>
-      <button type="button" class="depo-nav depo-next" onclick="depoMove(1)" aria-label="Próximo depoimento">
-        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-    </div>
-    <div class="depo-dots" id="depoDots"></div>
-  </div>
-</section>
-
-<section class="material" id="material">
-  <div class="sec">
-    <div class="mat-head">
-      <span class="eyebrow">Materiais e Ferramentas Gratuitas</span>
-      <h2 class="sec-title">Presentes para usar agora mesmo</h2>
-      <p class="sec-lead">Conteúdo e ferramentas prontos para você aplicar no seu dia a dia ou com a sua equipe, sem custo.</p>
-    </div>
-
-    <div class="mat-grid2">
-
-      <div class="mat-card">
-        <span class="mat-tag">PDF Gratuito</span>
-        <h3 class="mat-title">10 sinais de que sua liderança precisa de desenvolvimento</h3>
-        <p class="mat-sub">Um checklist prático para identificar hoje mesmo se os supervisores e líderes de primeiro nível da sua equipe estão prontos para o próximo passo.</p>
-        <ul class="mat-list">
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>10 sinais práticos para avaliar sua equipe agora</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Tabela de leitura de resultado e prioridade de ação</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Pronto para usar em 5 minutos, sem enrolação</li>
-        </ul>
-
-        <form id="form-material" name="material-gratuito" method="POST" data-netlify="true" netlify-honeypot="bot-field-material">
-          <input type="hidden" name="form-name" value="material-gratuito">
-          <input type="hidden" name="pagina_origem" value="index.html - Material Gratuito (Checklist 10 Sinais)">
-          <p class="dn"><input name="bot-field-material"></p>
-          <div class="mat-form">
-            <input type="text" name="nome" placeholder="Seu nome" required>
-            <input type="email" name="email" placeholder="Seu e-mail" required>
-            <button type="submit" class="mat-btn">Baixar checklist gratuito</button>
-          </div>
-          <p class="mat-note">Sem spam. Você recebe apenas o material.</p>
-        </form>
-
-        <div class="mat-ok" id="mat-ok">
-          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          <p>Pronto. Clique no botão abaixo para baixar o seu checklist.</p>
-          <a href="assets/materiais/10-sinais-lideranca-primeiro-nivel.pdf" download>Baixar PDF agora</a>
-        </div>
-      </div>
-
-      <div class="mat-card">
-        <span class="mat-tag mat-tag-ferramenta">Ferramenta Gratuita</span>
-        <h3 class="mat-title">Matriz de Decisão</h3>
-        <p class="mat-sub">Uma ferramenta simples para organizar suas tarefas por prioridade. Basta salvar o link no navegador e usar sempre que precisar decidir o que fazer primeiro, sem se perder em meio a tantas demandas.</p>
-        <ul class="mat-list">
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Organize tarefas por urgência e importância</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Use direto no navegador, sem precisar instalar nada</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Salve como favorito e acesse sempre que precisar</li>
-        </ul>
-        <p class="mat-sub" style="margin-top:-6px;margin-bottom:20px"><strong>Como usar:</strong> abra o link, liste suas tarefas e posicione cada uma na matriz conforme o nível de urgência e importância. O resultado mostra o que fazer primeiro, o que agendar, o que delegar e o que descartar.</p>
-        <a href="https://www.paulocortez.com.br/matrizdecisao" target="_blank" rel="noopener" class="mat-btn mat-btn-link">Abrir Matriz de Decisão</a>
-        <p class="mat-note">www.paulocortez.com.br/matrizdecisao</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="ia">
-  <div class="ia-inner">
-    <div class="ia-body">
-      <span class="eyebrow">Assistente Virtual</span>
-      <h2 class="sec-title">Tire suas dúvidas com a IA do Paulo</h2>
-      <p class="sec-lead">Um assistente treinado com minhas metodologias e serviços. Pergunte sobre os temas que abordo e como posso apoiar a sua organização.</p>
-      <a href="https://paulocortez.lovable.app" target="_blank" class="btn-sec">Conversar com a IA</a>
-    </div>
-    <div class="ia-chat">
-      <div class="ia-top">
-        <div class="ia-av"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-        <div><div class="ia-name">Assistente Paulo Cortez</div><div class="ia-status">Online agora</div></div>
-      </div>
-      <div class="ia-msg">Oi! Posso explicar como o Paulo apoia o desenvolvimento da sua equipe. O que você precisa?</div>
-      <div class="ia-msg me">Trabalho com RH numa cooperativa. Temos dificuldade com as lideranças de primeiro nível.</div>
-      <div class="ia-msg">Esse é o foco principal dele. Trilhas e treinamentos práticos para supervisores e líderes operacionais. Quer saber como seria no seu caso?</div>
-    </div>
-  </div>
-</section>
-
-<section class="faq" id="faq">
-  <div class="sec">
-    <div class="faq-head">
-      <span class="eyebrow">Perguntas frequentes</span>
-      <h2 class="sec-title">Dúvidas comuns</h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item on">
-        <button type="button" class="faq-q" onclick="toggleFaq(this)">Quem é Paulo Cortez?</button>
-        <div class="faq-a">Paulo Cortez é consultor e facilitador em desenvolvimento de pessoas, formado em Engenharia de Produção com MBA em Gestão de Pessoas pela FGV. Atua com treinamentos, palestras e trilhas de ensino para cooperativas e empresas, com foco em equipes operacionais e lideranças de primeiro nível. Tem atuação em 8 estados brasileiros, além de Moçambique e China.</div>
-      </div>
-      <div class="faq-item">
-        <button type="button" class="faq-q" onclick="toggleFaq(this)">O que a ProCrescer Academy oferece para cooperativas?</button>
-        <div class="faq-a">A ProCrescer Academy oferece quatro linhas de serviço para cooperativas: treinamentos corporativos para equipes e lideranças, palestras e workshops sobre temas comportamentais, trilhas de ensino estruturadas de aprendizagem contínua, e diagnóstico organizacional com análise de perfil comportamental. Os temas incluem liderança com metodologia DISC, educação financeira, neurociência da priorização, sinergia geracional e programação neurolinguística.</div>
-      </div>
-      <div class="faq-item">
-        <button type="button" class="faq-q" onclick="toggleFaq(this)">Quais cooperativas já foram atendidas por Paulo Cortez?</button>
-        <div class="faq-a">Entre as cooperativas e empresas atendidas estão Coopercitrus, Sicoob, Unicred, Unimed, Coplana, Cocal, São Martinho, Raízen, Tereos, AB Mauri, Mercado Livre, Mercado Pago e GSK. A atuação inclui parceria institucional com SESCOOP e SEBRAE.</div>
-      </div>
-      <div class="faq-item">
-        <button type="button" class="faq-q" onclick="toggleFaq(this)">Como funciona uma trilha de ensino para lideranças de cooperativa?</button>
-        <div class="faq-a">Uma trilha de ensino é um programa estruturado de aprendizagem contínua, desenhado sob medida para o perfil das lideranças e os objetivos da cooperativa. Diferente de uma palestra isolada, a trilha combina encontros sequenciais, aplicação prática entre as sessões e acompanhamento de resultados. O desenho começa com um diagnóstico das necessidades reais da organização.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="cta-in">
-    <span class="eyebrow">Próximo passo</span>
-    <h2 class="cta-title">Pronto para desenvolver as pessoas do seu time?</h2>
-    <p class="cta-sub">Fale pelo WhatsApp, envie um e-mail ou preencha o briefing para receber uma proposta sob medida.</p>
-    <div class="cta-acts">
-      <a href="proposta.html" class="btn-light">Preencher Briefing</a>
-      <a href="mailto:opaulocortez@outlook.com?subject=Contato pelo site paulocortez.com.br" class="btn-ghost">Enviar E-mail</a>
-    </div>
-  </div>
-</section>
-
-
-<footer>
-  <div class="foot-in">
-    <div class="foot-top">
-      <div>
-        <div class="foot-name">Paulo Cortez</div>
-        <div class="foot-sub">ProCrescer Academy</div>
-        <p class="foot-desc">Desenvolvimento de pessoas, liderança e operações para cooperativas e empresas. Metodologia aplicada, resultado real.</p>
-      </div>
-      <div>
-        <div class="foot-h">Navegação</div>
-        <ul class="foot-links">
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#parceiros">Parceiros</a>
-      <a href="#material">Material Gratuito</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="depoimentos.html">Depoimentos</a></li>
-          <li><a href="proposta.html">Solicitar Proposta</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="foot-h">Contato</div>
-        <a href="https://wa.me/5511920182998" target="_blank" class="foot-c"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.37 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.7a16 16 0 0 0 6.29 6.29l.62-.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(11) 92018-2998</a>
-        <a href="mailto:opaulocortez@outlook.com" class="foot-c"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>opaulocortez@outlook.com</a>
-        <a href="https://www.linkedin.com/in/opaulocortez/" target="_blank" class="foot-c"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>linkedin.com/in/opaulocortez</a>
-        <div class="foot-c"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Pederneiras, SP</div>
-        <div class="grating">
-          <div class="gr-left">
-            <div class="gr-logo">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-              Google
-            </div>
-            <div class="gr-stars">
-              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <span class="gr-nota">5.0</span>
-            </div>
-          </div>
-          <a href="https://g.page/r/CXzEDRD9VUz6EBM/review" target="_blank" class="btn-rate">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            Avaliar no Google
+  <div class="hero-content">
+    <div class="container hero-inner">
+      <div class="hero-left">
+        <p class="eyebrow hero-eyebrow">Desenvolvimento de Pessoas</p>
+        <h1 class="hero-headline">
+          Desenvolver pessoas<br>é mais do que <em>treinar</em>
+        </h1>
+        <p class="hero-sub">
+          Treinamentos, palestras e trilhas de liderança para cooperativas e empresas.
+          Conteúdo aplicado para o dia a dia, não apenas para o slide.
+        </p>
+        <div class="hero-ctas">
+          <a href="proposta.html" class="btn-primary">Solicitar Proposta</a>
+          <a href="https://wa.me/5511920182998" target="_blank" rel="noopener" class="btn-ghost">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413A11.815 11.815 0 0 0 12.05 0zm0 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.861 9.861 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884z"/></svg>
+            WhatsApp
           </a>
         </div>
       </div>
+
+      <div class="hero-right">
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num">500+</div>
+            <div class="hero-stat-label">Profissionais formados</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">8</div>
+            <div class="hero-stat-label">Estados atendidos</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">3</div>
+            <div class="hero-stat-label">Países</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">10+</div>
+            <div class="hero-stat-label">Anos de experiência</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="foot-bot">
-      <p>&copy; 2026 Paulo Cortez. Todos os direitos reservados.</p>
-      <div class="foot-soc">
-        <a href="https://www.linkedin.com/in/opaulocortez/" target="_blank" rel="noopener" class="foot-soc-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-        <a href="https://www.instagram.com/opaulocortez/" target="_blank" rel="noopener" class="foot-soc-icon" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></a>
-        <a href="https://wa.me/5511920182998" target="_blank">WhatsApp</a>
-        <a href="https://paulocortez.lovable.app" target="_blank">Assistente IA</a>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="hero-scroll-line"></div>
+    <span>Rolar</span>
+  </div>
+</section>
+
+<!-- ══ TRUST (Logo Wall) ════════════════════ -->
+<section id="trust">
+  <div class="container">
+    <p class="eyebrow trust-label" style="justify-content:center">Algumas das empresas já atendidas</p>
+  </div>
+  <div class="container">
+    <div class="trust-track-wrapper">
+      <div class="trust-track" aria-label="Logos de empresas clientes">
+        <!-- Set 1 -->
+        <img src="assets/logos/coopercitrus.webp" alt="Logo Coopercitrus, cooperativa cliente de treinamento de liderança" class="trust-logo" loading="lazy">
+        <img src="assets/logos/sicoob.webp" alt="Logo Sicoob, cooperativa de crédito cliente de treinamento de liderança" class="trust-logo lg" loading="lazy">
+        <img src="assets/logos/unicred.webp" alt="Logo Unicred, cooperativa de crédito cliente de treinamento de liderança" class="trust-logo" loading="lazy">
+        <img src="assets/logos/unimed.webp" alt="Logo Unimed, cooperativa de saúde cliente de treinamento de liderança" class="trust-logo lg" loading="lazy">
+        <img src="assets/logos/coplana.webp" alt="Logo Coplana, cooperativa agropecuária cliente de treinamento de liderança" class="trust-logo lg" loading="lazy">
+        <img src="assets/logos/sao-martinho.webp" alt="Logo São Martinho, cliente de treinamento de liderança" class="trust-logo lg" loading="lazy">
+        <img src="assets/logos/mercado-livre.webp" alt="Logo Mercado Livre, cliente de treinamento de liderança" class="trust-logo" loading="lazy">
+        <img src="assets/logos/mercado-pago.webp" alt="Logo Mercado Pago, cliente de treinamento de liderança" class="trust-logo lg" loading="lazy">
+        <img src="assets/logos/gsk.webp" alt="Logo GSK, cliente de treinamento de liderança" class="trust-logo lg" loading="lazy">
+        <img src="assets/logos/raizen.webp" alt="Logo Raízen, cliente de treinamento de liderança" class="trust-logo" loading="lazy">
+        <img src="assets/logos/tereos.webp" alt="Logo Tereos, cliente de treinamento de liderança" class="trust-logo lg" loading="lazy">
+        <img src="assets/logos/ab-mauri.webp" alt="Logo AB Mauri, cliente de treinamento de liderança" class="trust-logo" loading="lazy">
+        <img src="assets/logos/cocal.webp" alt="Logo Cocal, cliente de treinamento de liderança" class="trust-logo" loading="lazy">
+        <!-- Duplicado para loop infinito -->
+        <img src="assets/logos/coopercitrus.webp" alt="" class="trust-logo" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/sicoob.webp" alt="" class="trust-logo lg" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/unicred.webp" alt="" class="trust-logo" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/unimed.webp" alt="" class="trust-logo lg" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/coplana.webp" alt="" class="trust-logo lg" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/sao-martinho.webp" alt="" class="trust-logo lg" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/mercado-livre.webp" alt="" class="trust-logo" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/mercado-pago.webp" alt="" class="trust-logo lg" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/gsk.webp" alt="" class="trust-logo lg" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/raizen.webp" alt="" class="trust-logo" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/tereos.webp" alt="" class="trust-logo lg" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/ab-mauri.webp" alt="" class="trust-logo" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/cocal.webp" alt="" class="trust-logo" loading="lazy" aria-hidden="true">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══════════════════════════════ -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="services-head">
+      <div class="services-head-left">
+        <p class="eyebrow reveal">Serviços</p>
+        <h2 class="section-title reveal reveal-delay-1">
+          O que faço<br>por você e pela sua equipe
+        </h2>
+      </div>
+      <div class="services-head-right reveal reveal-delay-2">
+        <p>Soluções práticas para desenvolver pessoas, da operação à liderança, em cooperativas e empresas de todos os portes.</p>
+        <a href="proposta.html" class="btn-sec">Ver portfólio completo</a>
+      </div>
+    </div>
+
+    <div class="services-grid reveal">
+      <article class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <span class="service-num">01</span>
+        <h3 class="service-title">Treinamentos Corporativos</h3>
+        <p class="service-desc">Programas presenciais e online para lideranças de primeiro nível e equipes operacionais, com foco em comportamento, comunicação e resultado.</p>
+        <span class="service-link">Saiba mais <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <span class="service-num">02</span>
+        <h3 class="service-title">Palestras e Workshops</h3>
+        <p class="service-desc">Conteúdo aplicado em liderança, comportamento, neurociência e gestão de conflitos. Ajustado ao contexto da sua organização.</p>
+        <span class="service-link">Saiba mais <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <span class="service-num">03</span>
+        <h3 class="service-title">Trilhas de Ensino</h3>
+        <p class="service-desc">Programas estruturados de aprendizagem contínua, desenhados sob medida para o perfil das suas lideranças e os objetivos da organização.</p>
+        <span class="service-link">Saiba mais <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <span class="service-num">04</span>
+        <h3 class="service-title">Diagnóstico Organizacional</h3>
+        <p class="service-desc">Mapeamento das necessidades de desenvolvimento, com análise de perfil comportamental e identificação de gaps de liderança.</p>
+        <span class="service-link">Saiba mais <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </article>
+    </div>
+
+    <!-- Topics -->
+    <div class="topics-wrapper reveal">
+      <h3 class="topics-label">Alguns dos temas trabalhados</h3>
+      <div class="topics-grid">
+        <button type="button" class="topic-chip" onclick="openModal('ia')">
+          <div class="topic-chip-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+          <span class="topic-chip-name">IA e a Nova Produtividade</span>
+        </button>
+        <button type="button" class="topic-chip" onclick="openModal('neuro')">
+          <div class="topic-chip-icon"><svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 0 7 4.5v.5A2.5 2.5 0 0 0 4.5 7 2.5 2.5 0 0 0 2 9.5 2.5 2.5 0 0 0 4.5 12a2.5 2.5 0 0 0 0 5A2.5 2.5 0 0 0 7 19.5v.5A2.5 2.5 0 0 0 9.5 22h1a2.5 2.5 0 0 0 2.5-2.5v-15A2.5 2.5 0 0 0 10.5 2h-1z"/><path d="M14.5 2A2.5 2.5 0 0 1 17 4.5v.5a2.5 2.5 0 0 1 2.5 2 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5 2.5 2.5 0 0 1 0 5A2.5 2.5 0 0 1 17 19.5v.5a2.5 2.5 0 0 1-2.5 2.5h-1a2.5 2.5 0 0 1-2.5-2.5v-15A2.5 2.5 0 0 1 13.5 2h1z"/></svg></div>
+          <span class="topic-chip-name">Neurociência da Priorização</span>
+        </button>
+        <button type="button" class="topic-chip" onclick="openModal('pnl')">
+          <div class="topic-chip-icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+          <span class="topic-chip-name">Liderança Humanizada com PNL</span>
+        </button>
+        <button type="button" class="topic-chip" onclick="openModal('tripla')">
+          <div class="topic-chip-icon"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6L12 2z"/></svg></div>
+          <span class="topic-chip-name">Inteligência Tripla</span>
+        </button>
+        <button type="button" class="topic-chip" onclick="openModal('disc')">
+          <div class="topic-chip-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <span class="topic-chip-name">Liderança com DISC</span>
+        </button>
+        <button type="button" class="topic-chip" onclick="openModal('geracional')">
+          <div class="topic-chip-icon"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 21v-2a5 5 0 0 1 5-5h0a5 5 0 0 1 5 5v2"/><path d="M12 21v-2a5 5 0 0 1 5-5h0a5 5 0 0 1 5 5v2"/></svg></div>
+          <span class="topic-chip-name">Sinergia Geracional</span>
+        </button>
+        <button type="button" class="topic-chip" onclick="openModal('performance')">
+          <div class="topic-chip-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+          <span class="topic-chip-name">Times de Alta Performance</span>
+        </button>
+        <button type="button" class="topic-chip" onclick="openModal('financeira')">
+          <div class="topic-chip-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <span class="topic-chip-name">Educação Financeira</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══════════════════════════════════ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo-wrap reveal">
+        <img
+          src="assets/images/paulo-about.webp"
+          alt="Paulo Cortez, consultor em desenvolvimento de pessoas e liderança"
+          class="about-photo"
+          loading="lazy"
+        >
+        <div class="about-photo-badge">
+          <div class="about-badge-num">5.0</div>
+          <div class="about-badge-label">Google · Avaliação</div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <p class="eyebrow reveal">Sobre Paulo Cortez</p>
+        <h2 class="about-title reveal reveal-delay-1">
+          Formação de engenheiro,<br>leitura de gente
+        </h2>
+        <p class="about-bio reveal reveal-delay-2">
+          Engenheiro de Produção com MBA em Gestão de Pessoas pela FGV. Uno o rigor de processo com a leitura do comportamento humano. Atuo com cooperativas e empresas de diferentes portes, combinando neurociência aplicada, PNL e psicanálise numa abordagem direta, para quem opera e decide no dia a dia.
+        </p>
+        <div class="about-tags reveal reveal-delay-3">
+          <span class="about-tag">Neurociência Aplicada</span>
+          <span class="about-tag">Programação Neurolinguística</span>
+          <span class="about-tag">Inteligência Emocional</span>
+          <span class="about-tag">Gestão de Conflitos</span>
+          <span class="about-tag">DISC</span>
+          <span class="about-tag">Psicanálise</span>
+        </div>
+        <div class="about-stats reveal reveal-delay-4">
+          <div>
+            <div class="about-stat-num">500+</div>
+            <div class="about-stat-label">Profissionais desenvolvidos</div>
+          </div>
+          <div>
+            <div class="about-stat-num">8</div>
+            <div class="about-stat-label">Estados brasileiros</div>
+          </div>
+          <div>
+            <div class="about-stat-num">3</div>
+            <div class="about-stat-label">Países com atuação</div>
+          </div>
+          <div>
+            <div class="about-stat-num">10+</div>
+            <div class="about-stat-label">Anos de experiência</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══════════════════════════ -->
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="testimonials-head">
+      <div>
+        <p class="eyebrow reveal">Depoimentos</p>
+        <h2 class="section-title section-title--light reveal reveal-delay-1">Quem passou por aqui</h2>
+      </div>
+      <div class="testimonials-nav">
+        <button class="t-nav-btn" id="tPrev" aria-label="Depoimento anterior">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="t-nav-btn" id="tNext" aria-label="Próximo depoimento">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="testimonials-viewport">
+      <div class="testimonials-track" id="testimonialTrack">
+        <article class="t-card">
+          <div class="t-quote-mark">"</div>
+          <p class="t-text">O treinamento mudou minha forma de liderar. Aprendi a ouvir antes de reagir, e os resultados do meu time melhoraram muito.</p>
+          <div class="t-author">
+            <div class="t-name">Liderança Operacional</div>
+            <div class="t-role">Cooperativa do agronegócio</div>
+          </div>
+        </article>
+        <article class="t-card">
+          <div class="t-quote-mark">"</div>
+          <p class="t-text">Paulo tem um jeito direto de passar o conteúdo sem enrolação. O que aprendi apliquei na semana seguinte no trabalho.</p>
+          <div class="t-author">
+            <div class="t-name">Supervisor de Equipe</div>
+            <div class="t-role">Cooperativa de crédito</div>
+          </div>
+        </article>
+        <article class="t-card">
+          <div class="t-quote-mark">"</div>
+          <p class="t-text">A metodologia é diferente. Não é teoria pela teoria. É algo que você usa de verdade com a equipe no dia a dia.</p>
+          <div class="t-author">
+            <div class="t-name">Coordenadora de RH</div>
+            <div class="t-role">Cooperativa de saúde</div>
+          </div>
+        </article>
+        <article class="t-card">
+          <div class="t-quote-mark">"</div>
+          <p class="t-text">Participei de três programas diferentes com o Paulo. Cada um com mais profundidade. Recomendo sem hesitar.</p>
+          <div class="t-author">
+            <div class="t-name">Gerente de Cooperativa</div>
+            <div class="t-role">Sistema cooperativista</div>
+          </div>
+        </article>
+        <article class="t-card">
+          <div class="t-quote-mark">"</div>
+          <p class="t-text">Nosso RH contratou um ciclo de workshops. O retorno dos líderes foi excelente. Já planejamos o próximo.</p>
+          <div class="t-author">
+            <div class="t-name">Gerente de RH</div>
+            <div class="t-role">Indústria de grande porte</div>
+          </div>
+        </article>
+        <article class="t-card">
+          <div class="t-quote-mark">"</div>
+          <p class="t-text">Conteúdo denso, entregue de forma acessível. Saímos com ações claras para implementar na área.</p>
+          <div class="t-author">
+            <div class="t-name">Analista de Desenvolvimento</div>
+            <div class="t-role">Cooperativa agropecuária</div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="t-dots" aria-label="Navegação do carrossel"></div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="depoimentos.html" class="btn-ghost">Ver todos os depoimentos</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PARTNERS ══════════════════════════════ -->
+<section id="partners" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">Parceiros</p>
+      <h2 class="section-title" style="margin-top:0.75rem">Parceria com o SESCOOP, SEBRAE e Enora, instituições que ampliam o alcance do desenvolvimento de pessoas em cooperativas, empresas e alta liderança no Brasil e no mundo.</h2>
+    </div>
+
+    <div class="partners-grid reveal">
+      <div class="partner-card">
+        <div class="partner-logo-wrap">
+          <img src="assets/images/sescoop.webp" alt="Logo SESCOOP, parceiro institucional em cooperativismo" class="partner-logo" loading="lazy">
+        </div>
+        <h3 class="partner-title">SESCOOP</h3>
+        <p class="partner-desc">Parceria com o Serviço Nacional de Aprendizagem do Cooperativismo para desenvolvimento de pessoas em cooperativas de todo o Brasil.</p>
+        <ul class="partner-items">
+          <li class="partner-item">Treinamentos para cooperados e colaboradores</li>
+          <li class="partner-item">Programas de liderança e gestão cooperativista</li>
+          <li class="partner-item">Palestras e workshops em eventos do sistema</li>
+        </ul>
+      </div>
+      <div class="partner-card">
+        <div class="partner-logo-wrap">
+          <img src="assets/images/sebrae.webp" alt="Logo SEBRAE, parceiro institucional em capacitação empresarial" class="partner-logo" loading="lazy">
+        </div>
+        <h3 class="partner-title">SEBRAE</h3>
+        <p class="partner-desc">Parceria com o Serviço Brasileiro de Apoio às Micro e Pequenas Empresas para capacitação e desenvolvimento de pessoas em pequenos negócios.</p>
+        <ul class="partner-items">
+          <li class="partner-item">Capacitação de equipes e gestores</li>
+          <li class="partner-item">Programas de desenvolvimento comportamental</li>
+          <li class="partner-item">Palestras e treinamentos para empreendedores</li>
+        </ul>
+      </div>
+      <div class="partner-card">
+        <div class="partner-logo-wrap">
+          <img src="assets/images/enora.webp" alt="Logo Enora, parceira em programas de alta liderança" class="partner-logo" loading="lazy">
+        </div>
+        <h3 class="partner-title">Enora</h3>
+        <p class="partner-desc">Para programas de alta liderança, atuo em parceria com a Enora, plataforma especializada em desenvolvimento de lideranças executivas e estratégicas.</p>
+        <ul class="partner-items">
+          <li class="partner-item">Programas para C-Level e diretoria</li>
+          <li class="partner-item">Trilhas de alta liderança e governança</li>
+          <li class="partner-item">Desenvolvimento de lideranças estratégicas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MATERIALS ══════════════════════════════ -->
+<section id="materials" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">Materiais e Ferramentas Gratuitas</p>
+      <h2 class="section-title" style="margin-top:0.75rem">Presentes para usar agora mesmo</h2>
+    </div>
+
+    <div class="materials-grid">
+      <div class="material-card reveal">
+        <span class="material-tag material-tag--pdf">PDF Gratuito</span>
+        <h3 class="material-title">10 sinais de que sua liderança precisa de desenvolvimento</h3>
+        <p class="material-desc">Um checklist prático para identificar hoje mesmo se os supervisores e líderes de primeiro nível da sua equipe estão prontos para o próximo passo.</p>
+        <ul class="material-bullets">
+          <li class="material-bullet">10 sinais práticos para avaliar sua equipe agora</li>
+          <li class="material-bullet">Tabela de leitura de resultado e prioridade de ação</li>
+          <li class="material-bullet">Pronto para usar em 5 minutos, sem enrolação</li>
+        </ul>
+
+        <form id="formMaterial" name="material-gratuito" method="POST" data-netlify="true" netlify-honeypot="bot-campo">
+          <input type="hidden" name="form-name" value="material-gratuito">
+          <input type="hidden" name="pagina_origem" value="index.html - Material Gratuito (Checklist 10 Sinais)">
+          <p style="display:none"><input name="bot-campo"></p>
+          <div class="material-form">
+            <input type="text" name="nome" placeholder="Seu nome" required autocomplete="name">
+            <input type="email" name="email" placeholder="Seu e-mail" required autocomplete="email">
+            <button type="submit" class="material-submit">Baixar checklist gratuito</button>
+          </div>
+          <p class="material-note">Sem spam. Você recebe apenas o material.</p>
+        </form>
+
+        <div id="matOk" style="display:none;flex-direction:column;align-items:center;gap:1rem;padding:1rem 0">
+          <svg viewBox="0 0 24 24" width="40" height="40" stroke="#006478" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <p style="font-size:0.875rem;color:var(--ink-soft);text-align:center">Pronto. Clique para baixar o checklist.</p>
+          <a href="assets/materiais/10-sinais-lideranca-primeiro-nivel.pdf" download class="material-cta-btn">Baixar PDF agora</a>
+        </div>
+      </div>
+
+      <div class="material-card reveal reveal-delay-2">
+        <span class="material-tag material-tag--tool">Ferramenta Gratuita</span>
+        <h3 class="material-title">Matriz de Decisão</h3>
+        <p class="material-desc">Uma ferramenta simples para organizar suas tarefas por prioridade. Salve o link no navegador e use sempre que precisar decidir o que fazer primeiro, sem se perder em meio a tantas demandas.</p>
+        <ul class="material-bullets">
+          <li class="material-bullet">Organize tarefas por urgência e importância</li>
+          <li class="material-bullet">Use direto no navegador, sem instalar nada</li>
+          <li class="material-bullet">Salve como favorito e acesse sempre que precisar</li>
+        </ul>
+        <p class="material-desc" style="margin-top:0.5rem"><strong style="color:var(--ink)">Como usar:</strong> abra o link, liste suas tarefas e posicione cada uma na matriz conforme urgência e importância. O resultado mostra o que fazer primeiro, o que agendar, delegar ou descartar.</p>
+        <div class="material-cta-wrap">
+          <a href="https://www.paulocortez.com.br/matrizdecisao" target="_blank" rel="noopener" class="material-cta-btn">Abrir Matriz de Decisão</a>
+          <p class="material-cta-note">paulocortez.com.br/matrizdecisao</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══════════════════════════════════ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="faq-grid">
+      <div class="reveal">
+        <p class="eyebrow">Perguntas frequentes</p>
+        <h2 class="faq-title">Dúvidas comuns</h2>
+        <p>Se não encontrar o que precisa, fale direto pelo WhatsApp ou preencha o briefing.</p>
+      </div>
+      <div class="faq-list reveal reveal-delay-1">
+        <div class="faq-item">
+          <button class="faq-q" type="button">Quem é Paulo Cortez?
+            <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Paulo Cortez é consultor e facilitador em desenvolvimento de pessoas, formado em Engenharia de Produção com MBA em Gestão de Pessoas pela FGV. Atua com treinamentos, palestras e trilhas de ensino para cooperativas e empresas, com foco em equipes operacionais e lideranças de primeiro nível. Tem atuação em 8 estados brasileiros, além de Moçambique e China.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">O que a ProCrescer Academy oferece para cooperativas?
+            <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Quatro linhas de serviço: treinamentos corporativos para equipes e lideranças, palestras e workshops sobre temas comportamentais, trilhas de ensino estruturadas de aprendizagem contínua, e diagnóstico organizacional. Os temas incluem liderança com DISC, educação financeira, neurociência da priorização, sinergia geracional e PNL.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">Quais cooperativas já foram atendidas?
+            <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Entre as cooperativas e empresas atendidas estão Coopercitrus, Sicoob, Unicred, Unimed, Coplana, Cocal, São Martinho, Raízen, Tereos, AB Mauri, Mercado Livre, Mercado Pago e GSK. A atuação inclui parceria institucional com SESCOOP e SEBRAE.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">Como funciona uma trilha de ensino para lideranças?
+            <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Uma trilha de ensino é um programa estruturado de aprendizagem contínua, desenhado sob medida para o perfil das lideranças e os objetivos da cooperativa. Diferente de uma palestra isolada, a trilha combina encontros sequenciais, aplicação prática entre as sessões e acompanhamento de resultados. O desenho começa com um diagnóstico das necessidades reais da organização.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ════════════════════════════════════ -->
+<section id="cta" class="section--lg">
+  <div class="container cta-content">
+    <p class="eyebrow cta-eyebrow reveal">Próximo passo</p>
+    <h2 class="cta-title reveal reveal-delay-1">Pronto para desenvolver<br>as pessoas do seu time?</h2>
+    <p class="cta-sub reveal reveal-delay-2">Fale pelo WhatsApp, envie um e-mail ou preencha o briefing para receber uma proposta sob medida.</p>
+    <div class="cta-buttons reveal reveal-delay-3">
+      <a href="proposta.html" class="btn-primary">Preencher Briefing</a>
+      <a href="mailto:opaulocortez@outlook.com?subject=Contato%20pelo%20site" class="btn-ghost">Enviar E-mail</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <img src="assets/images/logo.webp" alt="Logo ProCrescer Academy" class="footer-brand-logo" loading="lazy">
+        <p class="footer-brand-desc">Desenvolvimento de pessoas, liderança e operações para cooperativas e empresas. Metodologia aplicada, resultado real.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/opaulocortez/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn de Paulo Cortez">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://www.instagram.com/opaulocortez/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram de Paulo Cortez">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://wa.me/5511920182998" target="_blank" rel="noopener" class="footer-social-link" aria-label="WhatsApp de Paulo Cortez">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413A11.815 11.815 0 0 0 12.05 0z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Navegação</p>
+        <ul class="footer-col-links">
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#testimonials">Depoimentos</a></li>
+          <li><a href="#partners">Parceiros</a></li>
+          <li><a href="#materials">Materiais</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Serviços</p>
+        <ul class="footer-col-links">
+          <li><a href="#">Treinamentos</a></li>
+          <li><a href="#">Palestras</a></li>
+          <li><a href="#">Trilhas de Ensino</a></li>
+          <li><a href="#">Diagnóstico</a></li>
+          <li><a href="proposta.html">Solicitar Proposta</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Contato</p>
+        <ul class="footer-col-links">
+          <li><a href="tel:+5511920182998">(11) 92018-2998</a></li>
+          <li><a href="mailto:opaulocortez@outlook.com">opaulocortez@outlook.com</a></li>
+          <li><a href="https://wa.me/5511920182998" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="enora.html">Alta Liderança via Enora</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Paulo Cortez · ProCrescer Academy. Todos os direitos reservados.</p>
+      <div class="footer-rating">
+        <span class="footer-stars">★★★★★</span>
+        <span>5.0 no Google</span>
+        <span>·</span>
+        <span>Pederneiras, SP</span>
       </div>
     </div>
   </div>
 </footer>
 
-<a href="https://wa.me/5511920182998?text=Ola%20Paulo%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais." target="_blank" class="wpp" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-</a>
-
-<script>
-document.getElementById('menuToggle').addEventListener('click',function(){document.getElementById('nav').classList.toggle('open')});
-var depoIdx=0;
-function depoVis(){var w=window.innerWidth;return w<=640?1:(w<=960?2:3);}
-function depoMax(){var t=document.getElementById('depoTrack');if(!t)return 0;return Math.max(0,t.children.length-depoVis());}
-function depoRender(){
-  var t=document.getElementById('depoTrack');if(!t)return;
-  var vis=depoVis(),max=depoMax();
-  if(depoIdx>max)depoIdx=max;
-  if(depoIdx<0)depoIdx=0;
-  var card=t.children[0];
-  if(!card)return;
-  var gap=parseFloat(getComputedStyle(t).gap)||24;
-  var step=card.getBoundingClientRect().width+gap;
-  t.style.transform='translateX(-'+(depoIdx*step)+'px)';
-  var prev=document.querySelector('.depo-prev'),next=document.querySelector('.depo-next');
-  if(prev)prev.disabled=(depoIdx===0);
-  if(next)next.disabled=(depoIdx>=max);
-  var dots=document.getElementById('depoDots');
-  if(dots){
-    dots.innerHTML='';
-    for(var i=0;i<=max;i++){
-      var b=document.createElement('button');
-      b.className='depo-dot'+(i===depoIdx?' on':'');
-      b.type='button';
-      b.setAttribute('aria-label','Ir para depoimento '+(i+1));
-      b.onclick=(function(n){return function(){depoIdx=n;depoRender();};})(i);
-      dots.appendChild(b);
-    }
-  }
-}
-function depoMove(d){depoIdx+=d;depoRender();}
-window.addEventListener('resize',depoRender);
-document.addEventListener('DOMContentLoaded',depoRender);
-depoRender();
-</script>
-<script>
-document.getElementById('form-material').addEventListener('submit', function(e){
-  e.preventDefault();
-  var f = this;
-  fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(f)).toString()})
-  .then(function(){
-    f.style.display = 'none';
-    document.getElementById('mat-ok').classList.add('on');
-  })
-  .catch(function(){
-    alert('Erro ao enviar. Tente novamente ou fale pelo WhatsApp.');
-  });
-});
-</script>
-<!-- MODAL DE TEMAS -->
-<div class="tema-modal-overlay" id="tema-modal-overlay" onclick="if(event.target===this) fecharTema()">
-  <div class="tema-modal">
-    <button type="button" class="tema-modal-close" onclick="fecharTema()" aria-label="Fechar">
+<!-- ══ MODAL ══════════════════════════════════ -->
+<div class="modal-overlay" id="topicModal" role="dialog" aria-modal="true" aria-label="Detalhamento do tema">
+  <div class="modal">
+    <button type="button" class="modal-close" onclick="closeModal()" aria-label="Fechar">
       <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
-    <div class="tema-modal-body" id="tema-modal-body"></div>
+    <div id="modalBody"></div>
   </div>
 </div>
 
-<script>
-var TEMAS = {
-  ia: {
-    banner: 'banner-ia',
-    icon: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>',
-    titulo: 'IA e a Nova Produtividade',
-    objetivo: 'Ajudar profissionais e lideranças a incorporar inteligência artificial no dia a dia de trabalho de forma prática, sem depender de conhecimento técnico prévio, ganhando tempo e qualidade nas entregas.',
-    modulos: [
-      'Mudança de mentalidade: da resistência à adoção prática da IA',
-      'Ferramentas de IA aplicadas a tarefas do dia a dia (e-mails, relatórios, apresentações, decisões)',
-      'Como delegar tarefas repetitivas para ganhar foco no que exige julgamento humano',
-      'Riscos e limites do uso de IA no ambiente corporativo',
-      'Construção de rotinas de produtividade combinando IA e método pessoal'
-    ],
-    publico: 'Equipes operacionais e lideranças que sentem que o volume de trabalho cresceu mais rápido que a capacidade de execução, e que precisam de ganho de produtividade real, não apenas teoria sobre IA.'
-  },
-  neuro: {
-    banner: 'banner-neuro',
-    icon: '<svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 0 7 4.5v.5A2.5 2.5 0 0 0 4.5 7 2.5 2.5 0 0 0 2 9.5 2.5 2.5 0 0 0 4.5 12a2.5 2.5 0 0 0 0 5A2.5 2.5 0 0 0 7 19.5v.5A2.5 2.5 0 0 0 9.5 22h1a2.5 2.5 0 0 0 2.5-2.5v-15A2.5 2.5 0 0 0 10.5 2h-1z"/><path d="M14.5 2A2.5 2.5 0 0 1 17 4.5v.5a2.5 2.5 0 0 1 2.5 2 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5 2.5 2.5 0 0 1 0 5A2.5 2.5 0 0 1 17 19.5v.5a2.5 2.5 0 0 1-2.5 2.5h-1a2.5 2.5 0 0 1-2.5-2.5v-15A2.5 2.5 0 0 1 13.5 2h1z"/></svg>',
-    titulo: 'Neurociência da Priorização e Foco',
-    objetivo: 'Usar princípios de neurociência aplicada para ajudar profissionais a identificar o que realmente importa em meio a excesso de demandas, reduzindo dispersão e retrabalho.',
-    modulos: [
-      'Como o cérebro processa prioridades e por que multitarefa não funciona',
-      'Técnicas de foco baseadas em neurociência aplicada',
-      'Identificação de ladrões de tempo e atenção no ambiente de trabalho',
-      'Construção de critérios claros de priorização para times e lideranças',
-      'Rotinas práticas para sustentar foco ao longo do dia'
-    ],
-    publico: 'Lideranças e equipes que lidam com excesso de demandas simultâneas e sentem dificuldade em decidir o que fazer primeiro, gerando sobrecarga e sensação de estar sempre correndo atrás.'
-  },
-  pnl: {
-    banner: 'banner-pnl',
-    icon: '<svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>',
-    titulo: 'Liderança Humanizada com PNL',
-    objetivo: 'Desenvolver lideranças que comuniquem com clareza e empatia, usando ferramentas de Programação Neurolinguística para melhorar a relação com as equipes sem perder firmeza na condução.',
-    modulos: [
-      'Fundamentos de PNL aplicados à liderança',
-      'Como adaptar a comunicação ao perfil de cada liderado',
-      'Técnicas de rapport para construir confiança rápida',
-      'Feedback estruturado com PNL: firme e humano ao mesmo tempo',
-      'Gestão de estados emocionais em momentos de pressão'
-    ],
-    publico: 'Lideranças de primeiro nível que precisam melhorar a relação com a equipe sem abrir mão de resultado, especialmente em contextos onde a comunicação hoje gera ruído ou distância.'
-  },
-  tripla: {
-    banner: 'banner-tripla',
-    icon: '<svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6L12 2z"/></svg>',
-    titulo: 'Inteligência Tripla (Financeira, Emocional e Relacional)',
-    objetivo: 'Desenvolver as três dimensões que sustentam o desempenho profissional de longo prazo: a relação saudável com dinheiro, o equilíbrio emocional e a qualidade dos relacionamentos.',
-    modulos: [
-      'Inteligência financeira: educação financeira aplicada ao contexto de quem trabalha',
-      'Inteligência emocional: autoconhecimento e regulação emocional no ambiente profissional',
-      'Inteligência relacional: construção de relações de confiança e cooperação',
-      'Como as três dimensões se conectam e impactam o desempenho',
-      'Ferramentas práticas para desenvolver cada uma delas'
-    ],
-    publico: 'Equipes e lideranças que precisam de um desenvolvimento mais amplo do que só a técnica, cobrindo estabilidade pessoal como base para o desempenho profissional.'
-  },
-  disc: {
-    banner: 'banner-disc',
-    icon: '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>',
-    titulo: 'Liderança com Metodologia DISC',
-    objetivo: 'Usar o DISC como ferramenta prática para lideranças entenderem perfis comportamentais e adaptarem sua forma de liderar, comunicar e formar equipes.',
-    modulos: [
-      'Fundamentos da metodologia DISC e os quatro perfis comportamentais',
-      'Aplicação do teste DISC na própria equipe',
-      'Como liderar cada perfil de forma diferente e eficaz',
-      'Formação de times equilibrados combinando perfis complementares',
-      'Uso do DISC na resolução de conflitos entre estilos diferentes'
-    ],
-    publico: 'Lideranças e RH que querem uma ferramenta prática e validada para entender melhor suas equipes e reduzir atritos causados por diferenças de estilo comportamental.'
-  },
-  geracional: {
-    banner: 'banner-geracional',
-    icon: '<svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 21v-2a5 5 0 0 1 5-5h0a5 5 0 0 1 5 5v2"/><path d="M12 21v-2a5 5 0 0 1 5-5h0a5 5 0 0 1 5 5v2"/></svg>',
-    titulo: 'Sinergia Geracional e Conflitos',
-    objetivo: 'Ajudar equipes multigeracionais a transformarem diferenças de geração em vantagem competitiva, reduzindo conflitos e melhorando a colaboração entre perfis diferentes.',
-    modulos: [
-      'Características e valores das gerações presentes no mercado de trabalho hoje',
-      'Origem dos conflitos geracionais mais comuns nas organizações',
-      'Como adaptar liderança e comunicação para cada geração',
-      'Construção de pontes entre experiência e inovação',
-      'Ferramentas para transformar diversidade geracional em resultado'
-    ],
-    publico: 'Organizações com equipes formadas por profissionais de diferentes gerações, especialmente quando há atrito, falta de comunicação ou dificuldade de integração entre times mais experientes e mais jovens.'
-  },
-  performance: {
-    banner: 'banner-performance',
-    icon: '<svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>',
-    titulo: 'Engenharia de Times de Alta Performance',
-    objetivo: 'Aplicar princípios de engenharia de processos e comportamento humano para estruturar equipes que entregam consistentemente resultados acima da média.',
-    modulos: [
-      'Fundamentos de alta performance: o que diferencia times comuns de times de elite',
-      'Estruturação de papéis, processos e fluxos de trabalho eficientes',
-      'Cultura de feedback contínuo e accountability',
-      'Gestão de metas e indicadores sem gerar desgaste',
-      'Construção de rituais de time que sustentam performance no longo prazo'
-    ],
-    publico: 'Gestores e lideranças que já têm uma equipe funcional, mas querem elevar o padrão de entrega e transformar um time bom em um time de alta performance.'
-  },
-  financeira: {
-    banner: 'banner-financeira',
-    icon: '<svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
-    titulo: 'Educação e Inteligência Financeira',
-    objetivo: 'Ajudar pessoas a organizarem sua vida financeira na prática, desde decisões do dia a dia até a construção de um caminho sólido rumo aos investimentos, reduzindo o estresse que dívidas e desorganização financeira causam dentro e fora do trabalho.',
-    modulos: [
-      'Como escolher a taxa de juros certa e entender o custo real de cada crédito',
-      'Qual dívida pagar primeiro: método prático de priorização de dívidas',
-      'Ciladas financeiras mais comuns e como se proteger delas',
-      'Organização do orçamento pessoal e controle de gastos no dia a dia',
-      'Primeiros passos para sair do vermelho e começar a investir com segurança'
-    ],
-    publico: 'Público geral dentro das empresas, muito aplicado em SIPATs e ações de bem-estar corporativo, especialmente organizações com alto número de colaboradores endividados ou com dificuldade de organização financeira.'
-  }
-};
+<!-- WhatsApp float -->
+<a href="https://wa.me/5511920182998" class="wpp-float" target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413A11.815 11.815 0 0 0 12.05 0z"/></svg>
+</a>
 
-function abrirTema(chave){
-  var t = TEMAS[chave];
-  if(!t) return;
-  var modulosHtml = t.modulos.map(function(m){ return '<li>'+m+'</li>'; }).join('');
-  var html =
-    '<div class="tema-banner '+t.banner+'">'+
-      '<span class="tema-banner-icon">'+t.icon+'</span>'+
-    '</div>'+
-    '<div class="tema-conteudo">'+
-      '<span class="tema-eyebrow">Detalhamento do programa</span>'+
-      '<h2 class="tema-titulo">'+t.titulo+'</h2>'+
-      '<div class="tema-bloco">'+
-        '<h4>Objetivo</h4>'+
-        '<p>'+t.objetivo+'</p>'+
-      '</div>'+
-      '<div class="tema-bloco">'+
-        '<h4>Módulos abordados</h4>'+
-        '<ul class="tema-modulos">'+modulosHtml+'</ul>'+
-      '</div>'+
-      '<div class="tema-bloco">'+
-        '<h4>Para quem é indicado</h4>'+
-        '<p>'+t.publico+'</p>'+
-      '</div>'+
-      '<div class="tema-cta">'+
-        '<a href="proposta.html" class="btn-primary">Solicitar Proposta</a>'+
-        '<a href="https://wa.me/5511920182998?text=Ola%20Paulo%2C%20quero%20saber%20mais%20sobre%20'+encodeURIComponent(t.titulo)+'." target="_blank" class="btn-sec">Falar pelo WhatsApp</a>'+
-      '</div>'+
-    '</div>';
-  document.getElementById('tema-modal-body').innerHTML = html;
-  document.getElementById('tema-modal-overlay').classList.add('on');
-  document.body.style.overflow = 'hidden';
-}
-
-function fecharTema(){
-  document.getElementById('tema-modal-overlay').classList.remove('on');
-  document.body.style.overflow = '';
-}
-
-document.addEventListener('keydown', function(e){
-  if(e.key === 'Escape') fecharTema();
-});
-
-function toggleFaq(btn){
-  var item = btn.parentElement;
-  item.classList.toggle('on');
-}
-</script>
-
+<script src="js/script.js" defer></script>
 </body>
 </html>
