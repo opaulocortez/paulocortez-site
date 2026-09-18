@@ -19,13 +19,9 @@
   const heroEl = document.getElementById("hero");
 
   function updateHeader() {
-    const scrolled = window.scrollY > 40;
-    header.classList.toggle("scrolled", scrolled);
-
-    if (heroEl) {
-      const heroBottom = heroEl.getBoundingClientRect().bottom;
-      header.classList.toggle("hero-active", heroBottom > 80);
-    }
+    const overHero = heroEl ? heroEl.getBoundingClientRect().bottom > 80 : false;
+    header.classList.toggle("hero-active", overHero);
+    header.classList.toggle("scrolled", !overHero);
   }
 
   window.addEventListener("scroll", updateHeader, { passive: true });
